@@ -1,0 +1,56 @@
+{
+  "dataset": "SCEDC_25",
+  "model": "scheme3",
+  "seed": 1,
+  "checkpoint_path": "/workspace/st-nkf-diagrams/st-nkf-gpu-six/SCEDC_25/weights/scheme3_H128_seed1_best.pt",
+  "n_test": 5000,
+  "LL_ts_total": -28885.850679503754,
+  "LL_t_total": 11408.364009827375,
+  "LL_s_given_t_total": -40294.21466970444,
+  "LL_ts_mean": -5.777170135900751,
+  "LL_t_mean": 2.2816728019654753,
+  "LL_s_given_t_mean": -8.058842933940888,
+  "decomposition_error": 9.5367431640625e-07,
+  "decomposition_error_sum": 1.9626691937446594e-05,
+  "old_LL_ts": -28885.84852218628,
+  "reproduction_difference": -0.0021573174744844437,
+  "LL_t_region_total": 10860.760492909902,
+  "LL_s_given_t_region_total": -39746.61110079015,
+  "LL_t_region_mean": 2.1721520985819804,
+  "LL_s_given_t_region_mean": -7.94932222015803,
+  "decomposition_error_region": 1.4443140408104682e-06,
+  "mu_checkpoint": 1.2408083875925513e-06,
+  "mu_loaded": 1.2408083875925513e-06,
+  "mu_before_load": 8.491783773934003e-06,
+  "intensity_clipping": false,
+  "min_lam_ts": 1.24393955047708e-06,
+  "min_lam_t": 0.8969115018844604,
+  "min_lam_t_region": 0.8461884260177612,
+  "events_csv": "/workspace/st-nkf-diagrams/st-nkf-ll-decomposition-20261117/events/SCEDC_25_scheme3_seed1_events.csv",
+  "compensator_json": "/workspace/st-nkf-diagrams/st-nkf-ll-decomposition-20261117/events/SCEDC_25_scheme3_seed1_compensator.json",
+  "normalization": {
+    "max_time": {
+      "checkpoint": 191.81761169433594,
+      "recomputed_from_data": 191.81761169433594,
+      "used": 191.81761169433594
+    },
+    "max_mag": {
+      "checkpoint": 7.300000190734863,
+      "recomputed_from_data": 7.300000190734863,
+      "used": 7.300000190734863
+    },
+    "max_dis": {
+      "checkpoint": 840.4164428710938,
+      "recomputed_from_data": 840.4164428710938,
+      "used": 840.4164428710938
+    },
+    "area": {
+      "checkpoint": 407145.958239966,
+      "recomputed_from_data": 407145.958239966,
+      "used": 407145.958239966
+    }
+  },
+  "use_boundary_correction": true,
+  "batch_size": 16,
+  "history": 128
+}

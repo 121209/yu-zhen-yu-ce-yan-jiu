@@ -1,0 +1,17 @@
+{
+  "dataset": "SanJac",
+  "model": "scheme3",
+  "seed": 1,
+  "n_test": 4400,
+  "official_testing_start": 16801.0,
+  "official_testing_end": 17532.0,
+  "first_test_event_time": 16801.689453125,
+  "last_test_event_time": 17531.69140625,
+  "compensator_interval_start": 16800.819598317146,
+  "compensator_interval_end": 17531.69140625,
+  "sum_compensator_increments": 4371.327119510854,
+  "sum_elapsed_interevent": 730.8715061042094,
+  "tail_after_last_event_to_official_end": 0.30859375,
+  "head_before_first_event_from_official_start": 0.689453125,
+  "notes": "Official scoring (eval_test) subtracts the inter-event compensator increment int_l for each test event and does not add a tail integral from the last test event to official testing_end. The first increment starts at the event immediately before the first test target, which may precede official testing_start. This is the original table metric."
+}

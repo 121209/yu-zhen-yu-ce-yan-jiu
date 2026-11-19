@@ -1,0 +1,3 @@
+dataset,contrast,model_plus,model_minus,n_test,unit,dLL_t_per_event,dLL_s_given_t_per_event,dLL_ts_per_event,gain_identity_error,dLL_t_region_per_event,dLL_s_given_t_region_per_event,dLL_ts_region_per_event,gain_identity_error_region
+SanJac,scheme3_minus_fcnn,scheme3,fcnn,4400,nats/event,0.12609773837707272,-0.051192946176636944,0.07490479282780793,6.27372154227146e-10,0.05845080311955164,0.01645398488320904,0.07490479282780793,4.825047250633929e-09
+SanJac,scheme2_minus_scheme3,scheme2,scheme3,4400,nats/event,-0.16043316129933705,0.2520550495386127,0.09162188377654701,-4.4627286310827685e-09,0.0014715680448784685,0.09015031560524367,0.09162188377654701,1.264248705723503e-10
