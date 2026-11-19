@@ -55,7 +55,7 @@ def resolve_repo_path(user_repo: str | None = None) -> Path:
         ):
             return cand
     raise FileNotFoundError(
-        "未找到 ST-NKF-pytorch 代码仓库（需包含 models.py、run_models.py、layers_transformer.py 及 Datasets/）。"
+        "未找到评测代码与数据根目录（需包含 models.py、run_models.py、layers_transformer.py 及 Datasets/）。本归档仓库的根目录即可。"
         "请通过 --repo 指定路径，或设置环境变量 ST_NKF_REPO。"
     )
 
@@ -63,9 +63,50 @@ KernelPointProcess = None  # loaded in setup_repo()
 prepare_run = None
 REPO = ROOT
 
+def maybe_unpack_payloads(root: Path) -> None:
+    """Expand payloads/parts if the archive tree has not been materialized yet."""
+    if not (root / "payloads" / "MANIFEST.json").is_file():
+        return
+    marker = root / "Datasets" / "SOURCE.txt"
+    if marker.is_file():
+        return
+    script = root / "scripts" / "unpack_archive.py"
+    if not script.is_file():
+        raise RuntimeError(f"archive payloads exist but {script} is missing")
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("stnkf_unpack_archive", script)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"unable to load {script}")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    rc = mod.unpack(root)
+    if rc != 0:
+        raise RuntimeError(f"failed to unpack archive payloads under {root}")
+
+
+def ensure_archive_binaries(root: Path) -> None:
+    """Materialize official .pt / .npy from text-safe *.b64 siblings if needed."""
+    script = root / "scripts" / "restore_binaries.py"
+    if not script.is_file():
+        return
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("stnkf_restore_binaries", script)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"unable to load {script}")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    rc = mod.restore(root, check=True)
+    if rc != 0:
+        raise RuntimeError(f"failed to restore official binaries under {root}")
+
+
 def setup_repo(user_repo: Path | None = None) -> Path:
     global KernelPointProcess, prepare_run, REPO
+    # Unpack first so Datasets/ and weight payloads exist, then locate the tree.
+    hint = Path(user_repo).expanduser().resolve() if user_repo else ROOT
+    maybe_unpack_payloads(hint)
     REPO = resolve_repo_path(str(user_repo) if user_repo else None)
+    ensure_archive_binaries(REPO)
     sys.path.insert(0, str(REPO))
     os.chdir(REPO)
     from models import KernelPointProcess as _KernelPointProcess
@@ -101,11 +142,11 @@ BACKBONES = {
     "scheme5": {"temporal_backbone": "fcnn", "spatial_backbone": "transformer", "kappa_backbone": "fcnn"},
 }
 
-FCNN_WEIGHTS = ROOT / "st-nkf-fcnn-h128-5090-20261114/run/weights"
-SANJAC_WEIGHTS = ROOT / "st-nkf-gpu-4090/weights"
-SIX_ROOT = ROOT / "st-nkf-gpu-six"
-COMCAT_WEIGHTS = ROOT / "st-nkf-comcat-5090-20261114/run/ComCat/weights"
-SCHEME5_ROOT = ROOT / "st-nkf-scheme5-spatial-tf-20261117"
+# Official H=128 seed=1 best-validation snapshots live in this archive:
+#   weights/baseline_stnkf_fcnn/
+#   weights/schemes/scheme{1-5}/{dataset}/
+# ETAS weights are under weights/etas/, but MODEL_ORDER does not include ETAS
+# because this script does not yet decompose the empirical ETAS kernel.
 
 # Exact totals stored at the original training eval (mean LL_ts * n).
 OLD_TEST = {
@@ -163,17 +204,18 @@ COMPARISONS = (
 )
 
 
+def _weights_root() -> Path:
+    """Prefer the resolved --repo root once setup_repo() has run."""
+    return REPO if REPO is not None else ROOT
+
+
 def checkpoint_path(dataset: str, model_id: str) -> Path:
+    root = _weights_root()
     if model_id == "fcnn":
-        return FCNN_WEIGHTS / f"stnkf_fcnn_{dataset}_H128_seed1_best.pt"
-    name = f"{model_id}_H128_seed1_best.pt"
+        return root / "weights" / "baseline_stnkf_fcnn" / f"stnkf_fcnn_{dataset}_H128_seed1_best.pt"
     if model_id == "scheme5":
-        return SCHEME5_ROOT / dataset / "weights" / name
-    if dataset == "SanJac":
-        return SANJAC_WEIGHTS / name
-    if dataset == "ComCat":
-        return COMCAT_WEIGHTS / name
-    return SIX_ROOT / dataset / "weights" / name
+        return root / "weights" / "schemes" / "scheme5" / dataset / "scheme5_H128_seed1_best.pt"
+    return root / "weights" / "schemes" / model_id / dataset / f"{model_id}_H128_seed1_best.pt"
 
 
 def load_checkpoint(path: Path, device: torch.device) -> dict:
@@ -570,7 +612,7 @@ def write_comparisons(path: Path, rows: list[dict]) -> tuple[list[dict], list[st
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
     p.add_argument("--repo", type=Path, default=None, help="ST-NKF-pytorch 代码与 Datasets 所在目录")
-    p.add_argument("--out", type=Path, default=ROOT / "st-nkf-ll-decomposition-20261117")
+    p.add_argument("--out", type=Path, default=ROOT / "results" / "decomposition")
     p.add_argument("--datasets", nargs="+", default=None, choices=list(DATASETS))
     p.add_argument("--models", nargs="+", default=None, choices=list(MODEL_ORDER))
     p.add_argument("--batch-size", type=int, default=BATCH_SIZE)
