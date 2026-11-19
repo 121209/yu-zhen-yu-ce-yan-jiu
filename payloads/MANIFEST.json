@@ -1,0 +1,122 @@
+{
+  "created_at": "2026-11-19 22:42:45 Asia/Shanghai",
+  "format": "concat part-*.b64 (decoded) == yu-zhen-archive-text.tar.gz ; then tar -xz",
+  "tarball_name": "yu-zhen-archive-text.tar.gz",
+  "tarball_sha256": "6725299c22c75c531490fc8280d825a16c013ba887c8040ea588299a0765784a",
+  "tarball_size": 29249102,
+  "note": "Tarball contains the archive tree except raw .pt/.npy (those are included as *.b64 and restored by scripts/restore_binaries.py) and except payloads/ itself.",
+  "parts": [
+    {
+      "name": "part-000.b64",
+      "order": 0,
+      "raw_sha256": "ea9b1e36880e5fe8b124f30ed12613dc619dae586a03e05e93728ce609e3f936",
+      "raw_size": 2097152,
+      "b64_sha256": "1d9f8d71f1a51a775a09891a97cffbb5fa0a7e9cd97264b479b60d88f4f81bb3",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-001.b64",
+      "order": 1,
+      "raw_sha256": "14f20dd18388c10b27d2187c30d6b6c7d8d159dec15272cd7c985c375f1ee2bf",
+      "raw_size": 2097152,
+      "b64_sha256": "be357e5b8f9abbca9dafedbc7e484272d2ce8fa49ef232272ba5589995412a2e",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-002.b64",
+      "order": 2,
+      "raw_sha256": "e73e3f3a1dcb3814f5d9bcf95af906312f5cfda1a335838714c813895623bf68",
+      "raw_size": 2097152,
+      "b64_sha256": "e33f3bfdb092f5d2763e186aa04426c608964bb0c73458aa6f44ed294d3aa50e",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-003.b64",
+      "order": 3,
+      "raw_sha256": "e532f6cf742e29354e5bb496a8097e79f5323eb1be5dc4dbcfa62b087349c84e",
+      "raw_size": 2097152,
+      "b64_sha256": "b567b7d6d54a6ed5bdb89293901fc5541c6ded81f78c24fdcf771b35a9edda61",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-004.b64",
+      "order": 4,
+      "raw_sha256": "4c2887376f029009ab8d1f857788d6a237791d568fc8a22dc551e8c45bd0c7d4",
+      "raw_size": 2097152,
+      "b64_sha256": "4ce9fe80236ef805bf6645e9958a3765a18d196ceac22a5a3fb888a0fdf70d31",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-005.b64",
+      "order": 5,
+      "raw_sha256": "8a3d9b4a5da10b2bef4d1c7e4c3b42f112a3298849431c8cfbcd994867eec5b4",
+      "raw_size": 2097152,
+      "b64_sha256": "9f49819104f2067d89599ea7456a43b109b1e41a41b8985e741cdbef20d75421",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-006.b64",
+      "order": 6,
+      "raw_sha256": "016d6412efb57729d0af899000d4f9c58a3effdc61ec777c335701cb4b1e3f5d",
+      "raw_size": 2097152,
+      "b64_sha256": "4efa7600111d758d61ed2de3a75c122daa3e19d39adcf39657c3f36367ca561e",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-007.b64",
+      "order": 7,
+      "raw_sha256": "ca9ce05fe87214656cdf80aae489e51bb536653d2cfbefea467a5ffa4aea9e71",
+      "raw_size": 2097152,
+      "b64_sha256": "b2bec63976683e772504550f518bc34bba9805a34921a8e8658c30a5357241e9",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-008.b64",
+      "order": 8,
+      "raw_sha256": "04897ed2ebf18145d702a5fc713d75a3e491c5716140c7fd60a89d20b2887eb2",
+      "raw_size": 2097152,
+      "b64_sha256": "0017f2165c1993f36a268355463eb85e77f10324ae6386e5af5138f186ee0cae",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-009.b64",
+      "order": 9,
+      "raw_sha256": "a81345a6fb2f6eff7936f3f461fb56ff23731d9cf1b29c18eb92885e9f6f5057",
+      "raw_size": 2097152,
+      "b64_sha256": "249e1551dff40f3fa33a2c78931e91d9ffa5129ddda15e0e2ba6f79a61272fc8",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-010.b64",
+      "order": 10,
+      "raw_sha256": "22825ed094ff1b560bb70873ece66e76f558f40617198fad885dca5dd07f516a",
+      "raw_size": 2097152,
+      "b64_sha256": "484bdb1cfbf3e5d8d33996cdd667f57afac929f2c71811abd1971786575c73af",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-011.b64",
+      "order": 11,
+      "raw_sha256": "e0d60a0c15c792dc875f2ce1a164844205c6b74c9f9b72ed96df431aac21f476",
+      "raw_size": 2097152,
+      "b64_sha256": "173ab1b0a4363330eaad70336dedb814961c370154f05d2c4a496a1f457c35f7",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-012.b64",
+      "order": 12,
+      "raw_sha256": "0955c8aee462e8f6987af9ce534149a863c55ea5e995f4e29374040a7b83561e",
+      "raw_size": 2097152,
+      "b64_sha256": "52854a6c226d5dff9422c3553086fe211aea29b3bbf1a142aade72c0701d42a9",
+      "b64_size": 2832997
+    },
+    {
+      "name": "part-013.b64",
+      "order": 13,
+      "raw_sha256": "d8e60a3b79acacb2551e8073e4bdbec747201035683ab2a3f55f17eecf28556b",
+      "raw_size": 1986126,
+      "b64_sha256": "32e5937c236aba43bfade8ef027d53c35719bd4d6d167173c9e6c71ec5ae69c4",
+      "b64_size": 2683013
+    }
+  ]
+}

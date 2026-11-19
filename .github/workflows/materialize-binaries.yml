@@ -1,0 +1,43 @@
+name: materialize-archive
+
+# The archive is pushed through a text-only GitHub MCP path. Official files
+# may first arrive as payloads/parts/*.b64 (a split tar.gz) plus *.pt.b64 /
+# *.npy.b64 siblings. This workflow unpacks them onto main so a later clone
+# has the complete tree and real .pt / .npy files.
+# eval_ll_decomposition.py also unpacks and restores locally if needed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "payloads/**"
+      - "scripts/unpack_archive.py"
+      - "scripts/restore_binaries.py"
+      - ".github/workflows/materialize-binaries.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Unpack text-safe payload tarball if present
+        run: python3 scripts/unpack_archive.py --root .
+      - name: Restore official .pt and .npy binaries
+        run: python3 scripts/restore_binaries.py --root .
+      - name: Commit materialized archive tree
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "tree already materialized"
+            exit 0
+          fi
+          git commit -m "Materialize the official aftershock-forecast archive tree from text-safe payloads."
+          git push
