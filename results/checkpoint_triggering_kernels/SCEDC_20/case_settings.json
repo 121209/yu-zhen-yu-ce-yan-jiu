@@ -1,0 +1,54 @@
+{
+  "test_event_id": 6663,
+  "catalog_time": "2019-07-06 03:19:53.040",
+  "catalog_time_days": 18083.138808333333,
+  "mainshock_magnitude": 7.1,
+  "query_time_days": 18083.152697222224,
+  "minutes_after": 20,
+  "history_size": 128,
+  "mainshock_history_index": 38,
+  "n_history_after_mainshock": 89,
+  "selection": "largest test magnitude, earliest tie",
+  "local_postshock_radius_km": 20,
+  "n_local_postshock": 73,
+  "local_epicenter_major_minor_std_ratio": 6.77900604775988,
+  "half_width_km": 20,
+  "grid_cells_per_axis": 100,
+  "dataset": "SCEDC_20",
+  "checkpoints": {
+    "etas": {
+      "path": "weights/etas/etas_SCEDC_20_H128_seed1_aligned_best.pt",
+      "sha256": "c4a9de4d017c40d373028fec1a0111a6a13c6ebe4444db99fbb370ed1080d4c6"
+    },
+    "fcnn": {
+      "path": "weights/baseline_stnkf_fcnn/stnkf_fcnn_SCEDC_20_H128_seed1_best.pt",
+      "sha256": "edfc1ecd763ae5a945c5004112fa1d5f72511843a5d2c14fabe0f4f0e0b13002"
+    },
+    "scheme5": {
+      "path": "weights/schemes/scheme5/SCEDC_20/scheme5_H128_seed1_best.pt",
+      "sha256": "f349536817ec77ae75865d1873aac4d82f138950c32e536796f98353f41fd308"
+    },
+    "scheme2": {
+      "path": "weights/schemes/scheme2/SCEDC_20/scheme2_H128_seed1_best.pt",
+      "sha256": "6f2cf299f91998e3296caa02c1065bb12a0058e4680a3fcec449b287c46c2f69"
+    },
+    "scheme4": {
+      "path": "weights/schemes/scheme4/SCEDC_20/scheme4_H128_seed1_best.pt",
+      "sha256": "bfa6b6ca4f3c29ef5385b994df26142dbce8e9c78ae2177715548b3e381e250a"
+    },
+    "scheme1": {
+      "path": "weights/schemes/scheme1/SCEDC_20/scheme1_H128_seed1_best.pt",
+      "sha256": "19f4464e3ab82ea7d71909a86dc13cf1c6a7e8b2773715698bc2e032955b0ea4"
+    }
+  },
+  "mc_configured": 2.0,
+  "mmax_training": 7.3,
+  "magnitude_context": "127 preceding events and the reference event with varied magnitude",
+  "origin_catalog_xy_km": [
+    179.68802749178604,
+    -52.1915276016157
+  ],
+  "map_axes": "model, delta_y, delta_x",
+  "triggered_field": "sum of kappa * temporal PDF * planar spatial PDF over H; excludes mu",
+  "display": "Cell centers; common log colors per row, clipped at pooled positive 1st/99.5th percentiles. Lower panel masked to study region. NPZ is unclipped."
+}

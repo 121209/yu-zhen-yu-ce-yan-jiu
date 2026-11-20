@@ -1,0 +1,54 @@
+{
+  "test_event_id": 688,
+  "catalog_time": "2016-06-10 08:04:38.638",
+  "catalog_time_days": 16962.336558310184,
+  "mainshock_magnitude": 5.19,
+  "query_time_days": 16962.350447199075,
+  "minutes_after": 20,
+  "history_size": 128,
+  "mainshock_history_index": 77,
+  "n_history_after_mainshock": 50,
+  "selection": "largest test magnitude, earliest tie",
+  "local_postshock_radius_km": 20,
+  "n_local_postshock": 50,
+  "local_epicenter_major_minor_std_ratio": 1.323918340778189,
+  "half_width_km": 20,
+  "grid_cells_per_axis": 100,
+  "dataset": "SanJac",
+  "checkpoints": {
+    "etas": {
+      "path": "weights/etas/etas_SanJac_H128_seed1_aligned_best.pt",
+      "sha256": "a83daca3863ab5011dcaba475a33b6375943dfd0c7cc0b49148a67317f4f7861"
+    },
+    "fcnn": {
+      "path": "weights/baseline_stnkf_fcnn/stnkf_fcnn_SanJac_H128_seed1_best.pt",
+      "sha256": "00a8c3263f850125345a8a945cfe84146c399f6a825077bd1a64f2c029bdd4ba"
+    },
+    "scheme5": {
+      "path": "weights/schemes/scheme5/SanJac/scheme5_H128_seed1_best.pt",
+      "sha256": "d37f21e8f0c370938e7e6cb75b70d924ba50e6ca8991489fa75759cd79245525"
+    },
+    "scheme2": {
+      "path": "weights/schemes/scheme2/SanJac/scheme2_H128_seed1_best.pt",
+      "sha256": "d031e2fbca39f311c0fb8021c477493e8c1254761b5e65128d74525fe0b16f7b"
+    },
+    "scheme4": {
+      "path": "weights/schemes/scheme4/SanJac/scheme4_H128_seed1_best.pt",
+      "sha256": "0d8427231e1075d0ce8bfe8c195ce76344b00eb70c8d7c8f1ff8d38817b9ee6d"
+    },
+    "scheme1": {
+      "path": "weights/schemes/scheme1/SanJac/scheme1_H128_seed1_best.pt",
+      "sha256": "0ef799f0b6c5bd6bf3fc2442badbb7cf69a2db7fe00cdcf82ed05a9245c91077"
+    }
+  },
+  "mc_configured": 1.0,
+  "mmax_training": 5.43,
+  "magnitude_context": "127 preceding events and the reference event with varied magnitude",
+  "origin_catalog_xy_km": [
+    -5.005104787696901,
+    5.15118775912555
+  ],
+  "map_axes": "model, delta_y, delta_x",
+  "triggered_field": "sum of kappa * temporal PDF * planar spatial PDF over H; excludes mu",
+  "display": "Cell centers; common log colors per row, clipped at pooled positive 1st/99.5th percentiles. Lower panel masked to study region. NPZ is unclipped."
+}

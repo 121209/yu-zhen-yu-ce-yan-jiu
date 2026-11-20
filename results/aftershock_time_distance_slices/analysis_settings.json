@@ -1,0 +1,152 @@
+{
+  "arguments": {
+    "repo": "C:\\Users\\sp202\\Desktop\\余震预测实验\\ST-NkF-transformer",
+    "datasets": [
+      "SCEDC_30",
+      "SCEDC_25",
+      "SCEDC_20",
+      "SaltonSea",
+      "SanJac",
+      "WHITE",
+      "ComCat"
+    ],
+    "strong_magnitude": 4.0,
+    "strong_quantile": null,
+    "distance_edges_km": [
+      10,
+      30,
+      100
+    ],
+    "baseline": "fcnn",
+    "include_etas": false,
+    "export_event_groups": false,
+    "out": null,
+    "check_only": false
+  },
+  "datasets": {
+    "SCEDC_30": {
+      "threshold_magnitude": 4.0,
+      "n_test": 1898,
+      "no_prior_reference": 0,
+      "catalog_sha256": "785cf69eb710f43274a058c108eb4bbcb5fa1157cadbbc29b91693d573928e78",
+      "events_sha256": {
+        "fcnn": "4d74a7ae8435748fc9bcb41d45de6b8927b088ee5194e41e0d566f8e33c3fbd9",
+        "scheme1": "7c8b2109f9ae1b8fe098321f7aa6112be4d30de797745cf717027d2641d49ba6",
+        "scheme2": "3ed633623dc72748d8c1fc30a8ad420ea558e5481a98f6d6b95706ed58457e4f",
+        "scheme3": "aca441e27cf2904d603a7d86866dd0ad6edf4ee9b815a21d90e21eee9803c33c",
+        "scheme4": "6a697b27757e7024a56a4c3a4c5bd1dd2cb14e2e544838d5b7615f85ac7e052a",
+        "scheme5": "5a0f766241d2071790d42ce92d3c52ce44c0a8ea1467e95d174db3232d86dbec"
+      }
+    },
+    "SCEDC_25": {
+      "threshold_magnitude": 4.0,
+      "n_test": 5000,
+      "no_prior_reference": 0,
+      "catalog_sha256": "785cf69eb710f43274a058c108eb4bbcb5fa1157cadbbc29b91693d573928e78",
+      "events_sha256": {
+        "fcnn": "e36aaf6d572333c3a6682467c0e22ae7a9075b34a0cc11e07fd34bcb448c5057",
+        "scheme1": "a037f95d52abe054fdb53f031706d9306b75fc7e724144c76924bf7c66402a36",
+        "scheme2": "e9823b12c4cd62447793274611a0512ab6d10dfbb7a3a5b506e9d36077ce329b",
+        "scheme3": "3759fd062eda1b3ecb3e31d3d108471aa7db41912cddd432e5e68656be519f49",
+        "scheme4": "cfe78f500e1d45b2fe23868a1a82916b53cfd393a494c4276bc6116172127bad",
+        "scheme5": "87fcd65157b468f65f807512f0cf94b1f132c241f8387cd023ff6fe42cc7362c"
+      }
+    },
+    "SCEDC_20": {
+      "threshold_magnitude": 4.0,
+      "n_test": 13067,
+      "no_prior_reference": 0,
+      "catalog_sha256": "785cf69eb710f43274a058c108eb4bbcb5fa1157cadbbc29b91693d573928e78",
+      "events_sha256": {
+        "fcnn": "4de6e2ad5f5cc7c88d58615a5e4ebf02a97333eb3f49d195d04b5fe678ffc348",
+        "scheme1": "b9db4aac4624d515e072e24f38e2b4c14b68335268d4072719cd130ba7614ff8",
+        "scheme2": "eb7f1ad4d96b55f5c96fc2c5198cfa70e345bccb29602533a9feb7c896ed2771",
+        "scheme3": "0753136bb861f876cdce78114ddf88e979b2f6369cd499ff83d0974cc75d9543",
+        "scheme4": "5fb2a1c97c8409e47816f3526758730aa39eab1162672ee90962ef94565ca83d",
+        "scheme5": "27442af4446be5dd7e21df390cc90ecad39be0e9e53c46975793bd2ce551d77c"
+      }
+    },
+    "SaltonSea": {
+      "threshold_magnitude": 4.0,
+      "n_test": 4104,
+      "no_prior_reference": 0,
+      "catalog_sha256": "05bdef3764c96fcd14ab13b4fab6c2a69cbdd7953c71d590e275a4a332aea926",
+      "events_sha256": {
+        "fcnn": "a68d5e814c1365df0a51625dcffd96bd32127327538a5b9f613364ffd86d7a84",
+        "scheme1": "1324d0a7c2f0796b05dfc7de94019191b2edd0a8024aa6070fa17083c850177c",
+        "scheme2": "e6a565184163df4abe1e86fce2cc98ae3498ce5b471c75f876d5598bb75f4904",
+        "scheme3": "7febea43a264ea695e8ade4595780e5e363ab08b2a45d185293978160cf76817",
+        "scheme4": "82192e204e3cb432b981ae0ef6e6a3805cbf75d0d2b7293812f874f07f381881",
+        "scheme5": "4c9ff0b5f501cd7aeea62c89ec33c9e1d33b339cc62bd06b13ec4b6a0e88ba9f"
+      }
+    },
+    "SanJac": {
+      "threshold_magnitude": 4.0,
+      "n_test": 4400,
+      "no_prior_reference": 0,
+      "catalog_sha256": "74d22d2c49969c5aba6de6e7d2e3d24b049566e2d17ab3f620ea97ba4d8d978e",
+      "events_sha256": {
+        "fcnn": "2a7ecaf247567f8c666d3ea7f104bf18b9de3ea14d72f5c22df267e0cf04b9bf",
+        "scheme1": "125dd5b0493e9a12b0717fba54d4ee713b0a2e8b90b48f593e57844b116aafba",
+        "scheme2": "4fecdb7dabe10b5320590571b6a38d89a25e79f5338d8b568cce5b85eb1c2504",
+        "scheme3": "d5406c09fb94e94dfa399b6b205a1e0780a6f79285f042007bc4c266bb6f7575",
+        "scheme4": "b1695ce5f6b6a32596fa12633045010312577bcfc429ab2d3cf7edfff6ac32ba",
+        "scheme5": "5571f520841df0006017d930b606ad47f52a6487ee12f86350af97a1d2cae1d3"
+      }
+    },
+    "WHITE": {
+      "threshold_magnitude": 4.0,
+      "n_test": 24080,
+      "no_prior_reference": 0,
+      "catalog_sha256": "da36efd29f9f30ee2c0cb0f8793c8ccc94ed83f01899ae3ace9df39ca7b0cb21",
+      "events_sha256": {
+        "fcnn": "a3a06557e46e117e8e609f605cafa2f0494ce27d9a916205b97eabe7da4a002a",
+        "scheme1": "2c46a888e31d0f644c90183e19c9acae05605f5a6cd62675652216ae2177c526",
+        "scheme2": "806ae7beba00cf1ee2e5f87844662c31e6857ed20b698ccad4ec361b599bbb89",
+        "scheme3": "2c7f4615cd1c9677b7b0c1db5447704ac0cb8af5fad20efb69b9aeaf54a5a5c2",
+        "scheme4": "17f2426a4d482c81bc85860abaa630a93b72e8766a02fb65550913c17ff5a795",
+        "scheme5": "8b483f1fa751acbe5e8823999de971fcbe8f000c26bd45ddf2f4dfd408f4111f"
+      }
+    },
+    "ComCat": {
+      "threshold_magnitude": 4.0,
+      "n_test": 21885,
+      "no_prior_reference": 0,
+      "catalog_sha256": "de77ca2beb5bec3613ff6c6513cdf4fb2ce2bf55b89a8701e4e40e3933333a49",
+      "events_sha256": {
+        "fcnn": "1e5147d8a032a3e91ceed44460f3600013f0673a0b250368661817fae9612245",
+        "scheme1": "1882382418009c16a4f3a3a54d6b7d8f780940bd3f04a16ca7bf18caa85703bb",
+        "scheme2": "7e6637b843c6e3169b95443d82ced10223848b861d76546fdabf20f149e99157",
+        "scheme3": "2d0cede2243a2deb53a90602b6654e2b19de58b06cbc345a207e801b400a0ba6",
+        "scheme4": "d4c05f3650d5733477e864684fa4b18ac6cd8f2fc61601445e544e715c70b4b9",
+        "scheme5": "f277836155f7031b8308250c42c7a25033e69a9f0efc9ba83a0911b1e14a6039"
+      }
+    }
+  },
+  "unit": "nats/event",
+  "phase_codes": {
+    "0": "lt_1h",
+    "1": "1h_to_lt_24h",
+    "2": "1d_to_7d_inclusive",
+    "3": "gt_7d"
+  },
+  "distance_codes": {
+    "0": "0_to_lt_10_km",
+    "1": "10_to_lt_30_km",
+    "2": "30_to_lt_100_km",
+    "3": "ge_100_km"
+  },
+  "assignment": "latest strictly earlier qualifying event since auxiliary_start; same-time events excluded",
+  "distance": "great-circle epicentral distance, Earth radius 6371 km; no depth used",
+  "missing": "phase/distance code -1, reference_catalog_row -1 means no prior reference",
+  "limitations": [
+    "descriptive slices, no parent-offspring identification",
+    "group events are clustered, n_events is not independent replication",
+    "training-only magnitude quantiles can include more than the top 5% because of ties",
+    "strong events themselves may be scored relative to an earlier reference"
+  ],
+  "versions": {
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  }
+}
