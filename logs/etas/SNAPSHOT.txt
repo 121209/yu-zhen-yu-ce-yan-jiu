@@ -1,1 +1,1 @@
-Copied 2026-11-19 22:37:58 Asia/Shanghai. ComCat ETAS may still have been training; this is not necessarily the final log.
+Final logs copied 2026-11-20T08:45:45.617197+08:00 (Asia/Shanghai). Training completed 2026-11-20 08:34:32 Asia/Shanghai. All seven ETAS datasets finished. No training/evaluation restarted.

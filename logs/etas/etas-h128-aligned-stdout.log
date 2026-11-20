@@ -390,3 +390,17 @@
 2026-11-19 22:21:15,209 - INFO - Epoch 38/50 loss=7.379166 val_loss=7.996211 mu=1.613581e-05 seconds=315.52
 2026-11-19 22:30:18,439 - INFO - Epoch 39/50 loss=7.379274 val_loss=7.988488 mu=1.629754e-05 seconds=352.94 *
 2026-11-19 22:35:58,173 - INFO - Epoch 40/50 loss=7.379108 val_loss=7.992628 mu=1.623586e-05 seconds=339.69
+2026-11-19 22:41:34,377 - INFO - Epoch 41/50 loss=7.379047 val_loss=7.990430 mu=1.626883e-05 seconds=336.20
+2026-11-19 22:46:56,039 - INFO - Epoch 42/50 loss=7.379279 val_loss=7.993643 mu=1.621221e-05 seconds=321.66
+2026-11-19 22:52:30,976 - INFO - Epoch 43/50 loss=7.379314 val_loss=7.998088 mu=1.613984e-05 seconds=334.94
+2026-11-19 23:14:33,209 - INFO - Epoch 44/50 loss=7.379128 val_loss=7.996698 mu=1.612600e-05 seconds=400.26
+2026-11-19 23:20:19,878 - INFO - Epoch 45/50 loss=7.379124 val_loss=7.991559 mu=1.620792e-05 seconds=346.64
+2026-11-19 23:26:04,320 - INFO - Epoch 46/50 loss=7.379081 val_loss=7.993903 mu=1.620118e-05 seconds=344.44
+2026-11-20 08:01:32,771 - INFO - Epoch 47/50 loss=7.379062 val_loss=7.987107 mu=1.636912e-05 seconds=496.08 *
+2026-11-20 08:22:49,129 - INFO - Epoch 48/50 loss=7.379210 val_loss=7.991537 mu=1.627177e-05 seconds=367.35
+2026-11-20 08:28:29,379 - INFO - Epoch 49/50 loss=7.379124 val_loss=7.994934 mu=1.619381e-05 seconds=340.24
+2026-11-20 08:33:20,993 - INFO - Epoch 50/50 loss=7.379157 val_loss=7.995598 mu=1.617240e-05 seconds=291.61
+2026-11-20 08:33:21,006 - INFO - Restored best-validation snapshot from epoch 47 (val_loss=7.987107).
+2026-11-20 08:34:32,614 - INFO - Weights saved to /workspace/st-nkf-diagrams/st-nkf-etas-h128-aligned-cpu-20261116/weights/etas_ComCat_H128_seed1_aligned_best.pt
+2026-11-20 08:34:32,674 - INFO - ===== DONE ETAS aligned ComCat status=ok best_epoch=47 test LL_ts=-7.460639 total=-163276.09 n=21885 seconds=20496.8 =====
+2026-11-20 08:34:32,675 - INFO - ETAS H=128 aligned CPU finished outcome=completed results=/workspace/st-nkf-diagrams/st-nkf-etas-h128-aligned-cpu-20261116/etas-h128-aligned-ll.json

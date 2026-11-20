@@ -24,7 +24,7 @@ git clone https://github.com/121209/yu-zhen-yu-ce-yan-jiu.git
 - μ 由训练集事件率 / 面积初始化，并在每个 epoch 解析更新
 - 评测始终恢复 **best-validation** 快照（`save_weights` 格式）
 
-对照结果页（尚无完整的 ETAS 列，ComCat 上的 ETAS 仍在云端训练）：
+对照结果页（已补齐七个目录的最终 ETAS 列，2026-11-20 更新）：
 
 ```text
 https://st-nkf-h-128-en3c.pages.grok.bot/
@@ -57,14 +57,14 @@ https://st-nkf-h-128-en3c.pages.grok.bot/
 ├── weights/
 │   ├── baseline_stnkf_fcnn/          # ST-NKF FCNN 基线 × 7 个数据集
 │   ├── schemes/scheme{1-5}/{dataset}/
-│   └── etas/                         # 已完成的 6 个 ETAS 权重（尚无 ComCat）
+│   └── etas/                         # 已完成的 7 个 ETAS 权重（含 ComCat）
 ├── logs/
-│   ├── etas/                         # 对齐协议 ETAS 训练日志快照（拷贝时 ComCat 可能仍在训）
+│   ├── etas/                         # 对齐协议 ETAS 最终完整训练日志
 │   └── decomposition/                # 分解评估运行日志
 └── results/
     ├── provenance/                   # 各次训练写出的 ll.json
     ├── decomposition_partial/        # 已完成的 24/42 分解结果（以 summary.csv 为准）
-    ├── etas-h128-aligned-ll.json     # 仅含已完成的 6 个数据集
+    ├── etas-h128-aligned-ll.json     # 全部 7 个数据集最终结果
     ├── CHECKPOINT_SOURCES.json
     └── MANIFEST.sha256.csv
 ```
@@ -81,13 +81,13 @@ https://st-nkf-h-128-en3c.pages.grok.bot/
 | scheme3 | Transformer | FCNN | FCNN | 7 / 7 |
 | scheme4 | Transformer | Transformer | MLP | 7 / 7 |
 | scheme5 | FCNN | Transformer | FCNN | 7 / 7 |
-| ETAS（经验核，`weights/etas/`） | 经验 | 经验 | 经验 | **6 / 7（无 ComCat）** |
+| ETAS（经验核，`weights/etas/`） | 经验 | 经验 | 经验 | **7 / 7（全部完成）** |
 
 七个数据集均为：`SCEDC_30`、`SCEDC_25`、`SCEDC_20`、`SaltonSea`、`SanJac`、`WHITE`、`ComCat`。
 
 - **42 个** FCNN + 五个方案权重，全部是官方 H=128、seed=1、best-validation 的 `save_weights` 快照。
-- **6 个** 已完成的 ETAS 权重：`SCEDC_30`、`SCEDC_25`、`SCEDC_20`、`SaltonSea`、`SanJac`、`WHITE`。
-- **ComCat 上的 ETAS 仍在云端训练，仓库里没有该目录的最佳权重，完成后再补。** 请不要用其他旧快照或论文路径下的 ETAS 权重顶替。
+- **7 个** 已完成的 ETAS 权重：`SCEDC_30`、`SCEDC_25`、`SCEDC_20`、`SaltonSea`、`SanJac`、`WHITE`、`ComCat`。
+- **ETAS 七个目录已于 2026-11-20 08:34:32（Asia/Shanghai，北京时间）全部完成，共 42+7=49 个官方快照。** ComCat 跑满 50 轮，best_epoch=47；test LL_ts=-7.460639476776123，n_test=21885，总量=-163276.09494924545。不要用旧快照或论文路径 ETAS 顶替。
 
 哈希与来源见 `results/MANIFEST.sha256.csv` 和 `results/CHECKPOINT_SOURCES.json`。
 
@@ -107,7 +107,7 @@ python scripts/restore_binaries.py --root .
 
 也可以直接运行 `python eval_ll_decomposition.py --repo <仓库根>`：脚本会在需要时自动解包并还原。仓库还配置了 GitHub Actions（`.github/workflows/materialize-binaries.yml`）；若该工作流已成功执行，之后的克隆会直接带有完整目录树和二进制权重。
 
-请不要用其他旧快照替换这些官方文件。
+请不要用其他旧快照替换这些官方文件。**历史 `payloads/` 分卷是 2026-11-19 的初始快照；仓库已物化时不要重新执行 `unpack_archive.py`，否则可能用旧 README/日志/JSON 覆盖最终增量更新。以 main 中的最终文件和 MANIFEST 为准。
 
 ## 如何运行对数似然分解
 
@@ -169,9 +169,9 @@ python .\eval_ll_decomposition.py --repo "C:\Users\admin\Desktop\yu-zhen-yu-ce-y
 
 ## ETAS / 日志快照说明
 
-- `results/etas-h128-aligned-ll.json` 只包含上述 6 个已完成数据集，没有 ComCat 条目。
-- `logs/etas/` 是从云端训练目录拷出的快照。拷贝时 **ComCat ETAS 仍在训练**，日志不是最终完整记录；训练结束后应再补最新日志、ComCat 最佳权重和更新后的 ll 结果。
-- 不要停止或改动云端仍在运行的 ETAS 训练进程。
+- `results/etas-h128-aligned-ll.json` 含全部 7 个数据集最终结果；原始训练 JSON 另存 `results/provenance/etas-h128-aligned-final-native.json`。
+- `logs/etas/` 已更新为最终完整日志，包含 ComCat 第 50 轮、恢复第 47 轮最佳验证快照和最终 completed 记录。
+- 本次只归档已完成文件，没有重启任何训练、评估、GPU 或分解 watcher。
 
 ## 许可
 

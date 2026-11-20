@@ -29,7 +29,9 @@
       "ComCat"
     ],
     "note": "SanJac is retrained under this protocol; paper-path ETAS H=128 results in st-nkf-etas-h128-cpu-20261114 are not reused.",
-    "started": "2026-11-16 11:10:30 Asia/Shanghai"
+    "started": "2026-11-16 11:10:30 Asia/Shanghai",
+    "finished": "2026-11-20 08:34:32 Asia/Shanghai",
+    "outcome": "completed"
   },
   "datasets": {
     "SCEDC_30": {
@@ -349,8 +351,61 @@
       "device": "cpu",
       "torch_threads": 4,
       "weights_original": "/workspace/st-nkf-diagrams/st-nkf-etas-h128-aligned-cpu-20261116/weights/etas_WHITE_H128_seed1_aligned_best.pt"
+    },
+    "ComCat": {
+      "status": "ok",
+      "name": "ETAS empirical (aligned training method, H=128)",
+      "dataset": "ComCat",
+      "official_splits": true,
+      "split_counts": {
+        "auxiliary": 14933,
+        "train": 40701,
+        "val": 14741,
+        "test": 21885
+      },
+      "history": 128,
+      "batch_size": 16,
+      "epochs": 50,
+      "patience": 20,
+      "lr": 0.0001,
+      "seed": 1,
+      "mu_batch_size": 256,
+      "upgrades_applied": true,
+      "boundary_correction": true,
+      "boundary_angles": 128,
+      "evaluated_weights": "best-validation snapshot",
+      "best_epoch": 47,
+      "stopped_early": false,
+      "stop_reason": "completed",
+      "epochs_ran": 50,
+      "best_val_loss": 7.98710737879148,
+      "mu": 1.636912020330783e-05,
+      "n_train": 40701,
+      "n_val": 14741,
+      "n_test": 21885,
+      "val": {
+        "LL_ts": -7.9881181716918945,
+        "LL_t": 0.974968433380127,
+        "LL_s": -8.963088035583496,
+        "n": 14741,
+        "LL_ts_total": -117752.84996891022
+      },
+      "test": {
+        "LL_ts": -7.460639476776123,
+        "LL_t": 1.3552122116088867,
+        "LL_s": -8.815853118896484,
+        "n": 21885,
+        "LL_ts_total": -163276.09494924545
+      },
+      "seconds": 20496.835782343995,
+      "mean_epoch_seconds": 408.46794339557977,
+      "weights": "weights/etas/etas_ComCat_H128_seed1_aligned_best.pt",
+      "finished": "2026-11-20 08:34:32 Asia/Shanghai",
+      "device": "cpu",
+      "torch_threads": 4,
+      "weights_original": "/workspace/st-nkf-diagrams/st-nkf-etas-h128-aligned-cpu-20261116/weights/etas_ComCat_H128_seed1_aligned_best.pt"
     }
   },
-  "archive_note": "Snapshot of completed datasets only. ComCat ETAS was still training on the cloud box when this archive was built; no ComCat best-validation weight is included.",
-  "archived_at": "2026-11-19 22:37:58 Asia/Shanghai"
+  "archive_note": "Final aligned-protocol ETAS results: all seven datasets complete; official H=128 seed=1 best-validation snapshots.",
+  "archived_at": "2026-11-20T08:45:45.617197+08:00"
 }
