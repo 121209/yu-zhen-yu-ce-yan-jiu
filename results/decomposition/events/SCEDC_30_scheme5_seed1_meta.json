@@ -1,0 +1,56 @@
+{
+  "dataset": "SCEDC_30",
+  "model": "scheme5",
+  "seed": 1,
+  "checkpoint_path": "/workspace/st-nkf-diagrams/st-nkf-scheme5-spatial-tf-20261117/SCEDC_30/weights/scheme5_H128_seed1_best.pt",
+  "n_test": 1898,
+  "LL_ts_total": -11131.067154757679,
+  "LL_t_total": 6324.351542830467,
+  "LL_s_given_t_total": -17455.418684720993,
+  "LL_ts_mean": -5.86462969165315,
+  "LL_t_mean": 3.332113563135125,
+  "LL_s_given_t_mean": -9.196743248008953,
+  "decomposition_error": 9.5367431640625e-07,
+  "decomposition_error_sum": 1.2867152690887451e-05,
+  "old_LL_ts": -11131.069972038269,
+  "reproduction_difference": 0.00281728059053421,
+  "LL_t_region_total": 3627.62496706158,
+  "LL_s_given_t_region_total": -14758.692089248827,
+  "LL_t_region_mean": 1.9112881807489883,
+  "LL_s_given_t_region_mean": -7.775917855241742,
+  "decomposition_error_region": 1.4250226954004575e-06,
+  "mu_checkpoint": 1.2413360650498362e-07,
+  "mu_loaded": 1.2413360650498362e-07,
+  "mu_before_load": 2.290697011630982e-06,
+  "intensity_clipping": false,
+  "min_lam_ts": 1.460891780880047e-07,
+  "min_lam_t": 0.41063785552978516,
+  "min_lam_t_region": 0.21221040189266205,
+  "events_csv": "/workspace/st-nkf-diagrams/st-nkf-ll-decomposition-20261117/events/SCEDC_30_scheme5_seed1_events.csv",
+  "compensator_json": "/workspace/st-nkf-diagrams/st-nkf-ll-decomposition-20261117/events/SCEDC_30_scheme5_seed1_compensator.json",
+  "normalization": {
+    "max_time": {
+      "checkpoint": 364.3888854980469,
+      "recomputed_from_data": 364.3888854980469,
+      "used": 364.3888854980469
+    },
+    "max_mag": {
+      "checkpoint": 7.300000190734863,
+      "recomputed_from_data": 7.300000190734863,
+      "used": 7.300000190734863
+    },
+    "max_dis": {
+      "checkpoint": 857.7275390625,
+      "recomputed_from_data": 857.7275390625,
+      "used": 857.7275390625
+    },
+    "area": {
+      "checkpoint": 407142.54330137314,
+      "recomputed_from_data": 407142.54330137314,
+      "used": 407142.54330137314
+    }
+  },
+  "use_boundary_correction": true,
+  "batch_size": 16,
+  "history": 128
+}

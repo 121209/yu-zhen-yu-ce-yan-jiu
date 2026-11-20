@@ -1,0 +1,17 @@
+{
+  "dataset": "SCEDC_30",
+  "model": "scheme1",
+  "seed": 1,
+  "n_test": 1898,
+  "official_testing_start": 16071.0,
+  "official_testing_end": 18262.0,
+  "first_test_event_time": 16071.658203125,
+  "last_test_event_time": 18258.724609375,
+  "compensator_interval_start": 16070.390057086945,
+  "compensator_interval_end": 18258.724609375,
+  "sum_compensator_increments": 1711.6318366042688,
+  "sum_elapsed_interevent": 2188.3349878163062,
+  "tail_after_last_event_to_official_end": 3.275390625,
+  "head_before_first_event_from_official_start": 0.658203125,
+  "notes": "Official scoring (eval_test) subtracts the inter-event compensator increment int_l for each test event and does not add a tail integral from the last test event to official testing_end. The first increment starts at the event immediately before the first test target, which may precede official testing_start. This is the original table metric."
+}

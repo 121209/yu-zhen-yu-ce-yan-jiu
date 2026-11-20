@@ -60,16 +60,17 @@ https://st-nkf-h-128-en3c.pages.grok.bot/
 │   └── etas/                         # 已完成的 7 个 ETAS 权重（含 ComCat）
 ├── logs/
 │   ├── etas/                         # 对齐协议 ETAS 最终完整训练日志
-│   └── decomposition/                # 分解评估运行日志
+│   └── decomposition/                # 42/42 分解评估最终日志（2026-11-20 15:38:17）
 └── results/
     ├── provenance/                   # 各次训练写出的 ll.json
-    ├── decomposition_partial/        # 已完成的 24/42 分解结果（以 summary.csv 为准）
+    ├── decomposition/                # 正式 42/42 分解结果（以 summary.csv 为准）
+    ├── decomposition_partial/        # 历史 24/42 快照，保留，不作为最终对照
     ├── etas-h128-aligned-ll.json     # 全部 7 个数据集最终结果
     ├── CHECKPOINT_SOURCES.json
     └── MANIFEST.sha256.csv
 ```
 
-新的分解评估默认写到 `results/decomposition/`，不会覆盖 `results/decomposition_partial/` 里已归档的结果。
+`results/decomposition/` 是 2026-11-20 15:38:17（Asia/Shanghai）完成的 42/42 正式结果。新的分解评估仍默认写到这个目录，不会覆盖 `results/decomposition_partial/` 里的历史 24 组快照。
 
 ## 权重清单
 
@@ -129,25 +130,22 @@ python .\eval_ll_decomposition.py --repo "C:\Users\admin\Desktop\yu-zhen-yu-ce-y
 - scheme5：`weights/schemes/scheme5/{dataset}/scheme5_H128_seed1_best.pt`
 - scheme1–4：`weights/schemes/{scheme}/{dataset}/{scheme}_H128_seed1_best.pt`
 
-默认输出目录是 `results/decomposition/`。已完成的行若已在该目录的 `summary.csv` 里，再次运行会跳过。若要续写本次已归档的 24 组结果，可以把 `--out` 指到 `results/decomposition_partial`，或先把 `summary.csv` 与 `events/` 复制过去。
+默认输出目录是 `results/decomposition/`。该目录的 `summary.csv` 已有完整 42 行，再次运行会跳过已完成的行。历史 24 组在 `results/decomposition_partial/`，不要用新结果覆盖它。
 
-**当前 `MODEL_ORDER` 不含 ETAS。** `eval_ll_decomposition.py` 还不能对经验 ETAS 核做同样的分解；ETAS 的权重、训练脚本、日志和已有 ll 结果仍收录在本仓库中，只是不要指望这条评估脚本直接读 `weights/etas/`。
+**当前 `MODEL_ORDER` 不含 ETAS。** `eval_ll_decomposition.py` 还不能对经验 ETAS 核做同样的分解；ETAS 的权重、训练脚本、日志和已有 ll 结果仍收录在本仓库中，只是不要指望这条评估脚本直接读 `weights/etas/`。这 42 组分解结果同样不含 ETAS。
 
-## 分解评估进度（24 / 42）
+## 分解评估进度（42 / 42）
 
-请以 `results/decomposition_partial/summary.csv` 为准。同目录的 `comparison.csv` 是旧版（只含 SanJac 上部分对比），已经过时，不要用它作为完整对照。
+正式结果在 `results/decomposition/`，于 **2026-11-20 15:38:17（Asia/Shanghai，北京时间）** 完成，exit=0，missing=0。请以该目录的 `summary.csv` 和 `comparison.csv` 为准。`results/decomposition_partial/` 是更早的 24 组历史快照，保留不动；其中的 `comparison.csv` 仍只覆盖 SanJac 上的部分对比，不要把它当作完整对照。
 
-已完成（24 组）：
+已完成（42 组，7 个数据集 × 6 个神经网络模型，seed=1）：
 
-- `SCEDC_30`、`SCEDC_25`、`SCEDC_20`、`SaltonSea`：FCNN 与 scheme1–4
-- `SanJac`：FCNN 与 scheme1–3
+- 数据集：`SCEDC_30`、`SCEDC_25`、`SCEDC_20`、`SaltonSea`、`SanJac`、`WHITE`、`ComCat`
+- 模型：FCNN 与 scheme1–5
 
-尚未完成（18 组），需要继续跑：
+**这 42 组不含 ETAS。** `MODEL_ORDER` 仍然没有 ETAS；经验 ETAS 核不在本次分解里。ETAS 的 7 个权重和 ll 结果另见 `weights/etas/` 与 `results/etas-h128-aligned-ll.json`。
 
-- **`SanJac` / scheme4**（当时中断，需要重跑）
-- **`WHITE` 上全部 6 个模型**（FCNN + scheme1–5）
-- **`ComCat` 上全部 6 个模型**（FCNN + scheme1–5）
-- **全部 7 个数据集的 scheme5**（其中 WHITE、ComCat 已计入上面两行）
+全档案哈希仍以 `results/MANIFEST.sha256.csv` 为准。仓库根目录的 `MANIFEST.sha256.csv` 和 `results/decomposition/MANIFEST.sha256.csv` 只覆盖这次分解增量，不能代替全档案清单。`summary.csv` 里的 `checkpoint_path` 保留原始本机路径。
 
 ## 训练脚本说明
 

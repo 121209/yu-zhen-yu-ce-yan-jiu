@@ -1,0 +1,56 @@
+{
+  "dataset": "SaltonSea",
+  "model": "scheme5",
+  "seed": 1,
+  "checkpoint_path": "/workspace/st-nkf-diagrams/st-nkf-scheme5-spatial-tf-20261117/SaltonSea/weights/scheme5_H128_seed1_best.pt",
+  "n_test": 4104,
+  "LL_ts_total": -783.013002216816,
+  "LL_t_total": 16554.348738610744,
+  "LL_s_given_t_total": -17337.361750662327,
+  "LL_ts_mean": -0.1907926418656959,
+  "LL_t_mean": 4.033710706289168,
+  "LL_s_given_t_mean": -4.224503350551249,
+  "decomposition_error": 4.76837158203125e-07,
+  "decomposition_error_sum": 9.834766387939453e-06,
+  "old_LL_ts": -782.9791560173035,
+  "reproduction_difference": -0.03384619951248169,
+  "LL_t_region_total": 9766.699311557513,
+  "LL_s_given_t_region_total": -10549.71230836303,
+  "LL_t_region_mean": 2.37980002718263,
+  "LL_s_given_t_region_mean": -2.5705926677297835,
+  "decomposition_error_region": 1.3528931788187037e-06,
+  "mu_checkpoint": 1.000675001705531e-05,
+  "mu_loaded": 1.000675001705531e-05,
+  "mu_before_load": 0.002416082192212343,
+  "intensity_clipping": false,
+  "min_lam_ts": 1.3990424122312106e-05,
+  "min_lam_t": 1.3862427473068237,
+  "min_lam_t_region": 0.9336268305778503,
+  "events_csv": "/workspace/st-nkf-diagrams/st-nkf-ll-decomposition-20261117/events/SaltonSea_scheme5_seed1_events.csv",
+  "compensator_json": "/workspace/st-nkf-diagrams/st-nkf-ll-decomposition-20261117/events/SaltonSea_scheme5_seed1_compensator.json",
+  "normalization": {
+    "max_time": {
+      "checkpoint": 51.22553253173828,
+      "recomputed_from_data": 51.22553253173828,
+      "used": 51.22553253173828
+    },
+    "max_mag": {
+      "checkpoint": 5.71999979019165,
+      "recomputed_from_data": 5.71999979019165,
+      "used": 5.71999979019165
+    },
+    "max_dis": {
+      "checkpoint": 112.41059112548828,
+      "recomputed_from_data": 112.41059112548828,
+      "used": 112.41059112548828
+    },
+    "area": {
+      "checkpoint": 8304.891914603613,
+      "recomputed_from_data": 8304.89191460366,
+      "used": 8304.89191460366
+    }
+  },
+  "use_boundary_correction": true,
+  "batch_size": 16,
+  "history": 128
+}

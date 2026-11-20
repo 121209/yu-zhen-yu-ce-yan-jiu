@@ -1,0 +1,74 @@
+ST-NKF final 42/42 log-likelihood decomposition — result-first handoff
+Generated: 2026-11-20, Asia/Shanghai (UTC+8)
+Target repo: https://github.com/121209/yu-zhen-yu-ce-yan-jiu  (existing main)
+This bundle: final decomposition RESULTS only. Not weights, not training source, not historical runs.
+CloudAgent must push. Do not rematerialize payloads/. Do not overwrite results/decomposition_partial/.
+Do not change numerical evaluation protocol. Do not re-run unpack_archive.py / restore_binaries.py / materialize workflow.
+
+1. What this is
+Native source (do not modify): /workspace/st-nkf-diagrams/st-nkf-ll-decomposition-20261117/
+Run finished 2026-11-20 15:38:17 Asia/Shanghai, exit=0.
+run.log last lines:
+  ComCat/scheme5: n=21885 LL_ts=-157884.547264 ...
+  wrote .../summary.csv rows=42 missing=0
+  2026-11-20 15:38:17 Asia/Shanghai finished remaining LL decomposition runs exit=0
+missing_checkpoints.txt is empty (0 bytes).
+Coverage: 7 datasets × 6 neural models = 42 unique (dataset, model) pairs, no duplicates.
+  Datasets: SCEDC_30, SCEDC_25, SCEDC_20, SaltonSea, SanJac, WHITE, ComCat
+  Models: fcnn, scheme1, scheme2, scheme3, scheme4, scheme5
+  seed=1 for all
+ETAS is excluded from these 42 rows (eval MODEL_ORDER has no ETAS). That is expected.
+Per-event outputs complete: 126 files = 42 events.csv + 42 meta.json + 42 compensator.json.
+n_test: SanJac 4400; SCEDC_30 1898; SCEDC_25 5000; SCEDC_20 13067; SaltonSea 4104; WHITE 24080; ComCat 21885.
+Background mu: evaluation uses the scalar mu stored in each model's best-validation checkpoint (not a shared value across models; no separate background-rate evaluation was run).
+
+2. Proposed placement (extract tarball at repository root)
+  results/decomposition/          NEW complete 42/42 tree (summary, comparison, events/, logs, manifest)
+  logs/decomposition/             UPDATE with the final complete run.log and companion logs
+  results/decomposition_partial/  KEEP UNCHANGED (historical 24-row snapshot from the earlier archive)
+  results/MANIFEST.sha256.csv     OPTIONAL later: append or regenerate against the current tree;
+                                  do NOT rerun the old payloads materialize workflow (it would overwrite
+                                  newer README/results/logs with the 2026-11-19 snapshot).
+Do not delete or replace the 42 neural + 7 ETAS weights, Datasets/, or training scripts in this increment.
+
+3. Key file hashes (SHA256) after copy; byte-identical to native source
+  results/decomposition/summary.csv
+    17703  8554fd7d39aa04ebeda51668923cb820bdeeef69ebcc804e74031fb82fdbe297
+  results/decomposition/comparison.csv
+    9904   55dcf7fde40dca66f9e68be98442a90d19ec39b4f3f177c59380afd80095ca1b
+  results/decomposition/run.log  (same bytes as logs/decomposition/run.log)
+    26332  c0d8d4e29ca5817c370abe42e388f2fdda6415f51ee6eb4000bb7064689597df
+  results/decomposition/missing_checkpoints.txt
+    0      e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  results/decomposition/MANIFEST.sha256.csv  (payload files only; excludes this handoff and top manifest)
+    33391  f5c8c613db32e7bcfb5420d8de9fe9d6d1438c039a3167d8ffaf5e2c936b7561
+  events/ under results/decomposition/: 126 files, 59380507 bytes combined; per-file hashes in the manifest.
+
+4. After extract, validate
+  - wc -l results/decomposition/summary.csv  → 43 (header + 42)
+  - unique (dataset,model) == 42, missing=0
+  - ls results/decomposition/events | wc -l  → 126
+  - sha256sum -c or compare to results/decomposition/MANIFEST.sha256.csv
+  - results/decomposition_partial/summary.csv still has the old 24-row snapshot
+  - no payload rematerialization
+
+5. README updates for the CloudAgent (text only; do not alter numbers)
+  - Replace “分解评估进度（24 / 42）” with 42 / 42 completed 2026-11-20 15:38:17 Asia/Shanghai.
+  - Point canonical results to results/decomposition/ (summary.csv is authoritative).
+  - comparison.csv in the new directory has all 42 rows (the copy under decomposition_partial was an old SanJac-only table and must stay labeled historical).
+  - Keep the note that MODEL_ORDER excludes ETAS.
+  - Existing README still says the repo is private and that ComCat ETAS was unfinished; those are stale relative to later work and should be reconciled in the later completeness pass, not blocked on this results-first push.
+  - eval_ll_decomposition.py is already in the repo; the box copy at /workspace/st-nkf-diagrams/eval_ll_decomposition.py has hardcoded local roots. Making it portable is a later task and must not change the numerical protocol. This bundle does not include the script.
+
+6. Notes / non-secrets
+  - summary.csv checkpoint_path values are box-local paths under /workspace/st-nkf-diagrams/... (not credentials). Leave them as recorded.
+  - Text scan of csv/json/log/md/txt in the native decomp dir found no password/token/private-key patterns.
+  - Empty companion files resume-after-etas.nohup and scheme5-followon.nohup are included for run-directory completeness.
+
+7. Phase 2 (do not block this push)
+  Full end-to-end experiment archive (training source, official + historical weights/logs, ComCat fix, scheme5, aligned ETAS, preprocessing, ledger) remains pending after this results-first push.
+  Working notes: /workspace/yu-zhen-yu-ce-yan-jiu-FULL-SYNC-PHASE2-NOTES-20261120.txt
+
+8. How to unpack
+  tar -xJf yu-zhen-yu-ce-yan-jiu-decomp42-20261120.tar.xz
+  # run at the repository root; paths inside the archive are already repo-relative.

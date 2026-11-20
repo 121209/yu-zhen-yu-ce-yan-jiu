@@ -1,0 +1,17 @@
+{
+  "dataset": "WHITE",
+  "model": "scheme4",
+  "seed": 1,
+  "n_test": 24080,
+  "official_testing_start": 17167.0,
+  "official_testing_end": 18628.0,
+  "first_test_event_time": 17167.013671875,
+  "last_test_event_time": 18627.927734375,
+  "compensator_interval_start": 17166.972566772252,
+  "compensator_interval_end": 18627.927734375,
+  "sum_compensator_increments": 22416.81373519264,
+  "sum_elapsed_interevent": 1460.9561007278899,
+  "tail_after_last_event_to_official_end": 0.072265625,
+  "head_before_first_event_from_official_start": 0.013671875,
+  "notes": "Official scoring (eval_test) subtracts the inter-event compensator increment int_l for each test event and does not add a tail integral from the last test event to official testing_end. The first increment starts at the event immediately before the first test target, which may precede official testing_start. This is the original table metric."
+}

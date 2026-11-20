@@ -1,0 +1,56 @@
+{
+  "dataset": "SCEDC_30",
+  "model": "scheme2",
+  "seed": 1,
+  "checkpoint_path": "/workspace/st-nkf-diagrams/st-nkf-gpu-six/SCEDC_30/weights/scheme2_H128_seed1_best.pt",
+  "n_test": 1898,
+  "LL_ts_total": -11143.395309550688,
+  "LL_t_total": 3954.5164620503783,
+  "LL_s_given_t_total": -15097.91177892685,
+  "LL_ts_mean": -5.871125031375494,
+  "LL_t_mean": 2.083517630163529,
+  "LL_s_given_t_mean": -7.954642665398762,
+  "decomposition_error": 7.152557373046875e-07,
+  "decomposition_error_sum": 7.325783371925354e-06,
+  "old_LL_ts": -11143.395669937134,
+  "reproduction_difference": 0.0003603864461183548,
+  "LL_t_region_total": 3538.7780188259017,
+  "LL_s_given_t_region_total": -14682.173309869928,
+  "LL_t_region_mean": 1.8644773544920452,
+  "LL_s_given_t_region_mean": -7.735602376116927,
+  "decomposition_error_region": 1.3855757057257279e-06,
+  "mu_checkpoint": 6.425275245192097e-08,
+  "mu_loaded": 6.425275245192097e-08,
+  "mu_before_load": 2.290697011630982e-06,
+  "intensity_clipping": false,
+  "min_lam_ts": 9.312143589568223e-08,
+  "min_lam_t": 0.34473371505737305,
+  "min_lam_t_region": 0.19240130484104156,
+  "events_csv": "/workspace/st-nkf-diagrams/st-nkf-ll-decomposition-20261117/events/SCEDC_30_scheme2_seed1_events.csv",
+  "compensator_json": "/workspace/st-nkf-diagrams/st-nkf-ll-decomposition-20261117/events/SCEDC_30_scheme2_seed1_compensator.json",
+  "normalization": {
+    "max_time": {
+      "checkpoint": 364.3888854980469,
+      "recomputed_from_data": 364.3888854980469,
+      "used": 364.3888854980469
+    },
+    "max_mag": {
+      "checkpoint": 7.300000190734863,
+      "recomputed_from_data": 7.300000190734863,
+      "used": 7.300000190734863
+    },
+    "max_dis": {
+      "checkpoint": 857.7275390625,
+      "recomputed_from_data": 857.7275390625,
+      "used": 857.7275390625
+    },
+    "area": {
+      "checkpoint": 407142.54330137314,
+      "recomputed_from_data": 407142.54330137314,
+      "used": 407142.54330137314
+    }
+  },
+  "use_boundary_correction": true,
+  "batch_size": 16,
+  "history": 128
+}
