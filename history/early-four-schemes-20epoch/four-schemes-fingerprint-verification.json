@@ -1,0 +1,30 @@
+{
+  "etas": {
+    "l_ts": true,
+    "l_t": true,
+    "int_l": true,
+    "pdf_temporal": true,
+    "cdf_temporal": true,
+    "pdf_spatial": true,
+    "cdf_spatial": true,
+    "kappa": true,
+    "loss": true,
+    "mu": true,
+    "grad_A": true,
+    "grad_omori_c": true
+  },
+  "fcnn": {
+    "l_ts": true,
+    "l_t": true,
+    "int_l": true,
+    "pdf_temporal": true,
+    "cdf_temporal": true,
+    "pdf_spatial": true,
+    "cdf_spatial": true,
+    "kappa": true,
+    "loss": true,
+    "mu": true,
+    "grad_kappa_w": true,
+    "grad_temp_w": true
+  }
+}

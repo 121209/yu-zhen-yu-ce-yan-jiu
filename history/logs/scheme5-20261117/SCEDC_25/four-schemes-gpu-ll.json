@@ -1,0 +1,80 @@
+{
+  "protocol": {
+    "dataset": "SCEDC_25",
+    "catalog": "Datasets/SCEDC/SCEDC_catalog_jitter.csv (m ≥ 2.5)",
+    "splits": "aux 1981-01-01, train 1985-01-01, val 2005-01-01, test 2014-01-01–2020-01-01, m0=2.5",
+    "counts": {
+      "auxiliary_num": 4242,
+      "training_num": 25257,
+      "validation_num": 9089,
+      "testing_num": 5000,
+      "area": 407145.958239966,
+      "global_m0": 2.5,
+      "catalog": "Datasets/SCEDC/SCEDC_catalog_jitter.csv (m ≥ 2.5)",
+      "windows": "aux 1981-01-01, train 1985-01-01, val 2005-01-01, test 2014-01-01–2020-01-01, m0=2.5",
+      "history": 128
+    },
+    "history": 128,
+    "batch_size": 16,
+    "epochs": 50,
+    "patience": 0,
+    "lr": 0.0001,
+    "seed": 1,
+    "boundary_angles": 128,
+    "mu_init": "mean train event rate / area, then analytic epoch update",
+    "evaluated_weights": "best-validation snapshot, always restored",
+    "run_order": [
+      "scheme5"
+    ],
+    "device": "NVIDIA GeForce RTX 4090",
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "started": "2026-11-17 12:52:40 Asia/Shanghai",
+    "finished": "2026-11-17 13:46:13 Asia/Shanghai",
+    "elapsed_seconds": 8244.693125636317
+  },
+  "schemes": {
+    "scheme5": {
+      "status": "ok",
+      "name": "Spatial Transformer only; Temporal and Kappa FCNN",
+      "flags": {
+        "temporal_backbone": "fcnn",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "fcnn"
+      },
+      "device": "cuda",
+      "lr": 0.0001,
+      "seed": 1,
+      "history": 128,
+      "batch_size": 16,
+      "epoch_cap": 50,
+      "patience": 0,
+      "official_splits": true,
+      "upgrades_applied": true,
+      "evaluated_weights": "best-validation snapshot, always restored",
+      "cli": "--temporal-backbone fcnn --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+      "stop_reason": "completed",
+      "stopped_early": false,
+      "best_epoch": 48,
+      "best_val_loss": 7.2600098094316925,
+      "epochs_ran": 50,
+      "mean_epoch_seconds": 63.96417839737609,
+      "mu": 2.1843101194463088e-07,
+      "val": {
+        "LL_ts": -7.260014533996582,
+        "LL_t": 2.9426605701446533,
+        "LL_s": -10.202674865722656,
+        "n": 9089
+      },
+      "test": {
+        "LL_ts": -5.5955657958984375,
+        "LL_t": 3.606903076171875,
+        "LL_s": -9.202468872070312,
+        "n": 5000
+      },
+      "seconds": 3212.6201236164197,
+      "weights": "/hy-tmp/st-nkf-scheme5-spatial-tf-20261117/SCEDC_25/weights/scheme5_H128_seed1_best.pt",
+      "finished": "2026-11-17 13:46:13 Asia/Shanghai"
+    }
+  }
+}

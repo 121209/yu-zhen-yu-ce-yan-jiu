@@ -1,0 +1,6 @@
+2026-11-10 21:05:18,553 - INFO - SanJac: auxiliary=1672, training=11770, validation=3449, testing=4400, area_km2=10310.1, device=cpu
+2026-11-10 21:05:20,389 - INFO - Normalization scales max_time=367.181 max_mag=5.43 max_dis=140.978 area=10310.1
+2026-11-10 21:06:23,034 - INFO - Epoch 1/1 loss=1599.724039 val_loss=2181.526327 mu=5.504783e-04
+2026-11-10 21:06:33,407 - INFO - Weights saved to weights/SanJac_neural_neural_neural.pt
+2026-11-10 21:06:33,407 - INFO - Test results: LL_ts=-7.042505264282227, LL_t=0.9834831357002258, LL_s=-8.025988578796387
+2026-11-10 21:06:33,594 - INFO - Results saved to csv/SanJac_neural_neural_neural.csv

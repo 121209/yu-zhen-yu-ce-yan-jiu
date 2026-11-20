@@ -1,0 +1,2 @@
+2026-11-10 21:09:26,540 - INFO - SanJac: auxiliary=1672, training=11770, validation=3449, testing=4400, area_km2=10310.1, device=cpu
+2026-11-10 21:09:28,407 - INFO - Normalization scales max_time=367.181 max_mag=5.43 max_dis=140.978 area=10310.1

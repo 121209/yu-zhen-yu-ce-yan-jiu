@@ -1,0 +1,447 @@
+{
+  "protocol": {
+    "datasets_requested": [
+      "SCEDC_20"
+    ],
+    "dataset_order": [
+      "SCEDC_20"
+    ],
+    "scheme_order": [
+      "scheme5"
+    ],
+    "history": 128,
+    "batch_size": 16,
+    "epochs": 50,
+    "patience": 0,
+    "lr": 0.0001,
+    "seed": 1,
+    "boundary_angles": 128,
+    "mu_init": "mean train event rate / area, then analytic epoch update",
+    "evaluated_weights": "best-validation snapshot, always restored",
+    "same_controls": "On each dataset the four schemes share the official jitter catalog, official config.py windows, H, batch, seed, lr, epoch cap, patience, boundary correction, and mu update rule.",
+    "device": "NVIDIA GeForce RTX 4090",
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "budget_hours": 0.0,
+    "started": "2026-11-17 18:41:37 Asia/Shanghai",
+    "resumed_from": "2026-11-17 11:28:48 Asia/Shanghai",
+    "finished": "2026-11-17 20:14:45 Asia/Shanghai",
+    "elapsed_seconds": 5588.140150063671,
+    "outcome": "completed"
+  },
+  "datasets": {
+    "SCEDC_30": {
+      "status": "ok",
+      "counts": {
+        "auxiliary_num": 1142,
+        "training_num": 6815,
+        "validation_num": 3135,
+        "testing_num": 1898,
+        "area": 407142.54330137314,
+        "global_m0": 3.0,
+        "catalog": "Datasets/SCEDC/SCEDC_catalog_jitter.csv (m ≥ 3.0)",
+        "windows": "aux 1981-01-01, train 1985-01-01, val 2005-01-01, test 2014-01-01–2020-01-01, m0=3.0",
+        "history": 128
+      },
+      "schemes": {
+        "scheme5": {
+          "status": "ok",
+          "name": "Spatial Transformer only; Temporal and Kappa FCNN",
+          "flags": {
+            "temporal_backbone": "fcnn",
+            "spatial_backbone": "transformer",
+            "kappa_backbone": "fcnn"
+          },
+          "device": "cuda",
+          "lr": 0.0001,
+          "seed": 1,
+          "history": 128,
+          "batch_size": 16,
+          "epoch_cap": 50,
+          "patience": 0,
+          "official_splits": true,
+          "upgrades_applied": true,
+          "evaluated_weights": "best-validation snapshot, always restored",
+          "cli": "--temporal-backbone fcnn --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+          "stop_reason": "completed",
+          "stopped_early": false,
+          "best_epoch": 47,
+          "best_val_loss": 8.104175285289163,
+          "epochs_ran": 50,
+          "mean_epoch_seconds": 17.965627827253194,
+          "mu": 1.2413360650498362e-07,
+          "val": {
+            "LL_ts": -8.104239463806152,
+            "LL_t": 2.056264877319336,
+            "LL_s": -10.160504341125488,
+            "n": 3135
+          },
+          "test": {
+            "LL_ts": -5.864631175994873,
+            "LL_t": 3.3321115970611572,
+            "LL_s": -9.19674301147461,
+            "n": 1898
+          },
+          "seconds": 905.6129402951337,
+          "weights": "/hy-tmp/st-nkf-scheme5-spatial-tf-20261117/SCEDC_30/weights/scheme5_H128_seed1_best.pt",
+          "finished": "2026-11-17 11:43:54 Asia/Shanghai"
+        }
+      },
+      "finished": "2026-11-17 11:43:54 Asia/Shanghai"
+    },
+    "SanJac": {
+      "status": "ok",
+      "counts": {
+        "auxiliary_num": 1672,
+        "training_num": 11770,
+        "validation_num": 3449,
+        "testing_num": 4400,
+        "area": 10310.094253972062,
+        "global_m0": 1.0,
+        "catalog": "Datasets/QTM/SanJac_catalog_jitter.csv",
+        "windows": "aux 2008-01-01, train 2009-01-01, val 2014-01-01, test 2016-01-01–2018-01-01, m0=1.0",
+        "history": 128
+      },
+      "schemes": {
+        "scheme5": {
+          "status": "ok",
+          "name": "Spatial Transformer only; Temporal and Kappa FCNN",
+          "flags": {
+            "temporal_backbone": "fcnn",
+            "spatial_backbone": "transformer",
+            "kappa_backbone": "fcnn"
+          },
+          "device": "cuda",
+          "lr": 0.0001,
+          "seed": 1,
+          "history": 128,
+          "batch_size": 16,
+          "epoch_cap": 50,
+          "patience": 0,
+          "official_splits": true,
+          "upgrades_applied": true,
+          "evaluated_weights": "best-validation snapshot, always restored",
+          "cli": "--temporal-backbone fcnn --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+          "stop_reason": "completed",
+          "stopped_early": false,
+          "best_epoch": 50,
+          "best_val_loss": 5.668884459700436,
+          "epochs_ran": 50,
+          "mean_epoch_seconds": 29.401804669490083,
+          "mu": 4.032108699902892e-05,
+          "val": {
+            "LL_ts": -5.668959617614746,
+            "LL_t": 1.7008172273635864,
+            "LL_s": -7.369777202606201,
+            "n": 3449
+          },
+          "test": {
+            "LL_ts": -4.729705810546875,
+            "LL_t": 2.1568644046783447,
+            "LL_s": -6.886569976806641,
+            "n": 4400
+          },
+          "seconds": 1478.2445064522326,
+          "weights": "/hy-tmp/st-nkf-scheme5-spatial-tf-20261117/SanJac/weights/scheme5_H128_seed1_best.pt",
+          "finished": "2026-11-17 12:08:32 Asia/Shanghai"
+        }
+      },
+      "finished": "2026-11-17 12:08:32 Asia/Shanghai"
+    },
+    "WHITE": {
+      "status": "ok",
+      "counts": {
+        "auxiliary_num": 2196,
+        "training_num": 18548,
+        "validation_num": 13812,
+        "testing_num": 24080,
+        "area": 4001.748376919784,
+        "global_m0": 0.6,
+        "catalog": "Datasets/WHITE/WHITE_catalog_jitter.csv",
+        "windows": "aux 2008-01-01, train 2009-01-01, val 2014-01-01, test 2017-01-01–2021-01-01, m0=0.6",
+        "history": 128
+      },
+      "schemes": {
+        "scheme5": {
+          "status": "ok",
+          "name": "Spatial Transformer only; Temporal and Kappa FCNN",
+          "flags": {
+            "temporal_backbone": "fcnn",
+            "spatial_backbone": "transformer",
+            "kappa_backbone": "fcnn"
+          },
+          "device": "cuda",
+          "lr": 0.0001,
+          "seed": 1,
+          "history": 128,
+          "batch_size": 16,
+          "epoch_cap": 50,
+          "patience": 0,
+          "official_splits": true,
+          "upgrades_applied": true,
+          "evaluated_weights": "best-validation snapshot, always restored",
+          "cli": "--temporal-backbone fcnn --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+          "stop_reason": "completed",
+          "stopped_early": false,
+          "best_epoch": 43,
+          "best_val_loss": 3.857325165902847,
+          "epochs_ran": 50,
+          "mean_epoch_seconds": 52.247057472001764,
+          "mu": 9.8130498372484e-05,
+          "val": {
+            "LL_ts": -3.857363700866699,
+            "LL_t": 3.5732696056365967,
+            "LL_s": -7.430632591247559,
+            "n": 13812
+          },
+          "test": {
+            "LL_ts": -2.600156307220459,
+            "LL_t": 3.871072769165039,
+            "LL_s": -6.47122859954834,
+            "n": 24080
+          },
+          "seconds": 2647.7656886796467,
+          "weights": "/hy-tmp/st-nkf-scheme5-spatial-tf-20261117/WHITE/weights/scheme5_H128_seed1_best.pt",
+          "finished": "2026-11-17 12:52:40 Asia/Shanghai"
+        }
+      },
+      "finished": "2026-11-17 12:52:40 Asia/Shanghai"
+    },
+    "SCEDC_25": {
+      "status": "ok",
+      "counts": {
+        "auxiliary_num": 4242,
+        "training_num": 25257,
+        "validation_num": 9089,
+        "testing_num": 5000,
+        "area": 407145.958239966,
+        "global_m0": 2.5,
+        "catalog": "Datasets/SCEDC/SCEDC_catalog_jitter.csv (m ≥ 2.5)",
+        "windows": "aux 1981-01-01, train 1985-01-01, val 2005-01-01, test 2014-01-01–2020-01-01, m0=2.5",
+        "history": 128
+      },
+      "schemes": {
+        "scheme5": {
+          "status": "ok",
+          "name": "Spatial Transformer only; Temporal and Kappa FCNN",
+          "flags": {
+            "temporal_backbone": "fcnn",
+            "spatial_backbone": "transformer",
+            "kappa_backbone": "fcnn"
+          },
+          "device": "cuda",
+          "lr": 0.0001,
+          "seed": 1,
+          "history": 128,
+          "batch_size": 16,
+          "epoch_cap": 50,
+          "patience": 0,
+          "official_splits": true,
+          "upgrades_applied": true,
+          "evaluated_weights": "best-validation snapshot, always restored",
+          "cli": "--temporal-backbone fcnn --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+          "stop_reason": "completed",
+          "stopped_early": false,
+          "best_epoch": 48,
+          "best_val_loss": 7.2600098094316925,
+          "epochs_ran": 50,
+          "mean_epoch_seconds": 63.96417839737609,
+          "mu": 2.1843101194463088e-07,
+          "val": {
+            "LL_ts": -7.260014533996582,
+            "LL_t": 2.9426605701446533,
+            "LL_s": -10.202674865722656,
+            "n": 9089
+          },
+          "test": {
+            "LL_ts": -5.5955657958984375,
+            "LL_t": 3.606903076171875,
+            "LL_s": -9.202468872070312,
+            "n": 5000
+          },
+          "seconds": 3212.6201236164197,
+          "weights": "/hy-tmp/st-nkf-scheme5-spatial-tf-20261117/SCEDC_25/weights/scheme5_H128_seed1_best.pt",
+          "finished": "2026-11-17 13:46:13 Asia/Shanghai"
+        }
+      },
+      "finished": "2026-11-17 13:46:13 Asia/Shanghai"
+    },
+    "SaltonSea": {
+      "status": "ok",
+      "counts": {
+        "auxiliary_num": 2144,
+        "training_num": 36639,
+        "validation_num": 2683,
+        "testing_num": 4104,
+        "area": 8304.891914603613,
+        "global_m0": 1.0,
+        "catalog": "Datasets/QTM/SaltonSea_catalog_jitter.csv",
+        "windows": "aux 2008-01-01, train 2009-01-01, val 2014-01-01, test 2016-01-01–2018-01-01, m0=1.0",
+        "history": 128
+      },
+      "schemes": {
+        "scheme5": {
+          "status": "ok",
+          "name": "Spatial Transformer only; Temporal and Kappa FCNN",
+          "flags": {
+            "temporal_backbone": "fcnn",
+            "spatial_backbone": "transformer",
+            "kappa_backbone": "fcnn"
+          },
+          "device": "cuda",
+          "lr": 0.0001,
+          "seed": 1,
+          "history": 128,
+          "batch_size": 16,
+          "epoch_cap": 50,
+          "patience": 0,
+          "official_splits": true,
+          "upgrades_applied": true,
+          "evaluated_weights": "best-validation snapshot, always restored",
+          "cli": "--temporal-backbone fcnn --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+          "stop_reason": "completed",
+          "stopped_early": false,
+          "best_epoch": 50,
+          "best_val_loss": 2.411963790199715,
+          "epochs_ran": 50,
+          "mean_epoch_seconds": 85.05086132867262,
+          "mu": 1.000675001705531e-05,
+          "val": {
+            "LL_ts": -2.412015199661255,
+            "LL_t": 2.768099069595337,
+            "LL_s": -5.180114269256592,
+            "n": 2683
+          },
+          "test": {
+            "LL_ts": -0.19078439474105835,
+            "LL_t": 4.033719062805176,
+            "LL_s": -4.224503040313721,
+            "n": 4104
+          },
+          "seconds": 4260.061085680965,
+          "weights": "/hy-tmp/st-nkf-scheme5-spatial-tf-20261117/SaltonSea/weights/scheme5_H128_seed1_best.pt",
+          "finished": "2026-11-17 14:57:13 Asia/Shanghai"
+        }
+      },
+      "finished": "2026-11-17 14:57:13 Asia/Shanghai"
+    },
+    "ComCat": {
+      "status": "ok",
+      "counts": {
+        "auxiliary_num": 14933,
+        "training_num": 40701,
+        "validation_num": 14741,
+        "testing_num": 21885,
+        "area": 138223.32831313025,
+        "global_m0": 2.5,
+        "catalog": "Datasets/ComCat/ComCat_catalog_jitter.csv",
+        "windows": "aux 1971-01-01, train 1981-01-01, val 1998-01-01, test 2007-01-01–2020-01-17, m0=2.5",
+        "history": 128
+      },
+      "schemes": {
+        "scheme5": {
+          "status": "ok",
+          "name": "Spatial Transformer only; Temporal and Kappa FCNN",
+          "flags": {
+            "temporal_backbone": "fcnn",
+            "spatial_backbone": "transformer",
+            "kappa_backbone": "fcnn"
+          },
+          "device": "cuda",
+          "lr": 0.0001,
+          "seed": 1,
+          "history": 128,
+          "batch_size": 16,
+          "epoch_cap": 50,
+          "patience": 0,
+          "official_splits": true,
+          "upgrades_applied": true,
+          "evaluated_weights": "best-validation snapshot, always restored",
+          "cli": "--temporal-backbone fcnn --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+          "stop_reason": "completed",
+          "stopped_early": false,
+          "best_epoch": 46,
+          "best_val_loss": 7.804422186366513,
+          "epochs_ran": 50,
+          "mean_epoch_seconds": 109.11622909140773,
+          "mu": 1.5358409655163996e-05,
+          "val": {
+            "LL_ts": -7.804959297180176,
+            "LL_t": 2.4108846187591553,
+            "LL_s": -10.215843200683594,
+            "n": 14741
+          },
+          "test": {
+            "LL_ts": -7.2142815589904785,
+            "LL_t": 2.794207811355591,
+            "LL_s": -10.008489608764648,
+            "n": 21885
+          },
+          "seconds": 5477.65339453239,
+          "weights": "/hy-tmp/st-nkf-scheme5-spatial-tf-20261117/ComCat/weights/scheme5_H128_seed1_best.pt",
+          "finished": "2026-11-17 16:28:31 Asia/Shanghai"
+        }
+      },
+      "finished": "2026-11-17 16:28:31 Asia/Shanghai"
+    },
+    "SCEDC_20": {
+      "status": "ok",
+      "counts": {
+        "auxiliary_num": 12373,
+        "training_num": 81433,
+        "validation_num": 23484,
+        "testing_num": 13067,
+        "area": 407150.83721931465,
+        "global_m0": 2.0,
+        "catalog": "Datasets/SCEDC/SCEDC_catalog_jitter.csv (m ≥ 2.0)",
+        "windows": "aux 1981-01-01, train 1985-01-01, val 2005-01-01, test 2014-01-01–2020-01-01, m0=2.0",
+        "history": 128
+      },
+      "schemes": {
+        "scheme5": {
+          "status": "ok",
+          "name": "Spatial Transformer only; Temporal and Kappa FCNN",
+          "flags": {
+            "temporal_backbone": "fcnn",
+            "spatial_backbone": "transformer",
+            "kappa_backbone": "fcnn"
+          },
+          "device": "cuda",
+          "lr": 0.0001,
+          "seed": 1,
+          "history": 128,
+          "batch_size": 16,
+          "epoch_cap": 50,
+          "patience": 0,
+          "official_splits": true,
+          "upgrades_applied": true,
+          "evaluated_weights": "best-validation snapshot, always restored",
+          "cli": "--temporal-backbone fcnn --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+          "stop_reason": "completed",
+          "stopped_early": false,
+          "best_epoch": 42,
+          "best_val_loss": 6.543510240959037,
+          "epochs_ran": 50,
+          "mean_epoch_seconds": 207.45741867800243,
+          "mu": 8.746283697291801e-08,
+          "val": {
+            "LL_ts": -6.543474197387695,
+            "LL_t": 3.5750813484191895,
+            "LL_s": -10.118555068969727,
+            "n": 23484
+          },
+          "test": {
+            "LL_ts": -5.268044471740723,
+            "LL_t": 4.083512306213379,
+            "LL_s": -9.351556777954102,
+            "n": 13067
+          },
+          "seconds": 5587.667965420056,
+          "weights": "/hy-tmp/st-nkf-scheme5-spatial-tf-20261117/SCEDC_20/weights/scheme5_H128_seed1_best.pt",
+          "finished": "2026-11-17 20:14:45 Asia/Shanghai"
+        }
+      },
+      "finished": "2026-11-17 20:14:45 Asia/Shanghai"
+    }
+  }
+}

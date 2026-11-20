@@ -1,0 +1,461 @@
+2026-11-14 21:05:08,750 - INFO - ST-NKF FCNN H=128 aligned start device=cuda name=NVIDIA GeForce RTX 5090 torch=2.9.1+cu128 cuda=12.8 out=/hy-tmp/st-nkf-fcnn-h128-20261114 epochs=50 patience=20 lr=0.0001 boundary_angles=128
+2026-11-14 21:05:08,751 - INFO - ===== START ST-NKF FCNN SCEDC_30 =====
+2026-11-14 21:05:08,838 - INFO - Loaded SCEDC_30 official splits n_aux=1142 n_train=6815 n_val=3135 n_test=1898 history=128 area=407142.54330137314 device=cuda windows={'catalog_path': './Datasets/SCEDC/SCEDC_catalog_jitter.csv', 'shape_path': './Datasets/SCEDC/SCEDC_shape.npy', 'auxiliary_start': 4018.0, 'training_start': 5479.0, 'validation_start': 12784.0, 'testing_start': 16071.0, 'testing_end': 18262.0, 'global_m0': 3.0}
+2026-11-14 21:05:08,896 - INFO - Normalization scales max_time=364.389 max_mag=7.3 max_dis=857.728 area=407143
+2026-11-14 21:05:08,896 - INFO - Initialized mu from mean event rate / area: 2.290697e-06
+2026-11-14 21:05:08,897 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-14 21:05:23,849 - INFO - Epoch 1/50 loss=11.909491 val_loss=9.977883 mu=1.038519e-06 seconds=14.05 *
+2026-11-14 21:05:37,374 - INFO - Epoch 2/50 loss=9.488054 val_loss=9.393275 mu=9.309288e-07 seconds=13.52 *
+2026-11-14 21:05:50,899 - INFO - Epoch 3/50 loss=9.281017 val_loss=9.295952 mu=9.002273e-07 seconds=13.52 *
+2026-11-14 21:06:04,502 - INFO - Epoch 4/50 loss=9.239249 val_loss=9.274300 mu=8.821336e-07 seconds=13.60 *
+2026-11-14 21:06:18,151 - INFO - Epoch 5/50 loss=9.227324 val_loss=9.264841 mu=8.727749e-07 seconds=13.65 *
+2026-11-14 21:06:31,738 - INFO - Epoch 6/50 loss=9.216710 val_loss=9.252678 mu=8.584325e-07 seconds=13.59 *
+2026-11-14 21:06:45,431 - INFO - Epoch 7/50 loss=9.200280 val_loss=9.228351 mu=8.423446e-07 seconds=13.69 *
+2026-11-14 21:06:58,439 - INFO - Epoch 8/50 loss=9.173060 val_loss=9.190043 mu=8.162638e-07 seconds=13.01 *
+2026-11-14 21:07:11,468 - INFO - Epoch 9/50 loss=9.128929 val_loss=9.147470 mu=7.828327e-07 seconds=13.03 *
+2026-11-14 21:07:24,686 - INFO - Epoch 10/50 loss=9.071067 val_loss=9.073939 mu=7.620129e-07 seconds=13.22 *
+2026-11-14 21:07:38,252 - INFO - Epoch 11/50 loss=8.988616 val_loss=8.968103 mu=7.139622e-07 seconds=13.57 *
+2026-11-14 21:07:51,856 - INFO - Epoch 12/50 loss=8.873886 val_loss=8.844692 mu=6.717989e-07 seconds=13.60 *
+2026-11-14 21:08:04,198 - INFO - Epoch 13/50 loss=8.758720 val_loss=8.725853 mu=6.304278e-07 seconds=12.34 *
+2026-11-14 21:08:17,340 - INFO - Epoch 14/50 loss=8.656087 val_loss=8.635307 mu=6.010603e-07 seconds=13.14 *
+2026-11-14 21:08:30,659 - INFO - Epoch 15/50 loss=8.579569 val_loss=8.559891 mu=5.623837e-07 seconds=13.32 *
+2026-11-14 21:08:42,458 - INFO - Epoch 16/50 loss=8.525065 val_loss=8.518234 mu=5.530702e-07 seconds=11.80 *
+2026-11-14 21:08:56,115 - INFO - Epoch 17/50 loss=8.485505 val_loss=8.489547 mu=5.434039e-07 seconds=13.66 *
+2026-11-14 21:09:08,855 - INFO - Epoch 18/50 loss=8.457117 val_loss=8.470213 mu=5.371652e-07 seconds=12.74 *
+2026-11-14 21:09:22,401 - INFO - Epoch 19/50 loss=8.436116 val_loss=8.456030 mu=5.354964e-07 seconds=13.54 *
+2026-11-14 21:09:35,960 - INFO - Epoch 20/50 loss=8.418979 val_loss=8.439039 mu=5.180398e-07 seconds=13.56 *
+2026-11-14 21:09:49,523 - INFO - Epoch 21/50 loss=8.405487 val_loss=8.430125 mu=5.175595e-07 seconds=13.56 *
+2026-11-14 21:10:02,214 - INFO - Epoch 22/50 loss=8.391091 val_loss=8.422199 mu=5.125643e-07 seconds=12.69 *
+2026-11-14 21:10:15,419 - INFO - Epoch 23/50 loss=8.381365 val_loss=8.417864 mu=5.094521e-07 seconds=13.20 *
+2026-11-14 21:10:28,015 - INFO - Epoch 24/50 loss=8.369682 val_loss=8.408714 mu=5.057538e-07 seconds=12.60 *
+2026-11-14 21:10:41,010 - INFO - Epoch 25/50 loss=8.360133 val_loss=8.399805 mu=4.893330e-07 seconds=12.99 *
+2026-11-14 21:10:53,674 - INFO - Epoch 26/50 loss=8.350489 val_loss=8.398122 mu=4.782667e-07 seconds=12.66 *
+2026-11-14 21:11:07,259 - INFO - Epoch 27/50 loss=8.344469 val_loss=8.384177 mu=4.684062e-07 seconds=13.58 *
+2026-11-14 21:11:20,790 - INFO - Epoch 28/50 loss=8.335053 val_loss=8.383341 mu=4.586777e-07 seconds=13.53 *
+2026-11-14 21:11:34,405 - INFO - Epoch 29/50 loss=8.326199 val_loss=8.383129 mu=4.565652e-07 seconds=13.61 *
+2026-11-14 21:11:47,893 - INFO - Epoch 30/50 loss=8.319858 val_loss=8.379324 mu=4.429814e-07 seconds=13.49 *
+2026-11-14 21:12:01,188 - INFO - Epoch 31/50 loss=8.314536 val_loss=8.373714 mu=4.315098e-07 seconds=13.29 *
+2026-11-14 21:12:12,637 - INFO - Epoch 32/50 loss=8.309610 val_loss=8.370945 mu=4.126042e-07 seconds=11.45 *
+2026-11-14 21:12:25,910 - INFO - Epoch 33/50 loss=8.305575 val_loss=8.371535 mu=4.122326e-07 seconds=13.27
+2026-11-14 21:12:39,483 - INFO - Epoch 34/50 loss=8.302257 val_loss=8.370810 mu=4.113723e-07 seconds=13.57 *
+2026-11-14 21:12:53,033 - INFO - Epoch 35/50 loss=8.299875 val_loss=8.367248 mu=4.058338e-07 seconds=13.55 *
+2026-11-14 21:13:06,605 - INFO - Epoch 36/50 loss=8.297227 val_loss=8.369409 mu=4.052053e-07 seconds=13.57
+2026-11-14 21:13:19,466 - INFO - Epoch 37/50 loss=8.295010 val_loss=8.364648 mu=3.973488e-07 seconds=12.86 *
+2026-11-14 21:13:32,104 - INFO - Epoch 38/50 loss=8.293153 val_loss=8.367543 mu=3.966352e-07 seconds=12.64
+2026-11-14 21:13:45,087 - INFO - Epoch 39/50 loss=8.291485 val_loss=8.362424 mu=3.840354e-07 seconds=12.98 *
+2026-11-14 21:13:58,112 - INFO - Epoch 40/50 loss=8.289030 val_loss=8.363807 mu=3.852196e-07 seconds=13.02
+2026-11-14 21:14:10,471 - INFO - Epoch 41/50 loss=8.289041 val_loss=8.360435 mu=3.908466e-07 seconds=12.36 *
+2026-11-14 21:14:23,336 - INFO - Epoch 42/50 loss=8.287216 val_loss=8.359746 mu=3.749184e-07 seconds=12.86 *
+2026-11-14 21:14:36,380 - INFO - Epoch 43/50 loss=8.286932 val_loss=8.357241 mu=3.811635e-07 seconds=13.04 *
+2026-11-14 21:14:49,520 - INFO - Epoch 44/50 loss=8.285654 val_loss=8.357180 mu=3.759370e-07 seconds=13.14 *
+2026-11-14 21:15:02,708 - INFO - Epoch 45/50 loss=8.285643 val_loss=8.360753 mu=3.801453e-07 seconds=13.19
+2026-11-14 21:15:15,998 - INFO - Epoch 46/50 loss=8.284865 val_loss=8.354157 mu=3.743531e-07 seconds=13.29 *
+2026-11-14 21:15:29,520 - INFO - Epoch 47/50 loss=8.284115 val_loss=8.355339 mu=3.849622e-07 seconds=13.52
+2026-11-14 21:15:42,958 - INFO - Epoch 48/50 loss=8.282410 val_loss=8.355113 mu=3.754242e-07 seconds=13.44
+2026-11-14 21:15:56,389 - INFO - Epoch 49/50 loss=8.283795 val_loss=8.352541 mu=3.784947e-07 seconds=13.43 *
+2026-11-14 21:16:09,436 - INFO - Epoch 50/50 loss=8.282361 val_loss=8.353779 mu=3.878655e-07 seconds=13.05
+2026-11-14 21:16:09,437 - INFO - Restored best-validation snapshot from epoch 49 (val_loss=8.352541).
+2026-11-14 21:16:11,267 - INFO - Weights saved to /hy-tmp/st-nkf-fcnn-h128-20261114/weights/stnkf_fcnn_SCEDC_30_H128_seed1_best.pt
+2026-11-14 21:16:11,291 - INFO - ===== DONE ST-NKF FCNN SCEDC_30 status=ok best_epoch=49 test LL_ts=-6.222963 total=-11811.18 n=1898 seconds=662.4 =====
+2026-11-14 21:16:11,291 - INFO - ===== START ST-NKF FCNN SaltonSea =====
+2026-11-14 21:16:11,314 - INFO - Loaded SaltonSea official splits n_aux=2144 n_train=36639 n_val=2683 n_test=4104 history=128 area=8304.891914603613 device=cuda windows={'catalog_path': './Datasets/QTM/SaltonSea_catalog_jitter.csv', 'shape_path': './Datasets/QTM/SaltonSea_shape.npy', 'auxiliary_start': 13879.0, 'training_start': 14245.0, 'validation_start': 16071.0, 'testing_start': 16801.0, 'testing_end': 17532.0, 'global_m0': 1.0}
+2026-11-14 21:16:11,450 - INFO - Normalization scales max_time=51.2255 max_mag=5.72 max_dis=112.411 area=8304.89
+2026-11-14 21:16:11,451 - INFO - Initialized mu from mean event rate / area: 2.416082e-03
+2026-11-14 21:16:11,451 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-14 21:17:17,057 - INFO - Epoch 1/50 loss=2.489597 val_loss=8.209831 mu=4.090741e-04 seconds=65.60 *
+2026-11-14 21:18:22,650 - INFO - Epoch 2/50 loss=1.372960 val_loss=4.540887 mu=2.576042e-04 seconds=65.59 *
+2026-11-14 21:19:28,553 - INFO - Epoch 3/50 loss=1.246311 val_loss=3.918701 mu=1.729350e-04 seconds=65.90 *
+2026-11-14 21:20:30,591 - INFO - Epoch 4/50 loss=0.953837 val_loss=3.318019 mu=1.003431e-04 seconds=62.04 *
+2026-11-14 21:21:35,196 - INFO - Epoch 5/50 loss=0.828660 val_loss=3.046415 mu=7.317055e-05 seconds=64.60 *
+2026-11-14 21:22:40,764 - INFO - Epoch 6/50 loss=0.797215 val_loss=3.012624 mu=6.146332e-05 seconds=65.57 *
+2026-11-14 21:23:47,103 - INFO - Epoch 7/50 loss=0.778510 val_loss=2.945046 mu=5.373387e-05 seconds=66.34 *
+2026-11-14 21:24:52,851 - INFO - Epoch 8/50 loss=0.765349 val_loss=2.931012 mu=4.922335e-05 seconds=65.75 *
+2026-11-14 21:25:59,024 - INFO - Epoch 9/50 loss=0.756985 val_loss=2.905327 mu=4.528432e-05 seconds=66.17 *
+2026-11-14 21:27:04,085 - INFO - Epoch 10/50 loss=0.752161 val_loss=2.878886 mu=4.290644e-05 seconds=65.06 *
+2026-11-14 21:28:10,080 - INFO - Epoch 11/50 loss=0.748964 val_loss=2.888048 mu=4.052875e-05 seconds=65.99
+2026-11-14 21:29:15,021 - INFO - Epoch 12/50 loss=0.746640 val_loss=2.919345 mu=4.012307e-05 seconds=64.94
+2026-11-14 21:30:20,074 - INFO - Epoch 13/50 loss=0.744694 val_loss=2.919765 mu=3.822241e-05 seconds=65.05
+2026-11-14 21:31:24,887 - INFO - Epoch 14/50 loss=0.742872 val_loss=2.869639 mu=3.813868e-05 seconds=64.81 *
+2026-11-14 21:32:31,127 - INFO - Epoch 15/50 loss=0.742171 val_loss=2.842960 mu=3.552797e-05 seconds=66.24 *
+2026-11-14 21:33:31,682 - INFO - Epoch 16/50 loss=0.740857 val_loss=2.864741 mu=3.453567e-05 seconds=60.55
+2026-11-14 21:34:37,229 - INFO - Epoch 17/50 loss=0.740535 val_loss=2.881868 mu=3.356707e-05 seconds=65.55
+2026-11-14 21:35:32,281 - INFO - Epoch 18/50 loss=0.739468 val_loss=2.870560 mu=3.429504e-05 seconds=55.05
+2026-11-14 21:36:38,453 - INFO - Epoch 19/50 loss=0.739542 val_loss=2.883003 mu=3.325462e-05 seconds=66.17
+2026-11-14 21:37:45,808 - INFO - Epoch 20/50 loss=0.738869 val_loss=2.924998 mu=3.481583e-05 seconds=67.36
+2026-11-14 21:38:45,759 - INFO - Epoch 21/50 loss=0.738331 val_loss=2.847553 mu=3.335659e-05 seconds=59.95
+2026-11-14 21:39:51,952 - INFO - Epoch 22/50 loss=0.737857 val_loss=2.861136 mu=3.329545e-05 seconds=66.19
+2026-11-14 21:40:56,840 - INFO - Epoch 23/50 loss=0.738127 val_loss=2.884466 mu=3.042975e-05 seconds=64.89
+2026-11-14 21:42:01,634 - INFO - Epoch 24/50 loss=0.737553 val_loss=2.900323 mu=3.132074e-05 seconds=64.79
+2026-11-14 21:43:07,091 - INFO - Epoch 25/50 loss=0.737414 val_loss=2.861101 mu=3.328415e-05 seconds=65.46
+2026-11-14 21:44:03,890 - INFO - Epoch 26/50 loss=0.737433 val_loss=2.858967 mu=3.256890e-05 seconds=56.80
+2026-11-14 21:45:06,279 - INFO - Epoch 27/50 loss=0.736981 val_loss=2.886013 mu=3.240227e-05 seconds=62.39
+2026-11-14 21:46:08,487 - INFO - Epoch 28/50 loss=0.736936 val_loss=2.876857 mu=3.210961e-05 seconds=62.21
+2026-11-14 21:47:14,040 - INFO - Epoch 29/50 loss=0.736930 val_loss=2.864492 mu=3.139901e-05 seconds=65.55
+2026-11-14 21:48:19,766 - INFO - Epoch 30/50 loss=0.736417 val_loss=2.859714 mu=3.055054e-05 seconds=65.73
+2026-11-14 21:49:24,509 - INFO - Epoch 31/50 loss=0.736562 val_loss=2.841502 mu=3.137981e-05 seconds=64.74 *
+2026-11-14 21:50:30,189 - INFO - Epoch 32/50 loss=0.736386 val_loss=2.856090 mu=3.056973e-05 seconds=65.68
+2026-11-14 21:51:29,414 - INFO - Epoch 33/50 loss=0.736570 val_loss=2.852316 mu=3.089317e-05 seconds=59.23
+2026-11-14 21:52:34,002 - INFO - Epoch 34/50 loss=0.736548 val_loss=2.863319 mu=2.932778e-05 seconds=64.59
+2026-11-14 21:53:39,653 - INFO - Epoch 35/50 loss=0.736668 val_loss=2.896036 mu=3.049030e-05 seconds=65.65
+2026-11-14 21:54:41,798 - INFO - Epoch 36/50 loss=0.736479 val_loss=2.821541 mu=3.211734e-05 seconds=62.14 *
+2026-11-14 21:55:45,004 - INFO - Epoch 37/50 loss=0.735718 val_loss=2.858048 mu=3.173778e-05 seconds=63.21
+2026-11-14 21:56:49,547 - INFO - Epoch 38/50 loss=0.736186 val_loss=2.847070 mu=3.159946e-05 seconds=64.54
+2026-11-14 21:57:56,027 - INFO - Epoch 39/50 loss=0.735791 val_loss=2.850433 mu=3.201224e-05 seconds=66.48
+2026-11-14 21:59:01,694 - INFO - Epoch 40/50 loss=0.736300 val_loss=2.911060 mu=3.139296e-05 seconds=65.67
+2026-11-14 22:00:06,424 - INFO - Epoch 41/50 loss=0.736160 val_loss=2.951470 mu=2.981859e-05 seconds=64.73
+2026-11-14 22:01:11,474 - INFO - Epoch 42/50 loss=0.735737 val_loss=2.884296 mu=3.109207e-05 seconds=65.05
+2026-11-14 22:02:13,294 - INFO - Epoch 43/50 loss=0.735416 val_loss=2.910961 mu=3.033805e-05 seconds=61.82
+2026-11-14 22:03:15,944 - INFO - Epoch 44/50 loss=0.735834 val_loss=2.860343 mu=3.078346e-05 seconds=62.65
+2026-11-14 22:04:22,633 - INFO - Epoch 45/50 loss=0.735847 val_loss=2.859926 mu=2.940189e-05 seconds=66.69
+2026-11-14 22:05:27,717 - INFO - Epoch 46/50 loss=0.735909 val_loss=2.894990 mu=2.689137e-05 seconds=65.08
+2026-11-14 22:06:32,762 - INFO - Epoch 47/50 loss=0.735505 val_loss=2.835875 mu=2.968940e-05 seconds=65.05
+2026-11-14 22:07:35,797 - INFO - Epoch 48/50 loss=0.735838 val_loss=2.870685 mu=3.031563e-05 seconds=63.03
+2026-11-14 22:08:40,405 - INFO - Epoch 49/50 loss=0.735555 val_loss=2.848549 mu=3.084792e-05 seconds=64.61
+2026-11-14 22:09:35,583 - INFO - Epoch 50/50 loss=0.735551 val_loss=2.851064 mu=3.179332e-05 seconds=55.18
+2026-11-14 22:09:35,584 - INFO - Restored best-validation snapshot from epoch 36 (val_loss=2.821541).
+2026-11-14 22:09:38,149 - INFO - Weights saved to /hy-tmp/st-nkf-fcnn-h128-20261114/weights/stnkf_fcnn_SaltonSea_H128_seed1_best.pt
+2026-11-14 22:09:38,176 - INFO - ===== DONE ST-NKF FCNN SaltonSea status=ok best_epoch=36 test LL_ts=-0.533886 total=-2191.07 n=4104 seconds=3206.8 =====
+2026-11-14 22:09:38,177 - INFO - ===== START ST-NKF FCNN SanJac =====
+2026-11-14 22:09:38,188 - INFO - Loaded SanJac official splits n_aux=1672 n_train=11770 n_val=3449 n_test=4400 history=128 area=10310.094253972062 device=cuda windows={'catalog_path': './Datasets/QTM/SanJac_catalog_jitter.csv', 'shape_path': './Datasets/QTM/SanJac_shape.npy', 'auxiliary_start': 13879.0, 'training_start': 14245.0, 'validation_start': 16071.0, 'testing_start': 16801.0, 'testing_end': 17532.0, 'global_m0': 1.0}
+2026-11-14 22:09:38,240 - INFO - Normalization scales max_time=36.9942 max_mag=5.43 max_dis=138.569 area=10310.1
+2026-11-14 22:09:38,240 - INFO - Initialized mu from mean event rate / area: 6.251669e-04
+2026-11-14 22:09:38,240 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-14 22:09:59,254 - INFO - Epoch 1/50 loss=7.863142 val_loss=7.753789 mu=4.495806e-04 seconds=21.01 *
+2026-11-14 22:10:20,651 - INFO - Epoch 2/50 loss=6.119274 val_loss=6.757070 mu=3.464299e-04 seconds=21.40 *
+2026-11-14 22:10:43,099 - INFO - Epoch 3/50 loss=5.612263 val_loss=6.481835 mu=2.833281e-04 seconds=22.45 *
+2026-11-14 22:11:05,285 - INFO - Epoch 4/50 loss=5.535669 val_loss=6.446025 mu=2.595684e-04 seconds=22.19 *
+2026-11-14 22:11:26,406 - INFO - Epoch 5/50 loss=5.494978 val_loss=6.386141 mu=2.463766e-04 seconds=21.12 *
+2026-11-14 22:11:44,755 - INFO - Epoch 6/50 loss=5.416614 val_loss=6.314455 mu=2.468743e-04 seconds=18.35 *
+2026-11-14 22:12:05,888 - INFO - Epoch 7/50 loss=5.329852 val_loss=6.265496 mu=2.429381e-04 seconds=21.13 *
+2026-11-14 22:12:27,237 - INFO - Epoch 8/50 loss=5.260320 val_loss=6.228516 mu=2.430465e-04 seconds=21.35 *
+2026-11-14 22:12:49,539 - INFO - Epoch 9/50 loss=5.211080 val_loss=6.204344 mu=2.330010e-04 seconds=22.30 *
+2026-11-14 22:13:10,018 - INFO - Epoch 10/50 loss=5.167902 val_loss=6.164036 mu=2.250433e-04 seconds=20.48 *
+2026-11-14 22:13:30,436 - INFO - Epoch 11/50 loss=5.121840 val_loss=6.122132 mu=2.170976e-04 seconds=20.42 *
+2026-11-14 22:13:50,310 - INFO - Epoch 12/50 loss=5.071918 val_loss=6.072208 mu=2.031072e-04 seconds=19.87 *
+2026-11-14 22:14:12,802 - INFO - Epoch 13/50 loss=5.004592 val_loss=5.991537 mu=1.798315e-04 seconds=22.49 *
+2026-11-14 22:14:33,997 - INFO - Epoch 14/50 loss=4.932692 val_loss=5.927506 mu=1.593717e-04 seconds=21.19 *
+2026-11-14 22:14:53,223 - INFO - Epoch 15/50 loss=4.889046 val_loss=5.901004 mu=1.409325e-04 seconds=19.22 *
+2026-11-14 22:15:15,106 - INFO - Epoch 16/50 loss=4.862760 val_loss=5.873996 mu=1.275600e-04 seconds=21.88 *
+2026-11-14 22:15:35,979 - INFO - Epoch 17/50 loss=4.844748 val_loss=5.860741 mu=1.197515e-04 seconds=20.87 *
+2026-11-14 22:15:54,158 - INFO - Epoch 18/50 loss=4.830511 val_loss=5.849153 mu=1.095421e-04 seconds=18.18 *
+2026-11-14 22:16:14,438 - INFO - Epoch 19/50 loss=4.818356 val_loss=5.829139 mu=1.077511e-04 seconds=20.28 *
+2026-11-14 22:16:34,895 - INFO - Epoch 20/50 loss=4.808208 val_loss=5.827154 mu=1.074437e-04 seconds=20.46 *
+2026-11-14 22:16:56,433 - INFO - Epoch 21/50 loss=4.800876 val_loss=5.816152 mu=1.040594e-04 seconds=21.54 *
+2026-11-14 22:17:17,772 - INFO - Epoch 22/50 loss=4.793588 val_loss=5.812167 mu=1.027329e-04 seconds=21.34 *
+2026-11-14 22:17:39,240 - INFO - Epoch 23/50 loss=4.787499 val_loss=5.800276 mu=1.021023e-04 seconds=21.47 *
+2026-11-14 22:18:00,557 - INFO - Epoch 24/50 loss=4.784054 val_loss=5.794767 mu=9.999715e-05 seconds=21.32 *
+2026-11-14 22:18:21,114 - INFO - Epoch 25/50 loss=4.780461 val_loss=5.789663 mu=9.955095e-05 seconds=20.56 *
+2026-11-14 22:18:40,782 - INFO - Epoch 26/50 loss=4.777235 val_loss=5.804800 mu=9.586385e-05 seconds=19.67
+2026-11-14 22:19:01,148 - INFO - Epoch 27/50 loss=4.775273 val_loss=5.778212 mu=9.583786e-05 seconds=20.37 *
+2026-11-14 22:19:22,105 - INFO - Epoch 28/50 loss=4.772481 val_loss=5.772299 mu=9.731537e-05 seconds=20.96 *
+2026-11-14 22:19:43,354 - INFO - Epoch 29/50 loss=4.770490 val_loss=5.791969 mu=9.477087e-05 seconds=21.25
+2026-11-14 22:19:59,432 - INFO - Epoch 30/50 loss=4.769039 val_loss=5.801463 mu=9.459949e-05 seconds=16.08
+2026-11-14 22:20:12,392 - INFO - Epoch 31/50 loss=4.765954 val_loss=5.767626 mu=9.342137e-05 seconds=12.96 *
+2026-11-14 22:20:30,867 - INFO - Epoch 32/50 loss=4.764381 val_loss=5.788711 mu=8.905216e-05 seconds=18.47
+2026-11-14 22:20:53,037 - INFO - Epoch 33/50 loss=4.763119 val_loss=5.765516 mu=9.031130e-05 seconds=22.17 *
+2026-11-14 22:21:15,634 - INFO - Epoch 34/50 loss=4.761075 val_loss=5.774222 mu=8.850786e-05 seconds=22.60
+2026-11-14 22:21:37,934 - INFO - Epoch 35/50 loss=4.759901 val_loss=5.758867 mu=9.216632e-05 seconds=22.30 *
+2026-11-14 22:22:00,000 - INFO - Epoch 36/50 loss=4.758945 val_loss=5.792711 mu=8.940959e-05 seconds=22.07
+2026-11-14 22:22:20,961 - INFO - Epoch 37/50 loss=4.756901 val_loss=5.755940 mu=9.136257e-05 seconds=20.96 *
+2026-11-14 22:22:43,387 - INFO - Epoch 38/50 loss=4.756423 val_loss=5.766483 mu=9.104692e-05 seconds=22.43
+2026-11-14 22:23:05,061 - INFO - Epoch 39/50 loss=4.755287 val_loss=5.760436 mu=9.105652e-05 seconds=21.67
+2026-11-14 22:23:26,867 - INFO - Epoch 40/50 loss=4.754779 val_loss=5.756765 mu=9.336206e-05 seconds=21.81
+2026-11-14 22:23:48,462 - INFO - Epoch 41/50 loss=4.753707 val_loss=5.749330 mu=9.268054e-05 seconds=21.59 *
+2026-11-14 22:24:10,116 - INFO - Epoch 42/50 loss=4.753792 val_loss=5.756685 mu=9.247749e-05 seconds=21.65
+2026-11-14 22:24:32,041 - INFO - Epoch 43/50 loss=4.752873 val_loss=5.785106 mu=8.971161e-05 seconds=21.92
+2026-11-14 22:24:54,725 - INFO - Epoch 44/50 loss=4.752761 val_loss=5.766294 mu=8.915562e-05 seconds=22.68
+2026-11-14 22:25:16,068 - INFO - Epoch 45/50 loss=4.751680 val_loss=5.782123 mu=8.882922e-05 seconds=21.34
+2026-11-14 22:25:37,723 - INFO - Epoch 46/50 loss=4.752798 val_loss=5.772084 mu=8.775553e-05 seconds=21.66
+2026-11-14 22:25:59,279 - INFO - Epoch 47/50 loss=4.752024 val_loss=5.775048 mu=8.768815e-05 seconds=21.56
+2026-11-14 22:26:16,828 - INFO - Epoch 48/50 loss=4.751408 val_loss=5.745342 mu=9.253288e-05 seconds=17.55 *
+2026-11-14 22:26:39,280 - INFO - Epoch 49/50 loss=4.751037 val_loss=5.760383 mu=9.107510e-05 seconds=22.45
+2026-11-14 22:27:01,645 - INFO - Epoch 50/50 loss=4.750894 val_loss=5.748971 mu=9.021828e-05 seconds=22.37
+2026-11-14 22:27:01,646 - INFO - Restored best-validation snapshot from epoch 48 (val_loss=5.745342).
+2026-11-14 22:27:04,495 - INFO - Weights saved to /hy-tmp/st-nkf-fcnn-h128-20261114/weights/stnkf_fcnn_SanJac_H128_seed1_best.pt
+2026-11-14 22:27:04,520 - INFO - ===== DONE ST-NKF FCNN SanJac status=ok best_epoch=48 test LL_ts=-4.832994 total=-21265.17 n=4400 seconds=1046.3 =====
+2026-11-14 22:27:04,520 - INFO - ===== START ST-NKF FCNN SCEDC_25 =====
+2026-11-14 22:27:04,604 - INFO - Loaded SCEDC_25 official splits n_aux=4242 n_train=25257 n_val=9089 n_test=5000 history=128 area=407145.958239966 device=cuda windows={'catalog_path': './Datasets/SCEDC/SCEDC_catalog_jitter.csv', 'shape_path': './Datasets/SCEDC/SCEDC_shape.npy', 'auxiliary_start': 4018.0, 'training_start': 5479.0, 'validation_start': 12784.0, 'testing_start': 16071.0, 'testing_end': 18262.0, 'global_m0': 2.5}
+2026-11-14 22:27:04,726 - INFO - Normalization scales max_time=191.818 max_mag=7.3 max_dis=840.416 area=407146
+2026-11-14 22:27:04,726 - INFO - Initialized mu from mean event rate / area: 8.491784e-06
+2026-11-14 22:27:04,726 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-14 22:27:48,609 - INFO - Epoch 1/50 loss=9.111858 val_loss=8.749966 mu=3.134314e-06 seconds=43.88 *
+2026-11-14 22:28:37,331 - INFO - Epoch 2/50 loss=8.065080 val_loss=8.256356 mu=2.656697e-06 seconds=48.72 *
+2026-11-14 22:29:25,038 - INFO - Epoch 3/50 loss=7.945853 val_loss=8.043436 mu=2.377085e-06 seconds=47.71 *
+2026-11-14 22:30:12,250 - INFO - Epoch 4/50 loss=7.679744 val_loss=7.762636 mu=2.106677e-06 seconds=47.21 *
+2026-11-14 22:31:00,318 - INFO - Epoch 5/50 loss=7.535081 val_loss=7.670897 mu=1.982137e-06 seconds=48.07 *
+2026-11-14 22:31:47,547 - INFO - Epoch 6/50 loss=7.477669 val_loss=7.618361 mu=1.884212e-06 seconds=47.23 *
+2026-11-14 22:32:35,158 - INFO - Epoch 7/50 loss=7.436200 val_loss=7.602512 mu=1.744423e-06 seconds=47.61 *
+2026-11-14 22:33:22,797 - INFO - Epoch 8/50 loss=7.399034 val_loss=7.577037 mu=1.563504e-06 seconds=47.64 *
+2026-11-14 22:34:04,365 - INFO - Epoch 9/50 loss=7.372850 val_loss=7.578731 mu=1.374174e-06 seconds=41.57
+2026-11-14 22:34:50,124 - INFO - Epoch 10/50 loss=7.359537 val_loss=7.569750 mu=1.257039e-06 seconds=45.76 *
+2026-11-14 22:35:36,605 - INFO - Epoch 11/50 loss=7.352696 val_loss=7.556343 mu=1.150776e-06 seconds=46.48 *
+2026-11-14 22:36:23,149 - INFO - Epoch 12/50 loss=7.348369 val_loss=7.551908 mu=1.110641e-06 seconds=46.54 *
+2026-11-14 22:37:10,222 - INFO - Epoch 13/50 loss=7.345472 val_loss=7.558026 mu=1.034980e-06 seconds=47.07
+2026-11-14 22:37:51,375 - INFO - Epoch 14/50 loss=7.343582 val_loss=7.547109 mu=1.046141e-06 seconds=41.15 *
+2026-11-14 22:38:39,602 - INFO - Epoch 15/50 loss=7.342612 val_loss=7.555123 mu=9.901025e-07 seconds=48.23
+2026-11-14 22:39:25,939 - INFO - Epoch 16/50 loss=7.341607 val_loss=7.548604 mu=9.975536e-07 seconds=46.34
+2026-11-14 22:40:09,322 - INFO - Epoch 17/50 loss=7.340684 val_loss=7.540030 mu=1.022109e-06 seconds=43.38 *
+2026-11-14 22:40:54,510 - INFO - Epoch 18/50 loss=7.339525 val_loss=7.549696 mu=9.925802e-07 seconds=45.19
+2026-11-14 22:41:40,107 - INFO - Epoch 19/50 loss=7.338216 val_loss=7.543415 mu=9.628645e-07 seconds=45.60
+2026-11-14 22:42:24,771 - INFO - Epoch 20/50 loss=7.337854 val_loss=7.538174 mu=9.488184e-07 seconds=44.66 *
+2026-11-14 22:43:07,891 - INFO - Epoch 21/50 loss=7.336936 val_loss=7.542486 mu=9.349429e-07 seconds=43.12
+2026-11-14 22:43:54,809 - INFO - Epoch 22/50 loss=7.336311 val_loss=7.546069 mu=9.167910e-07 seconds=46.92
+2026-11-14 22:44:42,680 - INFO - Epoch 23/50 loss=7.336119 val_loss=7.544658 mu=9.524232e-07 seconds=47.87
+2026-11-14 22:45:30,888 - INFO - Epoch 24/50 loss=7.334769 val_loss=7.539047 mu=9.617462e-07 seconds=48.21
+2026-11-14 22:46:18,264 - INFO - Epoch 25/50 loss=7.334533 val_loss=7.535012 mu=1.002185e-06 seconds=47.38 *
+2026-11-14 22:47:06,652 - INFO - Epoch 26/50 loss=7.333680 val_loss=7.534722 mu=1.001644e-06 seconds=48.39 *
+2026-11-14 22:47:55,447 - INFO - Epoch 27/50 loss=7.333420 val_loss=7.533910 mu=1.015443e-06 seconds=48.79 *
+2026-11-14 22:48:42,689 - INFO - Epoch 28/50 loss=7.333221 val_loss=7.546107 mu=9.579025e-07 seconds=47.24
+2026-11-14 22:49:30,316 - INFO - Epoch 29/50 loss=7.332587 val_loss=7.535603 mu=9.724796e-07 seconds=47.63
+2026-11-14 22:50:19,059 - INFO - Epoch 30/50 loss=7.332142 val_loss=7.530157 mu=9.791807e-07 seconds=48.74 *
+2026-11-14 22:51:03,629 - INFO - Epoch 31/50 loss=7.331985 val_loss=7.535744 mu=9.915206e-07 seconds=44.57
+2026-11-14 22:51:50,450 - INFO - Epoch 32/50 loss=7.331141 val_loss=7.544299 mu=9.381608e-07 seconds=46.82
+2026-11-14 22:52:37,832 - INFO - Epoch 33/50 loss=7.331139 val_loss=7.533625 mu=9.537722e-07 seconds=47.38
+2026-11-14 22:53:25,868 - INFO - Epoch 34/50 loss=7.330987 val_loss=7.536256 mu=9.611659e-07 seconds=48.04
+2026-11-14 22:54:12,041 - INFO - Epoch 35/50 loss=7.330728 val_loss=7.529548 mu=9.822878e-07 seconds=46.17 *
+2026-11-14 22:54:56,853 - INFO - Epoch 36/50 loss=7.330504 val_loss=7.530730 mu=9.982200e-07 seconds=44.81
+2026-11-14 22:55:38,738 - INFO - Epoch 37/50 loss=7.330562 val_loss=7.540567 mu=9.720528e-07 seconds=41.88
+2026-11-14 22:56:27,070 - INFO - Epoch 38/50 loss=7.330683 val_loss=7.534520 mu=9.511307e-07 seconds=48.33
+2026-11-14 22:57:15,300 - INFO - Epoch 39/50 loss=7.330097 val_loss=7.529079 mu=9.663221e-07 seconds=48.23 *
+2026-11-14 22:58:01,960 - INFO - Epoch 40/50 loss=7.330443 val_loss=7.532283 mu=9.779721e-07 seconds=46.66
+2026-11-14 22:58:49,744 - INFO - Epoch 41/50 loss=7.329665 val_loss=7.535115 mu=9.947375e-07 seconds=47.78
+2026-11-14 22:59:37,426 - INFO - Epoch 42/50 loss=7.330059 val_loss=7.529422 mu=1.030613e-06 seconds=47.68
+2026-11-14 23:00:25,072 - INFO - Epoch 43/50 loss=7.330368 val_loss=7.540710 mu=9.957490e-07 seconds=47.65
+2026-11-14 23:01:08,555 - INFO - Epoch 44/50 loss=7.329361 val_loss=7.530855 mu=1.002669e-06 seconds=43.48
+2026-11-14 23:01:55,695 - INFO - Epoch 45/50 loss=7.329878 val_loss=7.529905 mu=1.017568e-06 seconds=47.14
+2026-11-14 23:02:42,613 - INFO - Epoch 46/50 loss=7.330301 val_loss=7.530454 mu=1.004763e-06 seconds=46.92
+2026-11-14 23:03:27,224 - INFO - Epoch 47/50 loss=7.329063 val_loss=7.529304 mu=1.033806e-06 seconds=44.61
+2026-11-14 23:04:12,568 - INFO - Epoch 48/50 loss=7.329785 val_loss=7.540535 mu=1.020946e-06 seconds=45.34
+2026-11-14 23:05:00,444 - INFO - Epoch 49/50 loss=7.330065 val_loss=7.530705 mu=1.008596e-06 seconds=47.88
+2026-11-14 23:05:47,698 - INFO - Epoch 50/50 loss=7.330048 val_loss=7.535389 mu=1.007652e-06 seconds=47.25
+2026-11-14 23:05:47,699 - INFO - Restored best-validation snapshot from epoch 39 (val_loss=7.529079).
+2026-11-14 23:05:53,047 - INFO - Weights saved to /hy-tmp/st-nkf-fcnn-h128-20261114/weights/stnkf_fcnn_SCEDC_25_H128_seed1_best.pt
+2026-11-14 23:05:53,073 - INFO - ===== DONE ST-NKF FCNN SCEDC_25 status=ok best_epoch=39 test LL_ts=-6.050899 total=-30254.49 n=5000 seconds=2328.4 =====
+2026-11-14 23:05:53,073 - INFO - ===== START ST-NKF FCNN SCEDC_20 =====
+2026-11-14 23:05:53,138 - INFO - Loaded SCEDC_20 official splits n_aux=12373 n_train=81433 n_val=23484 n_test=13067 history=128 area=407150.83721931465 device=cuda windows={'catalog_path': './Datasets/SCEDC/SCEDC_catalog_jitter.csv', 'shape_path': './Datasets/SCEDC/SCEDC_shape.npy', 'auxiliary_start': 4018.0, 'training_start': 5479.0, 'validation_start': 12784.0, 'testing_start': 16071.0, 'testing_end': 18262.0, 'global_m0': 2.0}
+2026-11-14 23:05:53,453 - INFO - Normalization scales max_time=59.3845 max_mag=7.3 max_dis=862.326 area=407151
+2026-11-14 23:05:53,453 - INFO - Initialized mu from mean event rate / area: 2.737882e-05
+2026-11-14 23:05:53,454 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-14 23:08:18,703 - INFO - Epoch 1/50 loss=7.794223 val_loss=8.002376 mu=8.357091e-06 seconds=145.25 *
+2026-11-14 23:10:47,434 - INFO - Epoch 2/50 loss=6.873091 val_loss=7.022733 mu=6.599574e-06 seconds=148.73 *
+2026-11-14 23:13:16,535 - INFO - Epoch 3/50 loss=6.736541 val_loss=6.948543 mu=4.456525e-06 seconds=149.10 *
+2026-11-14 23:15:40,974 - INFO - Epoch 4/50 loss=6.661239 val_loss=6.888154 mu=3.464273e-06 seconds=144.44 *
+2026-11-14 23:18:11,225 - INFO - Epoch 5/50 loss=6.642377 val_loss=6.876471 mu=2.871399e-06 seconds=150.25 *
+2026-11-14 23:20:40,823 - INFO - Epoch 6/50 loss=6.634548 val_loss=6.855688 mu=2.561680e-06 seconds=149.60 *
+2026-11-14 23:23:11,105 - INFO - Epoch 7/50 loss=6.630856 val_loss=6.853982 mu=2.268048e-06 seconds=150.28 *
+2026-11-14 23:25:32,556 - INFO - Epoch 8/50 loss=6.628097 val_loss=6.850206 mu=2.046594e-06 seconds=141.45 *
+2026-11-14 23:27:56,368 - INFO - Epoch 9/50 loss=6.626237 val_loss=6.848098 mu=1.975488e-06 seconds=143.81 *
+2026-11-14 23:30:14,494 - INFO - Epoch 10/50 loss=6.625242 val_loss=6.842610 mu=1.913156e-06 seconds=138.12 *
+2026-11-14 23:32:44,055 - INFO - Epoch 11/50 loss=6.624324 val_loss=6.856286 mu=1.677747e-06 seconds=149.56
+2026-11-14 23:35:06,279 - INFO - Epoch 12/50 loss=6.623229 val_loss=6.841504 mu=1.760308e-06 seconds=142.22 *
+2026-11-14 23:37:28,957 - INFO - Epoch 13/50 loss=6.623023 val_loss=6.846915 mu=1.602436e-06 seconds=142.68
+2026-11-14 23:39:36,792 - INFO - Epoch 14/50 loss=6.622209 val_loss=6.848159 mu=1.572954e-06 seconds=127.83
+2026-11-14 23:42:07,517 - INFO - Epoch 15/50 loss=6.622081 val_loss=6.847768 mu=1.549083e-06 seconds=150.72
+2026-11-14 23:44:38,008 - INFO - Epoch 16/50 loss=6.621648 val_loss=6.858348 mu=1.504135e-06 seconds=150.49
+2026-11-14 23:47:09,453 - INFO - Epoch 17/50 loss=6.621213 val_loss=6.836329 mu=1.516044e-06 seconds=151.44 *
+2026-11-14 23:49:38,185 - INFO - Epoch 18/50 loss=6.621252 val_loss=6.838210 mu=1.512528e-06 seconds=148.73
+2026-11-14 23:52:06,898 - INFO - Epoch 19/50 loss=6.620817 val_loss=6.846757 mu=1.528784e-06 seconds=148.71
+2026-11-14 23:54:16,636 - INFO - Epoch 20/50 loss=6.620882 val_loss=6.860458 mu=1.541889e-06 seconds=129.74
+2026-11-14 23:56:24,243 - INFO - Epoch 21/50 loss=6.621067 val_loss=6.836787 mu=1.550759e-06 seconds=127.61
+2026-11-14 23:58:55,412 - INFO - Epoch 22/50 loss=6.620768 val_loss=6.828039 mu=1.559650e-06 seconds=151.17 *
+2026-11-15 19:14:43,113 - INFO - ST-NKF FCNN H=128 aligned start device=cuda name=NVIDIA GeForce RTX 5090 torch=2.9.1+cu128 cuda=12.8 out=/hy-tmp/st-nkf-fcnn-h128-20261114 epochs=50 patience=20 lr=0.0001 boundary_angles=128
+2026-11-15 19:14:43,115 - INFO - skip completed SCEDC_30
+2026-11-15 19:14:43,115 - INFO - skip completed SaltonSea
+2026-11-15 19:14:43,115 - INFO - skip completed SanJac
+2026-11-15 19:14:43,115 - INFO - skip completed SCEDC_25
+2026-11-15 19:14:43,116 - INFO - ===== START ST-NKF FCNN SCEDC_20 =====
+2026-11-15 19:14:43,175 - INFO - Loaded SCEDC_20 official splits n_aux=12373 n_train=81433 n_val=23484 n_test=13067 history=128 area=407150.83721931465 device=cuda windows={'catalog_path': './Datasets/SCEDC/SCEDC_catalog_jitter.csv', 'shape_path': './Datasets/SCEDC/SCEDC_shape.npy', 'auxiliary_start': 4018.0, 'training_start': 5479.0, 'validation_start': 12784.0, 'testing_start': 16071.0, 'testing_end': 18262.0, 'global_m0': 2.0}
+2026-11-15 19:14:43,555 - INFO - Normalization scales max_time=59.3845 max_mag=7.3 max_dis=862.326 area=407151
+2026-11-15 19:14:43,556 - INFO - Initialized mu from mean event rate / area: 2.737882e-05
+2026-11-15 19:14:43,557 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-15 19:16:43,807 - INFO - Epoch 1/50 loss=7.794223 val_loss=8.002376 mu=8.357091e-06 seconds=119.12 *
+2026-11-15 19:19:17,451 - INFO - Epoch 2/50 loss=6.873091 val_loss=7.022733 mu=6.599574e-06 seconds=153.64 *
+2026-11-15 19:21:50,798 - INFO - Epoch 3/50 loss=6.736541 val_loss=6.948543 mu=4.456525e-06 seconds=153.35 *
+2026-11-15 19:24:22,385 - INFO - Epoch 4/50 loss=6.661239 val_loss=6.888154 mu=3.464273e-06 seconds=151.59 *
+2026-11-15 19:26:53,278 - INFO - Epoch 5/50 loss=6.642377 val_loss=6.876471 mu=2.871399e-06 seconds=150.89 *
+2026-11-15 19:29:24,102 - INFO - Epoch 6/50 loss=6.634548 val_loss=6.855688 mu=2.561680e-06 seconds=150.82 *
+2026-11-15 19:31:52,330 - INFO - Epoch 7/50 loss=6.630856 val_loss=6.853982 mu=2.268048e-06 seconds=148.23 *
+2026-11-15 19:34:24,182 - INFO - Epoch 8/50 loss=6.628097 val_loss=6.850206 mu=2.046594e-06 seconds=151.85 *
+2026-11-15 19:36:53,779 - INFO - Epoch 9/50 loss=6.626237 val_loss=6.848098 mu=1.975488e-06 seconds=149.60 *
+2026-11-15 19:39:24,471 - INFO - Epoch 10/50 loss=6.625242 val_loss=6.842610 mu=1.913156e-06 seconds=150.69 *
+2026-11-15 19:41:54,811 - INFO - Epoch 11/50 loss=6.624324 val_loss=6.856286 mu=1.677747e-06 seconds=150.34
+2026-11-15 19:44:19,339 - INFO - Epoch 12/50 loss=6.623229 val_loss=6.841504 mu=1.760308e-06 seconds=144.53 *
+2026-11-15 19:46:52,174 - INFO - Epoch 13/50 loss=6.623023 val_loss=6.846915 mu=1.602436e-06 seconds=152.83
+2026-11-15 19:49:09,546 - INFO - Epoch 14/50 loss=6.622209 val_loss=6.848159 mu=1.572954e-06 seconds=137.37
+2026-11-15 19:51:40,854 - INFO - Epoch 15/50 loss=6.622081 val_loss=6.847768 mu=1.549083e-06 seconds=151.31
+2026-11-15 19:54:12,240 - INFO - Epoch 16/50 loss=6.621648 val_loss=6.858348 mu=1.504135e-06 seconds=151.39
+2026-11-15 19:56:42,152 - INFO - Epoch 17/50 loss=6.621213 val_loss=6.836329 mu=1.516044e-06 seconds=149.91 *
+2026-11-15 19:59:14,465 - INFO - Epoch 18/50 loss=6.621252 val_loss=6.838210 mu=1.512528e-06 seconds=152.31
+2026-11-16 10:43:04,657 - INFO - ST-NKF FCNN H=128 aligned start device=cuda name=NVIDIA GeForce RTX 5090 torch=2.9.1+cu128 cuda=12.8 out=/hy-tmp/st-nkf-fcnn-h128-20261114 epochs=50 patience=20 lr=0.0001 boundary_angles=128
+2026-11-16 10:43:04,665 - INFO - skip completed SCEDC_30
+2026-11-16 10:43:04,665 - INFO - skip completed SaltonSea
+2026-11-16 10:43:04,665 - INFO - skip completed SanJac
+2026-11-16 10:43:04,665 - INFO - skip completed SCEDC_25
+2026-11-16 10:43:04,665 - INFO - ===== START ST-NKF FCNN SCEDC_20 =====
+2026-11-16 10:43:04,742 - INFO - Loaded SCEDC_20 official splits n_aux=12373 n_train=81433 n_val=23484 n_test=13067 history=128 area=407150.83721931465 device=cuda windows={'catalog_path': './Datasets/SCEDC/SCEDC_catalog_jitter.csv', 'shape_path': './Datasets/SCEDC/SCEDC_shape.npy', 'auxiliary_start': 4018.0, 'training_start': 5479.0, 'validation_start': 12784.0, 'testing_start': 16071.0, 'testing_end': 18262.0, 'global_m0': 2.0}
+2026-11-16 10:43:05,094 - INFO - Normalization scales max_time=59.3845 max_mag=7.3 max_dis=862.326 area=407151
+2026-11-16 10:43:05,094 - INFO - Initialized mu from mean event rate / area: 2.737882e-05
+2026-11-16 10:43:05,095 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-16 10:45:36,111 - INFO - Epoch 1/50 loss=7.794223 val_loss=8.002376 mu=8.357091e-06 seconds=150.02 *
+2026-11-16 10:47:59,524 - INFO - Epoch 2/50 loss=6.873091 val_loss=7.022733 mu=6.599574e-06 seconds=143.41 *
+2026-11-16 10:50:26,017 - INFO - Epoch 3/50 loss=6.736541 val_loss=6.948543 mu=4.456525e-06 seconds=146.49 *
+2026-11-16 10:52:42,631 - INFO - Epoch 4/50 loss=6.661239 val_loss=6.888154 mu=3.464273e-06 seconds=136.61 *
+2026-11-16 10:55:04,059 - INFO - Epoch 5/50 loss=6.642377 val_loss=6.876471 mu=2.871399e-06 seconds=141.43 *
+2026-11-16 10:57:34,369 - INFO - Epoch 6/50 loss=6.634548 val_loss=6.855688 mu=2.561680e-06 seconds=150.31 *
+2026-11-16 11:00:05,022 - INFO - Epoch 7/50 loss=6.630856 val_loss=6.853982 mu=2.268048e-06 seconds=150.65 *
+2026-11-16 11:02:34,290 - INFO - Epoch 8/50 loss=6.628097 val_loss=6.850206 mu=2.046594e-06 seconds=149.27 *
+2026-11-16 11:04:59,021 - INFO - Epoch 9/50 loss=6.626237 val_loss=6.848098 mu=1.975488e-06 seconds=144.73 *
+2026-11-16 11:07:26,153 - INFO - Epoch 10/50 loss=6.625242 val_loss=6.842610 mu=1.913156e-06 seconds=147.13 *
+2026-11-16 11:09:50,970 - INFO - Epoch 11/50 loss=6.624324 val_loss=6.856286 mu=1.677747e-06 seconds=144.82
+2026-11-16 11:12:17,994 - INFO - Epoch 12/50 loss=6.623229 val_loss=6.841504 mu=1.760308e-06 seconds=147.02 *
+2026-11-16 11:14:45,120 - INFO - Epoch 13/50 loss=6.623023 val_loss=6.846915 mu=1.602436e-06 seconds=147.13
+2026-11-16 11:17:08,305 - INFO - Epoch 14/50 loss=6.622209 val_loss=6.848159 mu=1.572954e-06 seconds=143.19
+2026-11-16 11:19:38,622 - INFO - Epoch 15/50 loss=6.622081 val_loss=6.847768 mu=1.549083e-06 seconds=150.32
+2026-11-16 11:22:10,645 - INFO - Epoch 16/50 loss=6.621648 val_loss=6.858348 mu=1.504135e-06 seconds=152.02
+2026-11-16 11:24:41,648 - INFO - Epoch 17/50 loss=6.621213 val_loss=6.836329 mu=1.516044e-06 seconds=151.00 *
+2026-11-16 11:27:04,574 - INFO - Epoch 18/50 loss=6.621252 val_loss=6.838210 mu=1.512528e-06 seconds=142.93
+2026-11-16 11:29:33,259 - INFO - Epoch 19/50 loss=6.620817 val_loss=6.846757 mu=1.528784e-06 seconds=148.68
+2026-11-16 11:32:05,288 - INFO - Epoch 20/50 loss=6.620882 val_loss=6.860458 mu=1.541889e-06 seconds=152.03
+2026-11-16 11:34:36,225 - INFO - Epoch 21/50 loss=6.621067 val_loss=6.836787 mu=1.550759e-06 seconds=150.94
+2026-11-16 11:37:06,838 - INFO - Epoch 22/50 loss=6.620768 val_loss=6.828039 mu=1.559650e-06 seconds=150.61 *
+2026-11-16 11:39:35,941 - INFO - Epoch 23/50 loss=6.620802 val_loss=6.849264 mu=1.517670e-06 seconds=149.10
+2026-11-16 11:42:08,488 - INFO - Epoch 24/50 loss=6.620350 val_loss=6.857700 mu=1.367998e-06 seconds=152.55
+2026-11-16 11:44:39,137 - INFO - Epoch 25/50 loss=6.620310 val_loss=6.851974 mu=1.347090e-06 seconds=150.65
+2026-11-16 11:47:06,881 - INFO - Epoch 26/50 loss=6.619996 val_loss=6.842612 mu=1.392803e-06 seconds=147.74
+2026-11-16 11:49:40,851 - INFO - Epoch 27/50 loss=6.620038 val_loss=6.842952 mu=1.372851e-06 seconds=153.97
+2026-11-16 11:52:09,623 - INFO - Epoch 28/50 loss=6.620143 val_loss=6.845308 mu=1.338998e-06 seconds=148.77
+2026-11-16 11:54:36,902 - INFO - Epoch 29/50 loss=6.620482 val_loss=6.843590 mu=1.320375e-06 seconds=147.28
+2026-11-16 11:57:01,934 - INFO - Epoch 30/50 loss=6.619874 val_loss=6.837428 mu=1.288522e-06 seconds=145.03
+2026-11-16 11:59:34,033 - INFO - Epoch 31/50 loss=6.619786 val_loss=6.846332 mu=1.314965e-06 seconds=152.10
+2026-11-16 12:02:02,541 - INFO - Epoch 32/50 loss=6.619457 val_loss=6.845953 mu=1.366405e-06 seconds=148.51
+2026-11-16 12:04:33,211 - INFO - Epoch 33/50 loss=6.620127 val_loss=6.844964 mu=1.344978e-06 seconds=150.67
+2026-11-16 12:07:00,633 - INFO - Epoch 34/50 loss=6.619788 val_loss=6.840709 mu=1.325524e-06 seconds=147.42
+2026-11-16 12:09:17,584 - INFO - Epoch 35/50 loss=6.619734 val_loss=6.850369 mu=1.261395e-06 seconds=136.95
+2026-11-16 12:11:49,575 - INFO - Epoch 36/50 loss=6.619439 val_loss=6.846702 mu=1.223158e-06 seconds=151.99
+2026-11-16 12:14:20,149 - INFO - Epoch 37/50 loss=6.619521 val_loss=6.852957 mu=1.203080e-06 seconds=150.57
+2026-11-16 12:16:52,674 - INFO - Epoch 38/50 loss=6.619782 val_loss=6.841296 mu=1.235730e-06 seconds=152.52
+2026-11-16 12:19:25,871 - INFO - Epoch 39/50 loss=6.619427 val_loss=6.843817 mu=1.177840e-06 seconds=153.20
+2026-11-16 12:21:48,115 - INFO - Epoch 40/50 loss=6.619613 val_loss=6.853838 mu=1.119192e-06 seconds=142.24
+2026-11-16 12:24:14,407 - INFO - Epoch 41/50 loss=6.619217 val_loss=6.849807 mu=1.093356e-06 seconds=146.29
+2026-11-16 12:26:32,507 - INFO - Epoch 42/50 loss=6.619346 val_loss=6.843558 mu=1.116630e-06 seconds=138.10
+2026-11-16 12:26:32,507 - INFO - Validation early stopping at epoch 42. Best val epoch=22 val_loss=6.828039.
+2026-11-16 12:26:32,508 - INFO - Restored best-validation snapshot from epoch 22 (val_loss=6.828039).
+2026-11-16 12:26:46,517 - INFO - Weights saved to /hy-tmp/st-nkf-fcnn-h128-20261114/weights/stnkf_fcnn_SCEDC_20_H128_seed1_best.pt
+2026-11-16 12:26:46,555 - INFO - ===== DONE ST-NKF FCNN SCEDC_20 status=ok best_epoch=22 test LL_ts=-5.721413 total=-74761.71 n=13067 seconds=6221.8 =====
+2026-11-16 12:26:46,555 - INFO - ===== START ST-NKF FCNN WHITE =====
+2026-11-16 12:26:46,592 - INFO - Loaded WHITE official splits n_aux=2196 n_train=18548 n_val=13812 n_test=24080 history=128 area=4001.748376919784 device=cuda windows={'catalog_path': './Datasets/WHITE/WHITE_catalog_jitter.csv', 'shape_path': './Datasets/WHITE/WHITE_shape.npy', 'auxiliary_start': 13879.0, 'training_start': 14245.0, 'validation_start': 16071.0, 'testing_start': 17167.0, 'testing_end': 18628.0, 'global_m0': 0.6}
+2026-11-16 12:26:46,740 - INFO - Normalization scales max_time=26.0378 max_mag=5.13 max_dis=93.457 area=4001.75
+2026-11-16 12:26:46,741 - INFO - Initialized mu from mean event rate / area: 2.538043e-03
+2026-11-16 12:26:46,741 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-16 12:27:23,918 - INFO - Epoch 1/50 loss=6.713723 val_loss=5.412366 mu=1.843491e-03 seconds=37.17 *
+2026-11-16 12:28:01,741 - INFO - Epoch 2/50 loss=5.117533 val_loss=4.626970 mu=1.063384e-03 seconds=37.82 *
+2026-11-16 12:28:37,565 - INFO - Epoch 3/50 loss=4.802454 val_loss=4.524168 mu=7.275166e-04 seconds=35.82 *
+2026-11-16 12:29:14,743 - INFO - Epoch 4/50 loss=4.743736 val_loss=4.479103 mu=5.911898e-04 seconds=37.18 *
+2026-11-16 12:29:51,845 - INFO - Epoch 5/50 loss=4.675255 val_loss=4.417157 mu=5.509642e-04 seconds=37.10 *
+2026-11-16 12:30:29,324 - INFO - Epoch 6/50 loss=4.593148 val_loss=4.339686 mu=5.224748e-04 seconds=37.48 *
+2026-11-16 12:31:06,598 - INFO - Epoch 7/50 loss=4.530269 val_loss=4.295274 mu=5.060852e-04 seconds=37.27 *
+2026-11-16 12:31:44,972 - INFO - Epoch 8/50 loss=4.490807 val_loss=4.262257 mu=4.952807e-04 seconds=38.37 *
+2026-11-16 12:32:21,844 - INFO - Epoch 9/50 loss=4.443570 val_loss=4.202605 mu=4.468355e-04 seconds=36.87 *
+2026-11-16 12:32:58,637 - INFO - Epoch 10/50 loss=4.376024 val_loss=4.134139 mu=4.058362e-04 seconds=36.79 *
+2026-11-16 12:33:35,480 - INFO - Epoch 11/50 loss=4.316236 val_loss=4.094808 mu=3.847272e-04 seconds=36.84 *
+2026-11-16 12:34:12,752 - INFO - Epoch 12/50 loss=4.276133 val_loss=4.053466 mu=3.560969e-04 seconds=37.27 *
+2026-11-16 12:34:49,487 - INFO - Epoch 13/50 loss=4.249905 val_loss=4.031356 mu=3.325109e-04 seconds=36.73 *
+2026-11-16 12:35:26,771 - INFO - Epoch 14/50 loss=4.234016 val_loss=4.027901 mu=3.159629e-04 seconds=37.28 *
+2026-11-16 12:36:04,740 - INFO - Epoch 15/50 loss=4.224231 val_loss=4.016599 mu=3.075478e-04 seconds=37.97 *
+2026-11-16 12:36:43,394 - INFO - Epoch 16/50 loss=4.217155 val_loss=4.004775 mu=2.913611e-04 seconds=38.65 *
+2026-11-16 12:37:22,051 - INFO - Epoch 17/50 loss=4.212057 val_loss=4.000452 mu=2.772661e-04 seconds=38.66 *
+2026-11-16 12:37:59,612 - INFO - Epoch 18/50 loss=4.208382 val_loss=3.998333 mu=2.663726e-04 seconds=37.56 *
+2026-11-16 12:38:38,007 - INFO - Epoch 19/50 loss=4.205063 val_loss=3.998912 mu=2.670507e-04 seconds=38.39
+2026-11-16 12:39:11,776 - INFO - Epoch 20/50 loss=4.203142 val_loss=3.993316 mu=2.574295e-04 seconds=33.77 *
+2026-11-16 12:39:49,880 - INFO - Epoch 21/50 loss=4.201284 val_loss=3.998956 mu=2.658038e-04 seconds=38.10
+2026-11-16 12:40:28,099 - INFO - Epoch 22/50 loss=4.198866 val_loss=3.991191 mu=2.529004e-04 seconds=38.22 *
+2026-11-16 12:41:03,125 - INFO - Epoch 23/50 loss=4.198402 val_loss=3.989726 mu=2.479109e-04 seconds=35.03 *
+2026-11-16 12:41:40,459 - INFO - Epoch 24/50 loss=4.197869 val_loss=3.995790 mu=2.479934e-04 seconds=37.33
+2026-11-16 12:42:17,222 - INFO - Epoch 25/50 loss=4.195964 val_loss=3.988014 mu=2.458501e-04 seconds=36.76 *
+2026-11-16 12:42:54,997 - INFO - Epoch 26/50 loss=4.196400 val_loss=3.988858 mu=2.338011e-04 seconds=37.77
+2026-11-16 12:43:26,756 - INFO - Epoch 27/50 loss=4.194886 val_loss=3.989290 mu=2.273322e-04 seconds=31.76
+2026-11-16 12:44:01,162 - INFO - Epoch 28/50 loss=4.194104 val_loss=3.985846 mu=2.237750e-04 seconds=34.41 *
+2026-11-16 12:44:37,956 - INFO - Epoch 29/50 loss=4.193602 val_loss=3.990006 mu=2.200775e-04 seconds=36.79
+2026-11-16 12:45:15,724 - INFO - Epoch 30/50 loss=4.192747 val_loss=3.991896 mu=2.343749e-04 seconds=37.77
+2026-11-16 12:45:53,353 - INFO - Epoch 31/50 loss=4.193164 val_loss=3.996465 mu=2.377048e-04 seconds=37.63
+2026-11-16 12:46:30,238 - INFO - Epoch 32/50 loss=4.192640 val_loss=3.982811 mu=2.229475e-04 seconds=36.88 *
+2026-11-16 12:47:08,069 - INFO - Epoch 33/50 loss=4.191856 val_loss=3.985522 mu=2.251477e-04 seconds=37.83
+2026-11-16 12:47:46,420 - INFO - Epoch 34/50 loss=4.191896 val_loss=3.988002 mu=2.275218e-04 seconds=38.35
+2026-11-16 12:48:23,382 - INFO - Epoch 35/50 loss=4.191627 val_loss=3.985928 mu=2.291661e-04 seconds=36.96
+2026-11-16 12:49:01,206 - INFO - Epoch 36/50 loss=4.192129 val_loss=3.988601 mu=2.347905e-04 seconds=37.82
+2026-11-16 12:49:36,969 - INFO - Epoch 37/50 loss=4.192026 val_loss=3.986548 mu=2.342517e-04 seconds=35.76
+2026-11-16 12:50:12,613 - INFO - Epoch 38/50 loss=4.191264 val_loss=3.990428 mu=2.320947e-04 seconds=35.64
+2026-11-16 12:50:49,861 - INFO - Epoch 39/50 loss=4.191465 val_loss=3.983281 mu=2.250147e-04 seconds=37.25
+2026-11-16 12:51:26,779 - INFO - Epoch 40/50 loss=4.190143 val_loss=3.984552 mu=2.122054e-04 seconds=36.92
+2026-11-16 12:52:01,666 - INFO - Epoch 41/50 loss=4.190697 val_loss=3.995990 mu=2.104437e-04 seconds=34.89
+2026-11-16 12:52:39,059 - INFO - Epoch 42/50 loss=4.190407 val_loss=3.985326 mu=2.135195e-04 seconds=37.39
+2026-11-16 12:53:15,108 - INFO - Epoch 43/50 loss=4.190748 val_loss=3.987476 mu=2.172804e-04 seconds=36.05
+2026-11-16 12:53:52,974 - INFO - Epoch 44/50 loss=4.190204 val_loss=3.982516 mu=2.150696e-04 seconds=37.86 *
+2026-11-16 12:54:30,032 - INFO - Epoch 45/50 loss=4.190496 val_loss=3.987019 mu=2.135446e-04 seconds=37.06
+2026-11-16 12:55:07,287 - INFO - Epoch 46/50 loss=4.191178 val_loss=3.990250 mu=2.183888e-04 seconds=37.26
+2026-11-16 12:55:44,604 - INFO - Epoch 47/50 loss=4.189814 val_loss=3.982653 mu=2.141817e-04 seconds=37.32
+2026-11-16 12:56:22,549 - INFO - Epoch 48/50 loss=4.189788 val_loss=3.987546 mu=2.253312e-04 seconds=37.94
+2026-11-16 12:57:00,506 - INFO - Epoch 49/50 loss=4.190359 val_loss=3.995958 mu=2.313152e-04 seconds=37.96
+2026-11-16 12:57:38,565 - INFO - Epoch 50/50 loss=4.190131 val_loss=3.986944 mu=2.345049e-04 seconds=38.06
+2026-11-16 12:57:38,566 - INFO - Restored best-validation snapshot from epoch 44 (val_loss=3.982516).
+2026-11-16 12:57:52,850 - INFO - Weights saved to /hy-tmp/st-nkf-fcnn-h128-20261114/weights/stnkf_fcnn_WHITE_H128_seed1_best.pt
+2026-11-16 12:57:52,876 - INFO - ===== DONE ST-NKF FCNN WHITE status=ok best_epoch=44 test LL_ts=-2.756778 total=-66383.23 n=24080 seconds=1866.3 =====
+2026-11-16 12:57:52,876 - INFO - ===== START ST-NKF FCNN ComCat =====
+2026-11-16 12:57:52,937 - INFO - Loaded ComCat official splits n_aux=14933 n_train=40701 n_val=14741 n_test=21885 history=128 area=138223.32831313025 device=cuda windows={'catalog_path': './Datasets/ComCat/ComCat_catalog_jitter.csv', 'shape_path': './Datasets/ComCat/california_shape.npy', 'auxiliary_start': 365.0, 'training_start': 4018.0, 'validation_start': 10227.0, 'testing_start': 13514.0, 'testing_end': 18278.0, 'global_m0': 2.5}
+2026-11-16 12:57:53,158 - INFO - Normalization scales max_time=53.4015 max_mag=7.3 max_dis=1521.84 area=138223
+2026-11-16 12:57:53,159 - INFO - Initialized mu from mean event rate / area: 4.742437e-05
+2026-11-16 12:57:53,159 - INFO - Region set: 19 vertices, 128-angle polar quadrature, convex=False
+2026-11-16 12:59:17,025 - INFO - Epoch 1/50 loss=8.579135 val_loss=8.924188 mu=2.153667e-05 seconds=83.86 *
+2026-11-16 13:00:40,442 - INFO - Epoch 2/50 loss=7.778368 val_loss=8.310736 mu=1.818696e-05 seconds=83.42 *
+2026-11-16 13:02:02,660 - INFO - Epoch 3/50 loss=7.528782 val_loss=8.103955 mu=1.689999e-05 seconds=82.22 *
+2026-11-16 13:03:28,028 - INFO - Epoch 4/50 loss=7.449434 val_loss=8.055711 mu=1.656690e-05 seconds=85.37 *
+2026-11-16 13:04:49,710 - INFO - Epoch 5/50 loss=7.421785 val_loss=8.042997 mu=1.637226e-05 seconds=81.68 *
+2026-11-16 13:06:14,032 - INFO - Epoch 6/50 loss=7.408109 val_loss=8.025592 mu=1.629473e-05 seconds=84.32 *
+2026-11-16 13:07:38,544 - INFO - Epoch 7/50 loss=7.399152 val_loss=8.014034 mu=1.633430e-05 seconds=84.51 *
+2026-11-16 13:09:03,620 - INFO - Epoch 8/50 loss=7.391004 val_loss=8.011813 mu=1.600308e-05 seconds=85.07 *
+2026-11-16 13:10:24,462 - INFO - Epoch 9/50 loss=7.382350 val_loss=7.996690 mu=1.588918e-05 seconds=80.84 *
+2026-11-16 13:11:44,203 - INFO - Epoch 10/50 loss=7.374748 val_loss=7.994221 mu=1.576603e-05 seconds=79.74 *
+2026-11-16 13:13:05,204 - INFO - Epoch 11/50 loss=7.371117 val_loss=7.985940 mu=1.569293e-05 seconds=81.00 *
+2026-11-16 13:14:26,005 - INFO - Epoch 12/50 loss=7.368751 val_loss=7.986586 mu=1.574526e-05 seconds=80.80
+2026-11-16 13:15:49,726 - INFO - Epoch 13/50 loss=7.367857 val_loss=7.993623 mu=1.563067e-05 seconds=83.72
+2026-11-16 13:17:02,836 - INFO - Epoch 14/50 loss=7.366712 val_loss=7.979712 mu=1.571570e-05 seconds=73.11 *
+2026-11-16 13:18:24,462 - INFO - Epoch 15/50 loss=7.365927 val_loss=7.977067 mu=1.565864e-05 seconds=81.62 *
+2026-11-16 13:19:39,672 - INFO - Epoch 16/50 loss=7.365642 val_loss=7.981055 mu=1.561453e-05 seconds=75.21
+2026-11-16 13:21:01,548 - INFO - Epoch 17/50 loss=7.364732 val_loss=7.987293 mu=1.569928e-05 seconds=81.88
+2026-11-16 13:22:05,814 - INFO - Epoch 18/50 loss=7.364683 val_loss=7.980882 mu=1.551633e-05 seconds=64.27
+2026-11-16 13:23:24,688 - INFO - Epoch 19/50 loss=7.364030 val_loss=7.975764 mu=1.571062e-05 seconds=78.87 *
+2026-11-16 13:24:45,992 - INFO - Epoch 20/50 loss=7.363723 val_loss=7.992255 mu=1.562658e-05 seconds=81.30
+2026-11-16 13:26:10,124 - INFO - Epoch 21/50 loss=7.363574 val_loss=7.980419 mu=1.555093e-05 seconds=84.13
+2026-11-16 13:27:34,489 - INFO - Epoch 22/50 loss=7.363706 val_loss=7.996959 mu=1.543425e-05 seconds=84.37
+2026-11-16 13:28:56,428 - INFO - Epoch 23/50 loss=7.363758 val_loss=7.986765 mu=1.539645e-05 seconds=81.94
+2026-11-16 13:30:20,474 - INFO - Epoch 24/50 loss=7.363288 val_loss=7.995612 mu=1.531721e-05 seconds=84.05
+2026-11-16 13:31:46,826 - INFO - Epoch 25/50 loss=7.363095 val_loss=7.981441 mu=1.558948e-05 seconds=86.35
+2026-11-16 13:33:07,116 - INFO - Epoch 26/50 loss=7.363433 val_loss=7.984073 mu=1.550239e-05 seconds=80.29
+2026-11-16 13:34:13,858 - INFO - Epoch 27/50 loss=7.363042 val_loss=7.979656 mu=1.555231e-05 seconds=66.74
+2026-11-16 13:35:21,129 - INFO - Epoch 28/50 loss=7.363186 val_loss=7.985920 mu=1.546916e-05 seconds=67.27
+2026-11-16 13:36:43,467 - INFO - Epoch 29/50 loss=7.362652 val_loss=7.977041 mu=1.557821e-05 seconds=82.34
+2026-11-16 13:38:08,638 - INFO - Epoch 30/50 loss=7.363173 val_loss=7.975864 mu=1.568279e-05 seconds=85.17
+2026-11-16 13:39:33,517 - INFO - Epoch 31/50 loss=7.363280 val_loss=7.981681 mu=1.553644e-05 seconds=84.88
+2026-11-16 13:40:55,113 - INFO - Epoch 32/50 loss=7.362980 val_loss=7.991754 mu=1.534959e-05 seconds=81.60
+2026-11-16 13:42:17,704 - INFO - Epoch 33/50 loss=7.362851 val_loss=7.985014 mu=1.556822e-05 seconds=82.59
+2026-11-16 13:43:43,734 - INFO - Epoch 34/50 loss=7.362690 val_loss=7.982684 mu=1.563612e-05 seconds=86.03
+2026-11-16 13:44:50,460 - INFO - Epoch 35/50 loss=7.362482 val_loss=7.975204 mu=1.567480e-05 seconds=66.73 *
+2026-11-16 13:46:14,495 - INFO - Epoch 36/50 loss=7.362937 val_loss=7.981227 mu=1.561619e-05 seconds=84.03
+2026-11-16 13:47:32,256 - INFO - Epoch 37/50 loss=7.362762 val_loss=7.991343 mu=1.546891e-05 seconds=77.76
+2026-11-16 13:48:57,229 - INFO - Epoch 38/50 loss=7.362733 val_loss=7.981462 mu=1.560952e-05 seconds=84.97
+2026-11-16 13:50:06,500 - INFO - Epoch 39/50 loss=7.362620 val_loss=7.972370 mu=1.573692e-05 seconds=69.27 *
+2026-11-16 13:51:21,785 - INFO - Epoch 40/50 loss=7.362599 val_loss=7.976188 mu=1.565251e-05 seconds=75.28
+2026-11-16 13:52:47,172 - INFO - Epoch 41/50 loss=7.362293 val_loss=7.976997 mu=1.576904e-05 seconds=85.39
+2026-11-16 13:54:10,850 - INFO - Epoch 42/50 loss=7.362997 val_loss=7.979225 mu=1.563424e-05 seconds=83.68
+2026-11-16 13:55:37,491 - INFO - Epoch 43/50 loss=7.362708 val_loss=7.987650 mu=1.546253e-05 seconds=86.64
+2026-11-16 13:56:59,720 - INFO - Epoch 44/50 loss=7.362359 val_loss=7.985664 mu=1.548227e-05 seconds=82.23
+2026-11-16 13:58:25,679 - INFO - Epoch 45/50 loss=7.362256 val_loss=7.977313 mu=1.550342e-05 seconds=85.96
+2026-11-16 13:59:48,554 - INFO - Epoch 46/50 loss=7.362199 val_loss=7.985507 mu=1.544384e-05 seconds=82.87
+2026-11-16 14:01:06,224 - INFO - Epoch 47/50 loss=7.362261 val_loss=7.967605 mu=1.591653e-05 seconds=77.67 *
+2026-11-16 14:02:18,024 - INFO - Epoch 48/50 loss=7.362519 val_loss=7.971076 mu=1.582747e-05 seconds=71.80
+2026-11-16 14:03:42,863 - INFO - Epoch 49/50 loss=7.362395 val_loss=7.985556 mu=1.556659e-05 seconds=84.84
+2026-11-16 14:05:05,205 - INFO - Epoch 50/50 loss=7.361962 val_loss=7.984655 mu=1.554925e-05 seconds=82.34
+2026-11-16 14:05:05,206 - INFO - Restored best-validation snapshot from epoch 47 (val_loss=7.967605).
+2026-11-16 14:05:19,671 - INFO - Weights saved to /hy-tmp/st-nkf-fcnn-h128-20261114/weights/stnkf_fcnn_ComCat_H128_seed1_best.pt
+2026-11-16 14:05:19,725 - INFO - ===== DONE ST-NKF FCNN ComCat status=ok best_epoch=47 test LL_ts=-7.435534 total=-162726.67 n=21885 seconds=4046.7 =====
+2026-11-16 14:05:19,726 - INFO - ST-NKF FCNN H=128 finished outcome=completed results=/hy-tmp/st-nkf-fcnn-h128-20261114/stnkf-fcnn-h128-ll.json

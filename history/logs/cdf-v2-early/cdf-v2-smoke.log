@@ -1,0 +1,20 @@
+2026-11-11 16:06:00,849 Normalization scales max_time=36.4197 max_mag=3.02 max_dis=141.161 area=10310.1
+2026-11-11 16:06:02,513 Epoch 1/1 loss=2284.242514 val_loss=972.525981 mu=4.378207e-04
+CDF_SMOKE {"design": "fixed-history-cdf-mixture-v2", "seed": 1, "H": 128, "train_targets": 256, "val_targets": 128, "test_targets": 128, "batch": 8, "epochs": 1, "lr": 0.005, "LL_ts": -8.401613235473633, "LL_t": 0.8392642140388489, "LL_s": -9.240877151489258, "seconds": 1.7861344814300537, "max_time": 36.41971969604492, "max_mag": 3.0199999809265137, "max_dis": 141.1612091064453, "domain_note": "prefix of each prepared split input; not official val/test targets"}
+2026-11-11 16:06:02,668 Weights saved to /workspace/st-nkf-diagrams/cdf-v2-H128-1epoch.pt
+2026-11-11 16:06:02,674 Normalization scales max_time=36.4197 max_mag=3.02 max_dis=141.161 area=10310.1
+2026-11-11 16:06:03,560 Epoch 1/5 loss=2284.242514 val_loss=972.525981 mu=4.378207e-04
+2026-11-11 16:06:04,445 Epoch 2/5 loss=8.733701 val_loss=8.159491 mu=4.378206e-04
+2026-11-11 16:06:05,332 Epoch 3/5 loss=8.733701 val_loss=8.159491 mu=4.378206e-04
+2026-11-11 16:06:06,146 Epoch 4/5 loss=8.733701 val_loss=8.159491 mu=4.378206e-04
+2026-11-11 16:06:07,057 Epoch 5/5 loss=8.733701 val_loss=8.159491 mu=4.378206e-04
+CDF_SMOKE {"design": "fixed-history-cdf-mixture-v2", "seed": 1, "H": 128, "train_targets": 256, "val_targets": 128, "test_targets": 128, "batch": 8, "epochs": 5, "lr": 0.005, "LL_ts": -8.401613235473633, "LL_t": 0.8392642736434937, "LL_s": -9.240877151489258, "seconds": 4.497675895690918, "max_time": 36.41971969604492, "max_mag": 3.0199999809265137, "max_dis": 141.1612091064453, "domain_note": "prefix of each prepared split input; not official val/test targets"}
+2026-11-11 16:06:07,168 Weights saved to /workspace/st-nkf-diagrams/cdf-v2-H128-5epoch.pt
+2026-11-11 16:06:07,173 Normalization scales max_time=36.4197 max_mag=3.02 max_dis=141.161 area=10310.1
+2026-11-11 16:06:08,108 Epoch 1/5 loss=2285.793180 val_loss=973.091288 mu=4.376017e-04
+2026-11-11 16:06:09,072 Epoch 2/5 loss=8.440498 val_loss=5.935549 mu=1.981977e-04
+2026-11-11 16:06:09,962 Epoch 3/5 loss=7.879867 val_loss=5.380242 mu=1.094606e-04
+2026-11-11 16:06:10,865 Epoch 4/5 loss=7.624230 val_loss=5.103670 mu=7.415245e-05
+2026-11-11 16:06:11,792 Epoch 5/5 loss=7.514765 val_loss=4.958806 mu=6.316842e-05
+CDF_SMOKE {"design": "fixed-history-cdf-mixture-v2", "seed": 1, "H": 128, "train_targets": 256, "val_targets": 128, "test_targets": 128, "batch": 8, "epochs": 5, "lr": 0.0001, "LL_ts": -6.472455978393555, "LL_t": 0.8999048471450806, "LL_s": -7.372360706329346, "seconds": 4.75412654876709, "max_time": 36.41971969604492, "max_mag": 3.0199999809265137, "max_dis": 141.1612091064453, "domain_note": "prefix of each prepared split input; not official val/test targets"}
+2026-11-11 16:06:11,925 Weights saved to /workspace/st-nkf-diagrams/cdf-v2-H128-5epoch-lr1e-4.pt

@@ -1,0 +1,150 @@
+2026-11-11 19:56:17,382 - INFO - Loading official SanJac splits with H=128
+2026-11-11 19:56:17,397 - INFO - ===== START scheme1: Temporal + Spatial + Kappa Transformer flags={'temporal_backbone': 'transformer', 'spatial_backbone': 'transformer', 'kappa_backbone': 'transformer'} =====
+2026-11-11 19:56:17,532 - INFO - Normalization scales max_time=36.9942 max_mag=5.43 max_dis=138.569 area=10310.1
+2026-11-11 19:56:17,533 - INFO - Initialized mu from mean event rate / area: 6.251669e-04
+2026-11-11 19:56:17,534 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-11 19:56:17,534 - INFO - scheme1 mu0=6.251669e-04 max_time=36.9942 max_mag=5.43 max_dis=138.569 n_train=11770 n_val=3449 n_test=4400
+2026-11-11 19:57:21,781 - INFO - Epoch 1/20 loss=5.111348 val_loss=6.226282 mu=2.410429e-04
+2026-11-11 19:58:22,394 - INFO - Epoch 2/20 loss=4.716021 val_loss=5.762628 mu=1.460344e-04
+2026-11-11 19:59:26,677 - INFO - Epoch 3/20 loss=4.639010 val_loss=5.662202 mu=1.149901e-04
+2026-11-11 20:00:30,048 - INFO - Epoch 4/20 loss=4.620162 val_loss=5.653286 mu=9.403954e-05
+2026-11-11 20:01:33,806 - INFO - Epoch 5/20 loss=4.609394 val_loss=5.640941 mu=9.600881e-05
+2026-11-11 20:02:37,746 - INFO - Epoch 6/20 loss=4.608605 val_loss=5.642021 mu=8.780715e-05
+2026-11-11 20:03:42,016 - INFO - Epoch 7/20 loss=4.603083 val_loss=5.625766 mu=8.207102e-05
+2026-11-11 20:04:46,355 - INFO - Epoch 8/20 loss=4.598587 val_loss=5.624503 mu=7.947776e-05
+2026-11-11 20:05:53,689 - INFO - Epoch 9/20 loss=4.597379 val_loss=5.640133 mu=6.826448e-05
+2026-11-11 20:06:58,552 - INFO - Epoch 10/20 loss=4.594820 val_loss=5.628991 mu=6.500924e-05
+2026-11-11 20:08:06,153 - INFO - Epoch 11/20 loss=4.592202 val_loss=5.620705 mu=6.592762e-05
+2026-11-11 20:09:12,397 - INFO - Epoch 12/20 loss=4.589912 val_loss=5.628321 mu=6.271662e-05
+2026-11-11 20:10:16,999 - INFO - Epoch 13/20 loss=4.587853 val_loss=5.615469 mu=6.981024e-05
+2026-11-11 20:11:21,878 - INFO - Epoch 14/20 loss=4.587650 val_loss=5.613700 mu=7.056512e-05
+2026-11-11 20:12:25,688 - INFO - Epoch 15/20 loss=4.585132 val_loss=5.626308 mu=6.350409e-05
+2026-11-11 20:13:27,696 - INFO - Epoch 16/20 loss=4.584605 val_loss=5.636919 mu=5.922015e-05
+2026-11-11 20:14:28,420 - INFO - Epoch 17/20 loss=4.582910 val_loss=5.614896 mu=6.047550e-05
+2026-11-11 20:15:30,311 - INFO - Epoch 18/20 loss=4.579936 val_loss=5.633834 mu=5.511973e-05
+2026-11-11 20:16:32,235 - INFO - Epoch 19/20 loss=4.582093 val_loss=5.624716 mu=5.515055e-05
+2026-11-11 20:17:35,583 - INFO - Epoch 20/20 loss=4.579574 val_loss=5.618164 mu=5.726342e-05
+2026-11-11 20:17:47,990 - INFO - Weights saved to /workspace/st-nkf-diagrams/four-schemes-weights/scheme1_H128_seed1.pt
+2026-11-11 20:17:47,991 - INFO - ===== DONE scheme1 val LL_ts=-5.6184 test LL_ts=-4.6846 best_epoch=14 seconds=1290.6 =====
+2026-11-11 20:17:47,992 - INFO - ===== START scheme2: Temporal + Spatial Transformer, Kappa 5x32 FCNN flags={'temporal_backbone': 'transformer', 'spatial_backbone': 'transformer', 'kappa_backbone': 'fcnn'} =====
+2026-11-11 20:17:48,050 - INFO - Normalization scales max_time=36.9942 max_mag=5.43 max_dis=138.569 area=10310.1
+2026-11-11 20:17:48,050 - INFO - Initialized mu from mean event rate / area: 6.251669e-04
+2026-11-11 20:17:48,051 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-11 20:17:48,051 - INFO - scheme2 mu0=6.251669e-04 max_time=36.9942 max_mag=5.43 max_dis=138.569 n_train=11770 n_val=3449 n_test=4400
+2026-11-11 20:18:31,497 - INFO - Epoch 1/20 loss=5.153389 val_loss=6.242236 mu=2.421991e-04
+2026-11-11 20:19:15,802 - INFO - Epoch 2/20 loss=4.725649 val_loss=5.768072 mu=1.446103e-04
+2026-11-11 20:20:00,369 - INFO - Epoch 3/20 loss=4.640054 val_loss=5.659652 mu=1.138238e-04
+2026-11-11 20:20:47,760 - INFO - Epoch 4/20 loss=4.619571 val_loss=5.653907 mu=9.243462e-05
+2026-11-11 20:21:38,969 - INFO - Epoch 5/20 loss=4.610036 val_loss=5.636557 mu=9.211237e-05
+2026-11-11 20:22:25,728 - INFO - Epoch 6/20 loss=4.608934 val_loss=5.640523 mu=8.533589e-05
+2026-11-11 20:23:11,937 - INFO - Epoch 7/20 loss=4.604461 val_loss=5.625591 mu=8.075081e-05
+2026-11-11 20:23:59,280 - INFO - Epoch 8/20 loss=4.600667 val_loss=5.624355 mu=7.885116e-05
+2026-11-11 20:24:44,676 - INFO - Epoch 9/20 loss=4.599850 val_loss=5.640810 mu=6.907342e-05
+2026-11-11 20:25:28,901 - INFO - Epoch 10/20 loss=4.597880 val_loss=5.635684 mu=6.471517e-05
+2026-11-11 20:26:12,362 - INFO - Epoch 11/20 loss=4.595829 val_loss=5.623306 mu=6.613009e-05
+2026-11-11 20:26:55,595 - INFO - Epoch 12/20 loss=4.593977 val_loss=5.629484 mu=6.407716e-05
+2026-11-11 20:27:39,035 - INFO - Epoch 13/20 loss=4.592128 val_loss=5.615057 mu=6.981356e-05
+2026-11-11 20:28:22,360 - INFO - Epoch 14/20 loss=4.591779 val_loss=5.617328 mu=7.047237e-05
+2026-11-11 20:29:05,783 - INFO - Epoch 15/20 loss=4.589558 val_loss=5.629930 mu=6.430919e-05
+2026-11-11 20:29:49,634 - INFO - Epoch 16/20 loss=4.589369 val_loss=5.640516 mu=6.012348e-05
+2026-11-11 20:30:33,529 - INFO - Epoch 17/20 loss=4.587885 val_loss=5.617779 mu=6.191471e-05
+2026-11-11 20:31:17,893 - INFO - Epoch 18/20 loss=4.585164 val_loss=5.638734 mu=5.682624e-05
+2026-11-11 20:32:01,700 - INFO - Epoch 19/20 loss=4.587056 val_loss=5.625553 mu=5.769916e-05
+2026-11-11 20:32:44,875 - INFO - Epoch 20/20 loss=4.584247 val_loss=5.623031 mu=5.946291e-05
+2026-11-11 20:32:51,646 - INFO - Weights saved to /workspace/st-nkf-diagrams/four-schemes-weights/scheme2_H128_seed1.pt
+2026-11-11 20:32:51,646 - INFO - ===== DONE scheme2 val LL_ts=-5.6233 test LL_ts=-4.6903 best_epoch=13 seconds=903.7 =====
+2026-11-11 20:32:51,652 - INFO - ===== START scheme3: Temporal Transformer only; Spatial and Kappa FCNN flags={'temporal_backbone': 'transformer', 'spatial_backbone': 'fcnn', 'kappa_backbone': 'fcnn'} =====
+2026-11-11 20:32:51,702 - INFO - Normalization scales max_time=36.9942 max_mag=5.43 max_dis=138.569 area=10310.1
+2026-11-11 20:32:51,702 - INFO - Initialized mu from mean event rate / area: 6.251669e-04
+2026-11-11 20:32:51,703 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-11 20:32:51,703 - INFO - scheme3 mu0=6.251669e-04 max_time=36.9942 max_mag=5.43 max_dis=138.569 n_train=11770 n_val=3449 n_test=4400
+2026-11-11 20:36:53,785 - INFO - Epoch 1/20 loss=5.270045 val_loss=6.319935 mu=2.875587e-04
+2026-11-11 20:41:02,075 - INFO - Epoch 2/20 loss=4.983030 val_loss=6.008428 mu=2.446133e-04
+2026-11-11 20:45:08,083 - INFO - Epoch 3/20 loss=4.955971 val_loss=5.985798 mu=2.291041e-04
+2026-11-11 20:49:14,498 - INFO - Epoch 4/20 loss=4.938685 val_loss=5.981664 mu=2.206386e-04
+2026-11-11 20:53:21,590 - INFO - Epoch 5/20 loss=4.928423 val_loss=5.976027 mu=2.158936e-04
+2026-11-11 20:57:31,343 - INFO - Epoch 6/20 loss=4.925627 val_loss=5.974256 mu=2.159765e-04
+2026-11-11 21:01:49,047 - INFO - Epoch 7/20 loss=4.920194 val_loss=5.965486 mu=2.146231e-04
+2026-11-11 21:06:09,559 - INFO - Epoch 8/20 loss=4.913561 val_loss=5.963734 mu=2.144493e-04
+2026-11-11 21:10:20,886 - INFO - Epoch 9/20 loss=4.905535 val_loss=5.961756 mu=2.041614e-04
+2026-11-11 21:14:42,065 - INFO - Epoch 10/20 loss=4.890970 val_loss=5.951429 mu=1.954900e-04
+2026-11-11 21:19:03,292 - INFO - Epoch 11/20 loss=4.863324 val_loss=5.906550 mu=1.846798e-04
+2026-11-11 21:23:14,276 - INFO - Epoch 12/20 loss=4.812382 val_loss=5.853343 mu=1.649998e-04
+2026-11-11 22:34:29,306 - INFO - Epoch 13/20 loss=4.752598 val_loss=5.792412 mu=1.495551e-04
+2026-11-11 22:50:24,536 - INFO - Epoch 14/20 loss=4.719753 val_loss=5.765996 mu=1.368492e-04
+2026-11-11 22:55:02,360 - INFO - Epoch 15/20 loss=4.703070 val_loss=5.756281 mu=1.219286e-04
+2026-11-11 22:59:40,744 - INFO - Epoch 16/20 loss=4.693846 val_loss=5.745074 mu=1.131851e-04
+2026-11-11 23:04:22,096 - INFO - Epoch 17/20 loss=4.688732 val_loss=5.735478 mu=1.089772e-04
+2026-11-11 23:09:28,388 - INFO - Epoch 18/20 loss=4.684950 val_loss=5.747376 mu=1.000262e-04
+2026-11-11 23:14:07,538 - INFO - Epoch 19/20 loss=4.684412 val_loss=5.732319 mu=1.001699e-04
+2026-11-11 23:18:49,037 - INFO - Epoch 20/20 loss=4.681674 val_loss=5.727885 mu=1.031121e-04
+2026-11-11 23:19:35,393 - INFO - Weights saved to /workspace/st-nkf-diagrams/four-schemes-weights/scheme3_H128_seed1.pt
+2026-11-11 23:19:35,396 - INFO - ===== DONE scheme3 val LL_ts=-5.7282 test LL_ts=-4.7671 best_epoch=20 seconds=6218.3 =====
+2026-11-11 23:19:35,408 - INFO - ===== START scheme4: Same as scheme 2, Kappa deeper MLP (4x64 GELU) flags={'temporal_backbone': 'transformer', 'spatial_backbone': 'transformer', 'kappa_backbone': 'mlp'} =====
+2026-11-11 23:19:35,625 - INFO - Normalization scales max_time=36.9942 max_mag=5.43 max_dis=138.569 area=10310.1
+2026-11-11 23:19:35,625 - INFO - Initialized mu from mean event rate / area: 6.251669e-04
+2026-11-11 23:19:35,657 - INFO - Region set: 4 vertices, 128-angle polar quadrature, convex=True
+2026-11-11 23:19:35,657 - INFO - scheme4 mu0=6.251669e-04 max_time=36.9942 max_mag=5.43 max_dis=138.569 n_train=11770 n_val=3449 n_test=4400
+2026-11-11 23:20:28,267 - INFO - Epoch 1/20 loss=5.113550 val_loss=6.224812 mu=2.448269e-04
+2026-11-11 23:21:19,634 - INFO - Epoch 2/20 loss=4.720168 val_loss=5.760456 mu=1.506479e-04
+2026-11-11 23:22:10,682 - INFO - Epoch 3/20 loss=4.642992 val_loss=5.666555 mu=1.162940e-04
+2026-11-11 23:23:00,396 - INFO - Epoch 4/20 loss=4.621072 val_loss=5.654866 mu=9.564971e-05
+2026-11-11 23:23:49,602 - INFO - Epoch 5/20 loss=4.610431 val_loss=5.640726 mu=9.810797e-05
+2026-11-11 23:24:37,396 - INFO - Epoch 6/20 loss=4.608826 val_loss=5.645265 mu=9.039804e-05
+2026-11-11 23:25:27,050 - INFO - Epoch 7/20 loss=4.604402 val_loss=5.627339 mu=8.479414e-05
+2026-11-11 23:26:15,151 - INFO - Epoch 8/20 loss=4.599587 val_loss=5.626240 mu=8.140020e-05
+2026-11-11 23:27:00,531 - INFO - Epoch 9/20 loss=4.597850 val_loss=5.644955 mu=6.905690e-05
+2026-11-11 23:27:47,508 - INFO - Epoch 10/20 loss=4.595703 val_loss=5.627913 mu=6.609513e-05
+2026-11-11 23:28:33,067 - INFO - Epoch 11/20 loss=4.593818 val_loss=5.623628 mu=6.703178e-05
+2026-11-11 23:29:20,471 - INFO - Epoch 12/20 loss=4.591368 val_loss=5.631456 mu=6.339760e-05
+2026-11-11 23:30:13,228 - INFO - Epoch 13/20 loss=4.589596 val_loss=5.617360 mu=7.146073e-05
+2026-11-11 23:31:09,217 - INFO - Epoch 14/20 loss=4.589239 val_loss=5.616166 mu=7.189704e-05
+2026-11-11 23:32:00,611 - INFO - Epoch 15/20 loss=4.587002 val_loss=5.624616 mu=6.559612e-05
+2026-11-11 23:32:52,057 - INFO - Epoch 16/20 loss=4.586412 val_loss=5.635329 mu=6.212171e-05
+2026-11-11 23:33:42,363 - INFO - Epoch 17/20 loss=4.584647 val_loss=5.614637 mu=6.319675e-05
+2026-11-11 23:34:33,223 - INFO - Epoch 18/20 loss=4.582101 val_loss=5.626063 mu=5.836904e-05
+2026-11-11 23:35:22,459 - INFO - Epoch 19/20 loss=4.583264 val_loss=5.626040 mu=5.735778e-05
+2026-11-11 23:36:13,885 - INFO - Epoch 20/20 loss=4.581363 val_loss=5.617153 mu=6.001539e-05
+2026-11-11 23:36:22,045 - INFO - Weights saved to /workspace/st-nkf-diagrams/four-schemes-weights/scheme4_H128_seed1.pt
+2026-11-11 23:36:22,045 - INFO - ===== DONE scheme4 val LL_ts=-5.6175 test LL_ts=-4.6873 best_epoch=17 seconds=1006.6 =====
+2026-11-11 23:36:22,047 - INFO - ===== START baseline etas =====
+2026-11-11 23:36:22,104 - INFO - Normalization scales max_time=36.9942 max_mag=5.43 max_dis=138.569 area=10310.1
+2026-11-11 23:36:23,273 - INFO - Epoch 1/20 loss=1599.386845 val_loss=2181.721569 mu=5.374475e-04
+2026-11-11 23:36:24,426 - INFO - Epoch 2/20 loss=5.378693 val_loss=6.420449 mu=2.904367e-04
+2026-11-11 23:36:25,576 - INFO - Epoch 3/20 loss=5.133581 val_loss=6.054994 mu=2.323877e-04
+2026-11-11 23:36:26,736 - INFO - Epoch 4/20 loss=5.021358 val_loss=6.098608 mu=2.047919e-04
+2026-11-11 23:36:27,838 - INFO - Epoch 5/20 loss=5.156228 val_loss=6.302964 mu=2.253348e-04
+2026-11-11 23:36:28,930 - INFO - Epoch 6/20 loss=5.273581 val_loss=6.352060 mu=2.264391e-04
+2026-11-11 23:36:30,038 - INFO - Epoch 7/20 loss=5.345712 val_loss=6.335430 mu=2.139111e-04
+2026-11-11 23:36:31,144 - INFO - Epoch 8/20 loss=5.323567 val_loss=6.308967 mu=2.117469e-04
+2026-11-11 23:36:32,255 - INFO - Epoch 9/20 loss=5.280302 val_loss=6.252462 mu=1.924406e-04
+2026-11-11 23:36:33,363 - INFO - Epoch 10/20 loss=5.122795 val_loss=6.085796 mu=1.852945e-04
+2026-11-11 23:36:34,450 - INFO - Epoch 11/20 loss=5.226630 val_loss=6.362067 mu=1.932486e-04
+2026-11-11 23:36:34,460 - INFO - Early stopping at epoch 11. Restored weights from epoch 3 (val_loss=6.054994).
+2026-11-11 23:36:34,634 - INFO - Weights saved to /workspace/st-nkf-diagrams/four-schemes-weights/baseline_etas_H128_seed1.pt
+2026-11-11 23:36:34,634 - INFO - ===== DONE baseline etas test LL_ts=-5.0269 seconds=12.6 =====
+2026-11-11 23:36:34,635 - INFO - ===== START baseline fcnn =====
+2026-11-11 23:36:34,681 - INFO - Normalization scales max_time=36.9942 max_mag=5.43 max_dis=138.569 area=10310.1
+2026-11-11 23:36:41,009 - INFO - Epoch 1/20 loss=1599.268555 val_loss=2181.508153 mu=5.499110e-04
+2026-11-11 23:36:46,980 - INFO - Epoch 2/20 loss=5.200324 val_loss=6.294417 mu=2.420650e-04
+2026-11-11 23:36:53,085 - INFO - Epoch 3/20 loss=4.892684 val_loss=5.889614 mu=1.928167e-04
+2026-11-11 23:36:58,688 - INFO - Epoch 4/20 loss=4.859307 val_loss=5.872934 mu=1.630043e-04
+2026-11-11 23:37:04,141 - INFO - Epoch 5/20 loss=4.841921 val_loss=5.823969 mu=1.572749e-04
+2026-11-11 23:37:09,651 - INFO - Epoch 6/20 loss=4.841100 val_loss=5.813673 mu=1.285984e-04
+2026-11-11 23:37:15,056 - INFO - Epoch 7/20 loss=4.838774 val_loss=5.794533 mu=1.162235e-04
+2026-11-11 23:37:20,368 - INFO - Epoch 8/20 loss=4.822476 val_loss=5.792731 mu=1.331676e-04
+2026-11-11 23:37:26,028 - INFO - Epoch 9/20 loss=4.823552 val_loss=5.795450 mu=1.291207e-04
+2026-11-11 23:37:31,682 - INFO - Epoch 10/20 loss=4.819332 val_loss=5.823158 mu=1.187267e-04
+2026-11-11 23:37:37,425 - INFO - Epoch 11/20 loss=4.821252 val_loss=5.796778 mu=1.353402e-04
+2026-11-11 23:37:43,281 - INFO - Epoch 12/20 loss=4.821085 val_loss=5.795032 mu=1.426071e-04
+2026-11-11 23:37:49,063 - INFO - Epoch 13/20 loss=4.816281 val_loss=5.872390 mu=1.438583e-04
+2026-11-11 23:37:54,952 - INFO - Epoch 14/20 loss=4.817398 val_loss=5.873629 mu=1.323489e-04
+2026-11-11 23:38:00,725 - INFO - Epoch 15/20 loss=4.816901 val_loss=5.788858 mu=1.149239e-04
+2026-11-11 23:38:06,550 - INFO - Epoch 16/20 loss=4.814336 val_loss=5.811780 mu=1.130545e-04
+2026-11-11 23:38:12,295 - INFO - Epoch 17/20 loss=4.807790 val_loss=5.813775 mu=1.201416e-04
+2026-11-11 23:38:17,933 - INFO - Epoch 18/20 loss=4.810481 val_loss=5.877699 mu=1.241567e-04
+2026-11-11 23:38:23,411 - INFO - Epoch 19/20 loss=4.808834 val_loss=5.801071 mu=1.317672e-04
+2026-11-11 23:38:28,846 - INFO - Epoch 20/20 loss=4.810594 val_loss=5.898377 mu=1.527068e-04
+2026-11-11 23:38:29,828 - INFO - Weights saved to /workspace/st-nkf-diagrams/four-schemes-weights/baseline_fcnn_H128_seed1.pt
+2026-11-11 23:38:29,828 - INFO - ===== DONE baseline fcnn test LL_ts=-4.9348 seconds=115.2 =====
+2026-11-11 23:38:29,829 - INFO - All four schemes (and baselines if reached) finished. JSON at /workspace/st-nkf-diagrams/four-schemes-ll.json

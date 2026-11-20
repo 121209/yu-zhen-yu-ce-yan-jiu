@@ -1,0 +1,270 @@
+{
+  "protocol": {
+    "dataset": "SanJac",
+    "catalog": "NeuralKernelFunction SanJac_catalog_jitter.csv (no extra train-time jitter)",
+    "splits": "official config.py train/val/test windows",
+    "history": 128,
+    "batch_size": 16,
+    "epochs": 20,
+    "patience": 8,
+    "lr": 0.0001,
+    "seed": 1,
+    "boundary_angles": 128,
+    "mu_batch_size": 256,
+    "mu_init": "mean train event rate / area, then analytic epoch update",
+    "loss": "spatiotemporal NLL, same as upstream TensorFlow",
+    "evaluated_weights": "fit_eval snapshot (best-val if early-stopped, else last epoch)",
+    "started": "2026-11-11 19:56:17 Asia/Shanghai"
+  },
+  "schemes": {
+    "scheme1": {
+      "status": "ok",
+      "name": "Temporal + Spatial + Kappa Transformer",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "transformer"
+      },
+      "cli": "--temporal-backbone transformer --spatial-backbone transformer --kappa-backbone transformer --history 128 --lr 0.0001 --epochs 20 --batch-size 16 --patience 8 --boundary-angles 128",
+      "architecture": {
+        "temporal": "Omori-mixture Transformer CDF (d_model=32, 8 heads, 1 layer, FFN 128, GELU, dropout 0, pre-norm)",
+        "spatial": "ETAS-radial-mixture Transformer CDF (same encoder size)",
+        "kappa": "history Transformer, d_model=32, 1 layer, softplus per event"
+      },
+      "history": 128,
+      "batch_size": 16,
+      "lr": 0.0001,
+      "seed": 1,
+      "official_splits": true,
+      "n_train": 11770,
+      "n_val": 3449,
+      "n_test": 4400,
+      "best_epoch": 14,
+      "best_val_loss": 5.613699969294175,
+      "epochs_ran": 20,
+      "stopped_early": false,
+      "mu": 5.726341623812914e-05,
+      "mu0_rate_init": true,
+      "boundary_correction": true,
+      "boundary_angles": 128,
+      "val": {
+        "LL_ts": -5.618437767028809,
+        "LL_t": 0.7440209984779358,
+        "LL_s": -6.362459182739258,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.684628009796143,
+        "LL_t": 1.2478251457214355,
+        "LL_s": -5.932453632354736,
+        "n": 4400
+      },
+      "seconds": 1290.5929798599973,
+      "weights": "/workspace/st-nkf-diagrams/four-schemes-weights/scheme1_H128_seed1.pt",
+      "rss_mb": 2668.51171875,
+      "finished": "2026-11-11 20:17:47 Asia/Shanghai"
+    },
+    "scheme2": {
+      "status": "ok",
+      "name": "Temporal + Spatial Transformer, Kappa 5x32 FCNN",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "fcnn"
+      },
+      "cli": "--temporal-backbone transformer --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 20 --batch-size 16 --patience 8 --boundary-angles 128",
+      "architecture": {
+        "temporal": "Omori-mixture Transformer CDF (d_model=32, 8 heads, 1 layer, FFN 128, GELU, dropout 0, pre-norm)",
+        "spatial": "ETAS-radial-mixture Transformer CDF (same encoder size)",
+        "kappa": "KappaNetwork 5x32, bias, softplus, NonNeg (paper)"
+      },
+      "history": 128,
+      "batch_size": 16,
+      "lr": 0.0001,
+      "seed": 1,
+      "official_splits": true,
+      "n_train": 11770,
+      "n_val": 3449,
+      "n_test": 4400,
+      "best_epoch": 13,
+      "best_val_loss": 5.6150565891205035,
+      "epochs_ran": 20,
+      "stopped_early": false,
+      "mu": 5.946290912106633e-05,
+      "mu0_rate_init": true,
+      "boundary_correction": true,
+      "boundary_angles": 128,
+      "val": {
+        "LL_ts": -5.62326717376709,
+        "LL_t": 0.7328476309776306,
+        "LL_s": -6.356114387512207,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.690300464630127,
+        "LL_t": 1.2314682006835938,
+        "LL_s": -5.921768665313721,
+        "n": 4400
+      },
+      "seconds": 903.6543493599966,
+      "weights": "/workspace/st-nkf-diagrams/four-schemes-weights/scheme2_H128_seed1.pt",
+      "rss_mb": 2668.51171875,
+      "finished": "2026-11-11 20:32:51 Asia/Shanghai"
+    },
+    "scheme3": {
+      "status": "ok",
+      "name": "Temporal Transformer only; Spatial and Kappa FCNN",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "fcnn",
+        "kappa_backbone": "fcnn"
+      },
+      "cli": "--temporal-backbone transformer --spatial-backbone fcnn --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 20 --batch-size 16 --patience 8 --boundary-angles 128",
+      "architecture": {
+        "temporal": "Omori-mixture Transformer CDF (d_model=32, 8 heads, 1 layer, FFN 128, GELU, dropout 0, pre-norm)",
+        "spatial": "FCNN 5x32 nonnegative tanh CDF (paper)",
+        "kappa": "KappaNetwork 5x32, bias, softplus, NonNeg (paper)"
+      },
+      "history": 128,
+      "batch_size": 16,
+      "lr": 0.0001,
+      "seed": 1,
+      "official_splits": true,
+      "n_train": 11770,
+      "n_val": 3449,
+      "n_test": 4400,
+      "best_epoch": 20,
+      "best_val_loss": 5.727884579617308,
+      "epochs_ran": 20,
+      "stopped_early": false,
+      "mu": 0.00010311206278856844,
+      "mu0_rate_init": true,
+      "boundary_correction": true,
+      "boundary_angles": 128,
+      "val": {
+        "LL_ts": -5.728219509124756,
+        "LL_t": 0.8750444650650024,
+        "LL_s": -6.603264331817627,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.7670769691467285,
+        "LL_t": 1.374653935432434,
+        "LL_s": -6.141731262207031,
+        "n": 4400
+      },
+      "seconds": 6218.316093517002,
+      "weights": "/workspace/st-nkf-diagrams/four-schemes-weights/scheme3_H128_seed1.pt",
+      "rss_mb": 7333.6171875,
+      "finished": "2026-11-11 23:19:35 Asia/Shanghai"
+    },
+    "scheme4": {
+      "status": "ok",
+      "name": "Same as scheme 2, Kappa deeper MLP (4x64 GELU)",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "mlp"
+      },
+      "cli": "--temporal-backbone transformer --spatial-backbone transformer --kappa-backbone mlp --history 128 --lr 0.0001 --epochs 20 --batch-size 16 --patience 8 --boundary-angles 128",
+      "architecture": {
+        "temporal": "Omori-mixture Transformer CDF (d_model=32, 8 heads, 1 layer, FFN 128, GELU, dropout 0, pre-norm)",
+        "spatial": "ETAS-radial-mixture Transformer CDF (same encoder size)",
+        "kappa": "unconstrained GELU MLP, 4 hidden layers x 64, softplus out"
+      },
+      "history": 128,
+      "batch_size": 16,
+      "lr": 0.0001,
+      "seed": 1,
+      "official_splits": true,
+      "n_train": 11770,
+      "n_val": 3449,
+      "n_test": 4400,
+      "best_epoch": 17,
+      "best_val_loss": 5.614637418427859,
+      "epochs_ran": 20,
+      "stopped_early": false,
+      "mu": 6.0015390772605315e-05,
+      "mu0_rate_init": true,
+      "boundary_correction": true,
+      "boundary_angles": 128,
+      "val": {
+        "LL_ts": -5.617464065551758,
+        "LL_t": 0.7372980117797852,
+        "LL_s": -6.354762077331543,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.687252521514893,
+        "LL_t": 1.2383382320404053,
+        "LL_s": -5.925590515136719,
+        "n": 4400
+      },
+      "seconds": 1006.6373403589969,
+      "weights": "/workspace/st-nkf-diagrams/four-schemes-weights/scheme4_H128_seed1.pt",
+      "rss_mb": 7333.6171875,
+      "finished": "2026-11-11 23:36:22 Asia/Shanghai"
+    }
+  },
+  "updated": "2026-11-11 23:38:29 Asia/Shanghai",
+  "baselines": {
+    "etas": {
+      "status": "ok",
+      "name": "ETAS (empirical kernels)",
+      "lr": 0.005,
+      "seed": 1,
+      "history": 128,
+      "official_splits": true,
+      "upgrades_applied": false,
+      "best_epoch": 3,
+      "stopped_early": true,
+      "epochs_ran": 11,
+      "best_val_loss": 6.0549943635829395,
+      "mu": 0.0002323877124581486,
+      "val": {
+        "LL_ts": -6.03032112121582,
+        "LL_t": 0.619215190410614,
+        "LL_s": -6.6495361328125,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -5.026916980743408,
+        "LL_t": 1.1031792163848877,
+        "LL_s": -6.130096435546875,
+        "n": 4400
+      },
+      "seconds": 12.584692639000423,
+      "weights": "/workspace/st-nkf-diagrams/four-schemes-weights/baseline_etas_H128_seed1.pt",
+      "finished": "2026-11-11 23:36:34 Asia/Shanghai"
+    },
+    "fcnn": {
+      "status": "ok",
+      "name": "ST-NKF FCNN 5x32 (paper path, H=128)",
+      "lr": 0.005,
+      "seed": 1,
+      "history": 128,
+      "official_splits": true,
+      "upgrades_applied": false,
+      "best_epoch": 15,
+      "stopped_early": false,
+      "epochs_ran": 20,
+      "best_val_loss": 5.78885799962633,
+      "mu": 0.00015270682342816144,
+      "val": {
+        "LL_ts": -5.896383762359619,
+        "LL_t": 0.6481356620788574,
+        "LL_s": -6.544519424438477,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.93479585647583,
+        "LL_t": 1.1149322986602783,
+        "LL_s": -6.049727916717529,
+        "n": 4400
+      },
+      "seconds": 115.19327913699817,
+      "weights": "/workspace/st-nkf-diagrams/four-schemes-weights/baseline_fcnn_H128_seed1.pt",
+      "finished": "2026-11-11 23:38:29 Asia/Shanghai"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "protocol": {
+    "dataset": "ComCat",
+    "catalog": "Datasets/ComCat/ComCat_catalog_jitter.csv",
+    "splits": "aux 1971-01-01, train 1981-01-01, val 1998-01-01, test 2007-01-01–2020-01-17, m0=2.5",
+    "counts": {
+      "auxiliary_num": 14933,
+      "training_num": 40701,
+      "validation_num": 14741,
+      "testing_num": 21885,
+      "area": 138223.32831313025,
+      "global_m0": 2.5,
+      "catalog": "Datasets/ComCat/ComCat_catalog_jitter.csv",
+      "windows": "aux 1971-01-01, train 1981-01-01, val 1998-01-01, test 2007-01-01–2020-01-17, m0=2.5",
+      "history": 128
+    },
+    "history": 128,
+    "batch_size": 16,
+    "epochs": 50,
+    "patience": 0,
+    "lr": 0.0001,
+    "seed": 1,
+    "boundary_angles": 128,
+    "mu_init": "mean train event rate / area, then analytic epoch update",
+    "evaluated_weights": "best-validation snapshot, always restored",
+    "run_order": [
+      "scheme2",
+      "scheme1",
+      "scheme4",
+      "scheme3"
+    ],
+    "device": "NVIDIA GeForce RTX 4090",
+    "torch": "2.5.1+cu124",
+    "cuda": "12.4",
+    "started": "2026-11-13 21:56:36 Asia/Shanghai",
+    "finished": "2026-11-13 21:56:37 Asia/Shanghai",
+    "elapsed_seconds": 32074.14784298092
+  },
+  "schemes": {
+    "scheme2": {
+      "status": "failed",
+      "name": "Temporal + Spatial Transformer, Kappa 5x32 FCNN",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "fcnn"
+      },
+      "error": "ValueError('Boundary-mass quadrature assumes a convex study region (SanJac is a projected rectangle).')",
+      "finished": "2026-11-13 21:56:36 Asia/Shanghai"
+    },
+    "scheme1": {
+      "status": "failed",
+      "name": "Temporal + Spatial + Kappa Transformer",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "transformer"
+      },
+      "error": "ValueError('Boundary-mass quadrature assumes a convex study region (SanJac is a projected rectangle).')",
+      "finished": "2026-11-13 21:56:36 Asia/Shanghai"
+    },
+    "scheme4": {
+      "status": "failed",
+      "name": "Same as scheme 2, Kappa deeper MLP (4x64 GELU)",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "mlp"
+      },
+      "error": "ValueError('Boundary-mass quadrature assumes a convex study region (SanJac is a projected rectangle).')",
+      "finished": "2026-11-13 21:56:37 Asia/Shanghai"
+    },
+    "scheme3": {
+      "status": "failed",
+      "name": "Temporal Transformer only; Spatial and Kappa FCNN",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "fcnn",
+        "kappa_backbone": "fcnn"
+      },
+      "error": "ValueError('Boundary-mass quadrature assumes a convex study region (SanJac is a projected rectangle).')",
+      "finished": "2026-11-13 21:56:37 Asia/Shanghai"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+test_all_six_notebooks_export_expected_figures (test_plot_notebooks.PlotNotebookTests.test_all_six_notebooks_export_expected_figures) ... ok
+test_committed_notebooks_have_no_outputs (test_plot_notebooks.PlotNotebookTests.test_committed_notebooks_have_no_outputs) ... ok
+test_comparison_uses_latest_distinct_seed_and_sample_sd (test_plot_notebooks.PlotNotebookTests.test_comparison_uses_latest_distinct_seed_and_sample_sd) ... ok
+test_csv_notebooks_reject_misaligned_events (test_plot_notebooks.PlotNotebookTests.test_csv_notebooks_reject_misaligned_events) ... ok
+test_missing_arrays_explain_how_to_generate_them (test_plot_notebooks.PlotNotebookTests.test_missing_arrays_explain_how_to_generate_them) ... ok
+test_temporal_year_axis_and_colorbar_do_not_overlap (test_plot_notebooks.PlotNotebookTests.test_temporal_year_axis_and_colorbar_do_not_overlap) ... ok
+test_batch_dry_run_order (test_port.CatalogTests.test_batch_dry_run_order) ... ok
+test_cli_order_is_kappa_temporal_spatial (test_port.CatalogTests.test_cli_order_is_kappa_temporal_spatial) ... ok
+test_sanjac_split_matches_readme_window (test_port.CatalogTests.test_sanjac_split_matches_readme_window) ... ok
+test_shared_seed_matches_and_nonnegative (test_port.KernelInitTests.test_shared_seed_matches_and_nonnegative) ... ok
+test_depth (test_port.NetworkShapeTests.test_depth) ... ok
+test_autograd_pdf_matches_closed_form (test_port.OmoriDerivativeTests.test_autograd_pdf_matches_closed_form) ... ok
+test_sorted_curves_drop_last_row (test_port.PatternDumpTests.test_sorted_curves_drop_last_row) ... ok
+test_matches_list_windows (test_port.ProcessDataTests.test_matches_list_windows) ... ok
+test_empirical_step_has_kernel_grad_and_mu_is_closed_form (test_port.SyntheticTrainTests.test_empirical_step_has_kernel_grad_and_mu_is_closed_form) ... ok
+test_neural_loss_finite (test_port.SyntheticTrainTests.test_neural_loss_finite) ... ok
+test_context_independent_of_query_time_and_position (test_transformer_smoke.NormalizedCDFTests.test_context_independent_of_query_time_and_position) ... ok
+test_finite_difference_matches_true_autograd_for_both_cdfs (test_transformer_smoke.NormalizedCDFTests.test_finite_difference_matches_true_autograd_for_both_cdfs) ... ok
+test_model_compensator_same_history_parameters_and_numeric_integral (test_transformer_smoke.NormalizedCDFTests.test_model_compensator_same_history_parameters_and_numeric_integral) ... ok
+test_monotonicity_origin_and_unit_asymptote (test_transformer_smoke.NormalizedCDFTests.test_monotonicity_origin_and_unit_asymptote) ... ok
+test_negative_domain_rejected (test_transformer_smoke.NormalizedCDFTests.test_negative_domain_rejected) ... ok
+test_numerical_pdf_integral_matches_cdf_difference_with_scale (test_transformer_smoke.NormalizedCDFTests.test_numerical_pdf_integral_matches_cdf_difference_with_scale) ... ok
+test_spatial_plane_mass_with_exact_radial_jacobian (test_transformer_smoke.NormalizedCDFTests.test_spatial_plane_mass_with_exact_radial_jacobian) ... ok
+test_spatial_zero_radius_limit_finite_and_backward (test_transformer_smoke.NormalizedCDFTests.test_spatial_zero_radius_limit_finite_and_backward) ... ok
+test_cli_backbone_flag_defaults_to_fcnn (test_transformer_smoke.TransformerBackboneModelTests.test_cli_backbone_flag_defaults_to_fcnn) ... ok
+test_default_backbone_is_fcnn (test_transformer_smoke.TransformerBackboneModelTests.test_default_backbone_is_fcnn) ... ok
+test_kappa_is_still_fcnn_when_backbone_transformer (test_transformer_smoke.TransformerBackboneModelTests.test_kappa_is_still_fcnn_when_backbone_transformer) ... ok
+test_model_forward_backward_finite_loss (test_transformer_smoke.TransformerBackboneModelTests.test_model_forward_backward_finite_loss) ... ok
+test_forward_backward_small_window (test_transformer_smoke.TransformerKernelTests.test_forward_backward_small_window) ... ok
+test_pdf_nonnegative_on_positive_inputs (test_transformer_smoke.TransformerKernelTests.test_pdf_nonnegative_on_positive_inputs) ... ok
+test_project_does_not_clamp_attention_weights (test_transformer_smoke.TransformerKernelTests.test_project_does_not_clamp_attention_weights) ... ok
+test_spatial_same_io_and_finite_pdf (test_transformer_smoke.TransformerKernelTests.test_spatial_same_io_and_finite_pdf) ... ok
+test_zero_input_gives_zero_cdf (test_transformer_smoke.TransformerKernelTests.test_zero_input_gives_zero_cdf) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 5.175s
+
+OK
+采用每个目录 / 模型 / seed 的最后一次记录，忽略 1 条较早记录。
+采用每个目录 / 模型 / seed 的最后一次记录，忽略 1 条较早记录。
+CDF_FD TemporalKernelTransformer: max_abs=1.098e-08
+CDF_FD TemporalKernelTransformer: max_abs=4.283e-11
+CDF_FD SpatialKernelTransformer: max_abs=2.310e-10
+CDF_FD SpatialKernelTransformer: max_abs=5.791e-11
+COMPENSATOR max_abs=2.388e-08 analytic=1.413664434 numeric=1.413664458
+CDF_LIMIT TemporalKernelTransformer: max_error=1.110e-16
+CDF_LIMIT SpatialKernelTransformer: max_error=1.110e-16
+CDF_INTEGRAL TemporalKernelTransformer: max_abs=1.612e-08
+CDF_INTEGRAL SpatialKernelTransformer: max_abs=2.956e-09
+SPATIAL_PLANE mass=[0.9999977721166946, 0.9999979907517186, 0.9999990376066854] max_error=2.228e-06

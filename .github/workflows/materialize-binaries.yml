@@ -1,43 +1,24 @@
 name: materialize-archive
 
-# The archive is pushed through a text-only GitHub MCP path. Official files
-# may first arrive as payloads/parts/*.b64 (a split tar.gz) plus *.pt.b64 /
-# *.npy.b64 siblings. This workflow unpacks them onto main so a later clone
-# has the complete tree and real .pt / .npy files.
-# eval_ll_decomposition.py also unpacks and restores locally if needed.
+# DISABLED 2026-11-20.
+# payloads/ is the 2026-11-19 text snapshot. Unpacking it and committing the
+# result overwrites the final README, aligned ETAS logs, and the 42/42
+# decomposition. This file no longer triggers on push and does not unpack.
+# Do not re-enable the push trigger or call scripts/unpack_archive.py against
+# this tree.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "payloads/**"
-      - "scripts/unpack_archive.py"
-      - "scripts/restore_binaries.py"
-      - ".github/workflows/materialize-binaries.yml"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   materialize:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Unpack text-safe payload tarball if present
-        run: python3 scripts/unpack_archive.py --root .
-      - name: Restore official .pt and .npy binaries
-        run: python3 scripts/restore_binaries.py --root .
-      - name: Commit materialized archive tree
+      - name: Refuse stale payload materialize
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "tree already materialized"
-            exit 0
-          fi
-          git commit -m "Materialize the official aftershock-forecast archive tree from text-safe payloads."
-          git push
+          echo "Refusing to unpack the 2026-11-19 payloads over the finalized archive."
+          exit 1

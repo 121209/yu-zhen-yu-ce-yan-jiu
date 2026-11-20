@@ -1,0 +1,76 @@
+2026-11-14 09:41:00,087 - INFO - Six-dataset GPU training start device=cuda name=NVIDIA GeForce RTX 4090 torch=2.5.1+cu124 cuda=12.4 out=/hy-tmp/st-nkf-comcat-20261114 budget=2.90h datasets=ComCat schemes=scheme2,scheme1,scheme4,scheme3
+2026-11-14 09:41:00,088 - INFO - ===== DATASET ComCat =====
+2026-11-14 09:41:00,157 - INFO - ComCat aux=14933 train=40701 val=14741 test=21885 m0=2.5 area=138223.3283
+2026-11-14 09:41:00,158 - INFO - ===== START scheme2: Temporal + Spatial Transformer, Kappa 5x32 FCNN on cuda =====
+2026-11-14 09:41:02,346 - INFO - Normalization scales max_time=53.4015 max_mag=7.3 max_dis=1521.84 area=138223
+2026-11-14 09:41:02,346 - INFO - Initialized mu from mean event rate / area: 4.742437e-05
+2026-11-14 09:41:02,348 - INFO - Region set: 19 vertices, 128-angle polar quadrature, convex=False
+2026-11-14 09:41:02,480 - INFO - scheme2 mu0=4.742437e-05 max_time=53.4015 max_mag=7.3 max_dis=1521.84 n_train=40701 n_val=14741 n_test=21885
+2026-11-14 09:42:19,641 - INFO - scheme2 Epoch 1/50 loss=7.595529 val_loss=8.398263 mu=1.831749e-05 seconds=76.37 *
+2026-11-14 09:43:36,303 - INFO - scheme2 Epoch 2/50 loss=7.245489 val_loss=7.869099 mu=1.602149e-05 seconds=76.65 *
+2026-11-14 09:44:50,073 - INFO - scheme2 Epoch 3/50 loss=7.209664 val_loss=7.840281 mu=1.572521e-05 seconds=73.75 *
+2026-11-14 09:46:10,043 - INFO - scheme2 Epoch 4/50 loss=7.202677 val_loss=7.832679 mu=1.556905e-05 seconds=79.95 *
+2026-11-14 09:47:22,805 - INFO - scheme2 Epoch 5/50 loss=7.197969 val_loss=7.840067 mu=1.553468e-05 seconds=72.75
+2026-11-14 09:48:41,853 - INFO - scheme2 Epoch 6/50 loss=7.193464 val_loss=7.831435 mu=1.515875e-05 seconds=79.03 *
+2026-11-14 09:49:51,480 - INFO - scheme2 Epoch 7/50 loss=7.189660 val_loss=7.823563 mu=1.532540e-05 seconds=69.61 *
+2026-11-14 09:51:04,949 - INFO - scheme2 Epoch 8/50 loss=7.186841 val_loss=7.831648 mu=1.523709e-05 seconds=73.46
+2026-11-14 09:52:18,060 - INFO - scheme2 Epoch 9/50 loss=7.186501 val_loss=7.826868 mu=1.572549e-05 seconds=73.10
+2026-11-14 09:53:29,829 - INFO - scheme2 Epoch 10/50 loss=7.183350 val_loss=7.824433 mu=1.548845e-05 seconds=71.76
+2026-11-14 09:54:39,997 - INFO - scheme2 Epoch 11/50 loss=7.181145 val_loss=7.821909 mu=1.544853e-05 seconds=70.15 *
+2026-11-14 09:55:49,337 - INFO - scheme2 Epoch 12/50 loss=7.179434 val_loss=7.822510 mu=1.550510e-05 seconds=69.33
+2026-11-14 09:56:59,095 - INFO - scheme2 Epoch 13/50 loss=7.178511 val_loss=7.823569 mu=1.537105e-05 seconds=69.75
+2026-11-14 09:58:16,763 - INFO - scheme2 Epoch 14/50 loss=7.177215 val_loss=7.810723 mu=1.551864e-05 seconds=77.65 *
+2026-11-14 09:59:30,951 - INFO - scheme2 Epoch 15/50 loss=7.175671 val_loss=7.829794 mu=1.522176e-05 seconds=74.18
+2026-11-14 10:00:39,892 - INFO - scheme2 Epoch 16/50 loss=7.173803 val_loss=7.817535 mu=1.529288e-05 seconds=68.93
+2026-11-14 10:01:47,958 - INFO - scheme2 Epoch 17/50 loss=7.171741 val_loss=7.810368 mu=1.549330e-05 seconds=68.05 *
+2026-11-14 10:02:53,575 - INFO - scheme2 Epoch 18/50 loss=7.170294 val_loss=7.822250 mu=1.504067e-05 seconds=65.60
+2026-11-14 10:04:02,717 - INFO - scheme2 Epoch 19/50 loss=7.169545 val_loss=7.809759 mu=1.558500e-05 seconds=69.13 *
+2026-11-14 10:05:17,908 - INFO - scheme2 Epoch 20/50 loss=7.168861 val_loss=7.813543 mu=1.533630e-05 seconds=75.18
+2026-11-14 10:06:30,833 - INFO - scheme2 Epoch 21/50 loss=7.166158 val_loss=7.818091 mu=1.526910e-05 seconds=72.91
+2026-11-14 10:07:47,783 - INFO - scheme2 Epoch 22/50 loss=7.165039 val_loss=7.824350 mu=1.509887e-05 seconds=76.94
+2026-11-14 10:08:59,287 - INFO - scheme2 Epoch 23/50 loss=7.164917 val_loss=7.811614 mu=1.507402e-05 seconds=71.49
+2026-11-14 10:10:12,676 - INFO - scheme2 Epoch 24/50 loss=7.163878 val_loss=7.816569 mu=1.508998e-05 seconds=73.38
+2026-11-14 10:11:26,800 - INFO - scheme2 Epoch 25/50 loss=7.163080 val_loss=7.809609 mu=1.516290e-05 seconds=74.11 *
+2026-11-14 10:12:42,493 - INFO - scheme2 Epoch 26/50 loss=7.162597 val_loss=7.807989 mu=1.529880e-05 seconds=75.68 *
+2026-11-14 10:13:52,565 - INFO - scheme2 Epoch 27/50 loss=7.160520 val_loss=7.808851 mu=1.526914e-05 seconds=70.06
+2026-11-14 10:15:06,239 - INFO - scheme2 Epoch 28/50 loss=7.160833 val_loss=7.816310 mu=1.518380e-05 seconds=73.66
+2026-11-14 10:16:12,883 - INFO - scheme2 Epoch 29/50 loss=7.159412 val_loss=7.807201 mu=1.541210e-05 seconds=66.63 *
+2026-11-14 10:17:22,801 - INFO - scheme2 Epoch 30/50 loss=7.159406 val_loss=7.801054 mu=1.546244e-05 seconds=69.90 *
+2026-11-14 10:18:34,225 - INFO - scheme2 Epoch 31/50 loss=7.158619 val_loss=7.809356 mu=1.536603e-05 seconds=71.41
+2026-11-14 10:19:50,228 - INFO - scheme2 Epoch 32/50 loss=7.158213 val_loss=7.812451 mu=1.506448e-05 seconds=75.99
+2026-11-14 10:21:07,495 - INFO - scheme2 Epoch 33/50 loss=7.157036 val_loss=7.806085 mu=1.526757e-05 seconds=77.25
+2026-11-14 10:22:17,245 - INFO - scheme2 Epoch 34/50 loss=7.156208 val_loss=7.803014 mu=1.532490e-05 seconds=69.74
+2026-11-14 10:23:28,450 - INFO - scheme2 Epoch 35/50 loss=7.155096 val_loss=7.820786 mu=1.521180e-05 seconds=71.19
+2026-11-14 10:24:36,787 - INFO - scheme2 Epoch 36/50 loss=7.155859 val_loss=7.816300 mu=1.513101e-05 seconds=68.32
+2026-11-14 10:25:47,199 - INFO - scheme2 Epoch 37/50 loss=7.154991 val_loss=7.802270 mu=1.520450e-05 seconds=70.40
+2026-11-14 10:26:58,766 - INFO - scheme2 Epoch 38/50 loss=7.153991 val_loss=7.812472 mu=1.521646e-05 seconds=71.56
+2026-11-14 10:28:04,368 - INFO - scheme2 Epoch 39/50 loss=7.153253 val_loss=7.804039 mu=1.558513e-05 seconds=65.59
+2026-11-14 10:29:16,609 - INFO - scheme2 Epoch 40/50 loss=7.153000 val_loss=7.805085 mu=1.547996e-05 seconds=72.23
+2026-11-14 10:30:27,334 - INFO - scheme2 Epoch 41/50 loss=7.153041 val_loss=7.804213 mu=1.536132e-05 seconds=70.71
+2026-11-14 10:31:33,691 - INFO - scheme2 Epoch 42/50 loss=7.152500 val_loss=7.815901 mu=1.553475e-05 seconds=66.34
+2026-11-14 10:32:48,193 - INFO - scheme2 Epoch 43/50 loss=7.151573 val_loss=7.806393 mu=1.518482e-05 seconds=74.49
+2026-11-14 10:34:02,693 - INFO - scheme2 Epoch 44/50 loss=7.151553 val_loss=7.808582 mu=1.515810e-05 seconds=74.49
+2026-11-14 10:35:18,715 - INFO - scheme2 Epoch 45/50 loss=7.150815 val_loss=7.811510 mu=1.516519e-05 seconds=76.01
+2026-11-14 10:36:29,572 - INFO - scheme2 Epoch 46/50 loss=7.150441 val_loss=7.806435 mu=1.525359e-05 seconds=70.84
+2026-11-14 10:37:45,101 - INFO - scheme2 Epoch 47/50 loss=7.149744 val_loss=7.807501 mu=1.556036e-05 seconds=75.52
+2026-11-14 10:38:59,081 - INFO - scheme2 Epoch 48/50 loss=7.149561 val_loss=7.812448 mu=1.557756e-05 seconds=73.97
+2026-11-14 10:40:11,236 - INFO - scheme2 Epoch 49/50 loss=7.149600 val_loss=7.811272 mu=1.502936e-05 seconds=72.14
+2026-11-14 10:41:22,430 - INFO - scheme2 Epoch 50/50 loss=7.148546 val_loss=7.804256 mu=1.521155e-05 seconds=71.18
+2026-11-14 10:41:22,444 - INFO - scheme2 restored best-val weights from epoch 30 (val_loss=7.801054)
+2026-11-14 10:41:39,197 - INFO - Weights saved to /hy-tmp/st-nkf-comcat-20261114/ComCat/weights/scheme2_H128_seed1_best.pt
+2026-11-14 10:41:39,198 - INFO - ===== DONE scheme2 status=ok val LL_ts=-7.8014 test LL_ts=-7.2127 best_epoch=30 reason=completed seconds=3639.0 =====
+2026-11-14 10:41:39,255 - INFO - ===== START scheme1: Temporal + Spatial + Kappa Transformer on cuda =====
+2026-11-14 10:41:39,462 - INFO - Normalization scales max_time=53.4015 max_mag=7.3 max_dis=1521.84 area=138223
+2026-11-14 10:41:39,462 - INFO - Initialized mu from mean event rate / area: 4.742437e-05
+2026-11-14 10:41:39,463 - INFO - Region set: 19 vertices, 128-angle polar quadrature, convex=False
+2026-11-14 10:41:39,466 - INFO - scheme1 mu0=4.742437e-05 max_time=53.4015 max_mag=7.3 max_dis=1521.84 n_train=40701 n_val=14741 n_test=21885
+2026-11-14 10:42:58,550 - INFO - scheme1 Epoch 1/50 loss=7.561748 val_loss=8.381041 mu=1.803854e-05 seconds=79.08 *
+2026-11-14 10:44:10,320 - INFO - scheme1 Epoch 2/50 loss=7.221964 val_loss=7.863674 mu=1.590219e-05 seconds=71.75 *
+2026-11-14 10:45:16,672 - INFO - scheme1 Epoch 3/50 loss=7.204230 val_loss=7.838448 mu=1.558432e-05 seconds=66.33 *
+2026-11-14 10:46:27,496 - INFO - scheme1 Epoch 4/50 loss=7.198280 val_loss=7.830543 mu=1.545819e-05 seconds=70.81 *
+2026-11-14 10:47:40,099 - INFO - scheme1 Epoch 5/50 loss=7.194018 val_loss=7.834151 mu=1.539066e-05 seconds=72.59
+2026-11-14 10:48:55,289 - INFO - scheme1 Epoch 6/50 loss=7.190225 val_loss=7.827635 mu=1.510861e-05 seconds=75.17 *
+2026-11-14 10:50:10,848 - INFO - scheme1 Epoch 7/50 loss=7.186422 val_loss=7.822680 mu=1.519823e-05 seconds=75.54 *
+2026-11-14 10:51:23,210 - INFO - scheme1 Epoch 8/50 loss=7.184034 val_loss=7.832711 mu=1.512609e-05 seconds=72.35
+2026-11-14 10:52:35,658 - INFO - scheme1 Epoch 9/50 loss=7.183707 val_loss=7.829510 mu=1.563008e-05 seconds=72.43
+2026-11-14 10:53:48,565 - INFO - scheme1 Epoch 10/50 loss=7.180519 val_loss=7.822372 mu=1.540955e-05 seconds=72.89 *

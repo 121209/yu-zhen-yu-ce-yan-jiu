@@ -1,0 +1,160 @@
+--- before/models.py
++++ after/models.py
+@@ -321,18 +321,19 @@
+         """Store the study polygon used for the finite-region mass m_i.
+ 
+         The compensator uses Int = mu * A * dt + sum_i kappa_i * Delta F_t(i) * m_i,
+-        where m_i is the plane-kernel mass inside this convex polygon. Intensity
++        where m_i is the plane-kernel mass inside this simple polygon. Intensity
+         lambda_ts is left on the unrestricted plane density. Polar quadrature
+         of the radial CDF along rays from each source is used because ETAS-like
+         kernels can be extremely peaked; a coarse Cartesian grid would miss
+         the near-source mass.
+         """
+         verts = _polygon_edges(polygon_xy)
+-        if not _polygon_is_convex(verts):
+-            raise ValueError(
+-                "Boundary-mass quadrature assumes a convex study region "
+-                "(SanJac is a projected rectangle)."
+-            )
++        self._region_is_convex = _polygon_is_convex(verts)
++        # Orientation is needed for signed entry/exit crossings on nonconvex regions.
++        signed_area2 = np.sum(verts[:-1, 0] * verts[1:, 1] - verts[1:, 0] * verts[:-1, 1])
++        if not np.isfinite(verts).all() or abs(signed_area2) < 1e-12:
++            raise ValueError("region polygon must be finite and have nonzero area")
++        self._region_orientation = 1.0 if signed_area2 > 0 else -1.0
+         self._region_vertices = verts
+         device = self.bac_func.mu.device
+         dtype = self.bac_func.mu.dtype
+@@ -352,7 +353,7 @@
+             "Region set: %d vertices, %d-angle polar quadrature, convex=%s",
+             verts.shape[0] - 1,
+             n_angles,
+-            True,
++            self._region_is_convex,
+         )
+         return self
+ 
+@@ -412,7 +413,8 @@
+         """m_i = integral_R w_plane(x-x_i, y-y_i) dA for each history source.
+ 
+         For a convex polygon this is the angular mean of the radial CDF on
+-        ray-boundary hits. From an interior source the ray hits once and the
++        ray-boundary hits. Nonconvex polygons sum all signed crossings.
++        From an interior source the ray hits once and the
+         contribution is F_r(t_hit). From an exterior source the (0 or 2) hits
+         contribute F_r(t_out) - F_r(t_in), or 0 if the ray misses R.
+         """
+@@ -440,6 +442,36 @@
+         safe_de = torch.where(parallel, torch.ones_like(cross_de), cross_de)
+         t_hit = cross_pse / safe_de
+         u_hit = cross_psd / safe_de
++        if not self._region_is_convex:
++            # A nonconvex ray may leave and re-enter several times. Sum signed
++            # CDF boundary fluxes: exits +F(r), entries -F(r). This equals the
++            # sum of F(r_out)-F(r_in) over every radial interval inside R,
++            # for both interior and exterior sources; F(0)=0.
++            # Strict side straddling is a half-open vertex rule: a tangent
++            # vertex contributes either zero hits or a cancelling pair.
++            side_p = cross_psd
++            side_q = side_p - cross_de
++            straddles = (side_p > 0.0) != (side_q > 0.0)
++            valid = (~parallel) & (t_hit > 1e-12) & straddles
++            radii = torch.where(valid, t_hit, t_hit.new_full((), math.inf))
++            sorted_r, indices = radii.sort(dim=-1)
++            signs = (self._region_orientation * cross_de.sign()).expand_as(t_hit)
++            sorted_signs = signs.gather(-1, indices)
++            # Only actual crossing ranks are evaluated, not all polygon edges.
++            # Keeping the angle axis avoids expanding neural mixture parameters
++            # over the edge axis (which would multiply training memory by V).
++            n_hits = int(valid.sum(dim=-1).max().item())
++            params = None if spatial_params is None else tuple(p.unsqueeze(2) for p in spatial_params)
++            contrib = torch.zeros_like(t_hit[..., 0])
++            for j in range(n_hits):
++                r = sorted_r[..., j]
++                ok = torch.isfinite(r)
++                r = torch.where(ok, r, torch.zeros_like(r))
++                f = self._radial_cdf_at(r.unsqueeze(-1), mags.unsqueeze(2), params).squeeze(-1)
++                contrib = contrib + torch.where(ok, sorted_signs[..., j] * f, torch.zeros_like(f))
++            return contrib.mean(dim=-1, keepdim=True).clamp(min=0.0)
++
++        # Preserve the existing convex path exactly for completed datasets.
+         valid = (~parallel) & (t_hit > 1e-12) & (u_hit >= 0.0) & (u_hit <= 1.0)
+         t_valid = torch.where(valid, t_hit, t_hit.new_full((), math.inf))
+         t_sorted, _ = t_valid.sort(dim=-1)  # (B,H,A,E)
+--- before/run_four_schemes_gpu.py
++++ after/run_four_schemes_gpu.py
+@@ -360,7 +360,7 @@
+         "stopped_early": bool(model.stopped_early),
+         "best_epoch": int(model.best_epoch),
+         "best_val_loss": float(best_val) if math.isfinite(best_val) else None,
+-        "epochs_ran": start_epoch if start_epoch >= epochs and not epoch_times else (
++        "epochs_ran": start_epoch if start_epoch >= epochs else (
+             (best_epoch + 1 + patience) if stop_reason == "early_stop"
+             else (int(payload["next_epoch"]) if last_path.is_file() else start_epoch)
+         ),
+--- /dev/null
++++ after/tests/test_nonconvex_boundary.py
+@@ -0,0 +1,62 @@
++"""Signed polar mass for simple nonconvex study polygons (ComCat regression)."""
++import unittest
++import numpy as np
++import torch
++from models import KernelPointProcess, _points_in_polygon
++
++
++class NonconvexBoundaryTests(unittest.TestCase):
++    def setUp(self):
++        torch.set_num_threads(1)
++        self.m = KernelPointProcess(
++            4, 4, 4, 'neural', 'neural', 'neural', 1., 100., 2, 8,
++            seed=4, backbone='transformer', use_boundary_correction=True,
++            init_mu_from_rate=False).double()
++        self.m.max_dis = 1.
++        self.poly = np.array([[0,0],[4,0],[4,4],[3,4],
++                              [3,1],[1,1],[1,4],[0,4]], float)
++        self.src = np.array([[.5,2],[2,2],[-1,2],[2,.5],[0,0],[1,1]])
++        self.x = torch.tensor(self.src[None,:,0:1], dtype=torch.float64)
++        self.y = torch.tensor(self.src[None,:,1:2], dtype=torch.float64)
++        self.w = torch.ones_like(self.x)
++        self.D = torch.full_like(self.x, .49, requires_grad=True)
++        self.q = torch.full_like(self.x, 1.8)
++
++    def mass(self, D=None):
++        return self.m._boundary_mass(self.x, self.y, self.w,
++                                     (self.w, self.D if D is None else D, self.q))
++
++    def test_multiple_intervals_and_boundary_vertices_monte_carlo(self):
++        self.m.set_region(self.poly, 128)
++        coarse = self.mass().detach().numpy().ravel()
++        self.m.set_region(self.poly, 4096)
++        fine = self.mass().detach().numpy().ravel()
++        rng = np.random.default_rng(20261114)
++        r = .7 * np.sqrt((1-rng.random(300000))**(-1/.8)-1)
++        theta = rng.random(len(r))*2*np.pi
++        delta = np.column_stack((r*np.cos(theta), r*np.sin(theta)))
++        mc = np.array([_points_in_polygon(delta+s,self.poly).mean() for s in self.src])
++        np.testing.assert_allclose(coarse, mc, atol=.004, rtol=0)
++        np.testing.assert_allclose(coarse, fine, atol=.001, rtol=0)
++        self.assertTrue(((coarse>=0)&(coarse<=1)).all())
++        self.m.set_region(self.poly[::-1], 128)
++        np.testing.assert_allclose(self.mass().detach().numpy().ravel(), coarse, atol=1e-12)
++
++    def test_gradient_finite_difference(self):
++        self.m.set_region(self.poly, 128)
++        grad = torch.autograd.grad(self.mass().sum(), self.D)[0]
++        eps = 1e-6
++        fd = (self.mass(self.D+eps)-self.mass(self.D-eps))/(2*eps)
++        self.assertTrue(torch.isfinite(grad).all())
++        torch.testing.assert_close(grad, fd, atol=1e-8, rtol=1e-5)
++
++    def test_convex_original_path_unchanged(self):
++        self.m.set_region(np.array([[-5,-5],[5,-5],[5,5],[-5,5]],float),128)
++        old = self.mass()
++        self.m._region_is_convex = False  # Exercise general formula on same rays.
++        new = self.mass()
++        torch.testing.assert_close(old, new, atol=1e-12, rtol=1e-12)
++
++
++if __name__ == '__main__':
++    unittest.main()

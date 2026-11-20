@@ -1,0 +1,5 @@
+2026-11-10 21:11:12,848 - INFO - Normalization scales max_time=36.4197 max_mag=3.02 max_dis=141.161 area=10310.1
+2026-11-10 21:11:14,853 - INFO - Epoch 1/1 loss=2284.351622 val_loss=972.517395 mu=4.378206e-04
+<stdin>:40: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+TRUNCATED_DONE H=128 n_train=256 n_val=128 n_test=128 elapsed=2.2s mu=4.378207e-04 LL_ts=-8.394207000732422 LL_t=0.8393619656562805 LL_s=-9.233570098876953 finite=True

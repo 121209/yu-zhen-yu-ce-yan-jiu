@@ -1,0 +1,228 @@
+{
+  "finished_seen_at": "2026-11-14 19:59:57 Asia/Shanghai",
+  "done": {
+    "done": "1",
+    "finished": "2026-11-14 18:24:20 CST"
+  },
+  "process_exit": "exit=0\nfinished=2026-11-14 18:24:20 CST\n",
+  "local_run_dir": "/workspace/st-nkf-diagrams/st-nkf-comcat-5090-20261114/run",
+  "final_sync": {
+    "remote_files": 36,
+    "pulled": 0,
+    "unchanged": 36,
+    "skipped": 0,
+    "bytes_got": 0
+  },
+  "ll": {
+    "protocol": {
+      "dataset": "ComCat",
+      "catalog": "Datasets/ComCat/ComCat_catalog_jitter.csv",
+      "splits": "aux 1971-01-01, train 1981-01-01, val 1998-01-01, test 2007-01-01–2020-01-17, m0=2.5",
+      "counts": {
+        "auxiliary_num": 14933,
+        "training_num": 40701,
+        "validation_num": 14741,
+        "testing_num": 21885,
+        "area": 138223.32831313025,
+        "global_m0": 2.5,
+        "catalog": "Datasets/ComCat/ComCat_catalog_jitter.csv",
+        "windows": "aux 1971-01-01, train 1981-01-01, val 1998-01-01, test 2007-01-01–2020-01-17, m0=2.5",
+        "history": 128
+      },
+      "history": 128,
+      "batch_size": 16,
+      "epochs": 50,
+      "patience": 0,
+      "lr": 0.0001,
+      "seed": 1,
+      "boundary_angles": 128,
+      "mu_init": "mean train event rate / area, then analytic epoch update",
+      "evaluated_weights": "best-validation snapshot, always restored",
+      "run_order": [
+        "scheme2",
+        "scheme1",
+        "scheme4",
+        "scheme3"
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "torch": "2.9.1+cu128",
+      "cuda": "12.8",
+      "started": "2026-11-14 15:05:19 Asia/Shanghai",
+      "finished": "2026-11-14 18:24:19 Asia/Shanghai",
+      "elapsed_seconds": 11939.713696443941
+    },
+    "schemes": {
+      "scheme2": {
+        "status": "ok",
+        "name": "Temporal + Spatial Transformer, Kappa 5x32 FCNN",
+        "flags": {
+          "temporal_backbone": "transformer",
+          "spatial_backbone": "transformer",
+          "kappa_backbone": "fcnn"
+        },
+        "device": "cuda",
+        "lr": 0.0001,
+        "seed": 1,
+        "history": 128,
+        "batch_size": 16,
+        "epoch_cap": 50,
+        "patience": 0,
+        "official_splits": true,
+        "upgrades_applied": true,
+        "evaluated_weights": "best-validation snapshot, always restored",
+        "cli": "--temporal-backbone transformer --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+        "stop_reason": "completed",
+        "stopped_early": false,
+        "best_epoch": 30,
+        "best_val_loss": 7.801054071752521,
+        "epochs_ran": 50,
+        "mean_epoch_seconds": 72.37028463199735,
+        "mu": 1.5462443116120994e-05,
+        "val": {
+          "LL_ts": -7.801358222961426,
+          "LL_t": 1.0707004070281982,
+          "LL_s": -8.872058868408203,
+          "n": 14741
+        },
+        "test": {
+          "LL_ts": -7.212661266326904,
+          "LL_t": 1.4924029111862183,
+          "LL_s": -8.705063819885254,
+          "n": 21885
+        },
+        "seconds": 3639.039602961391,
+        "weights": "/hy-tmp/st-nkf-comcat-20261114/ComCat/weights/scheme2_H128_seed1_best.pt",
+        "finished": "2026-11-14 10:41:39 Asia/Shanghai"
+      },
+      "scheme1": {
+        "status": "ok",
+        "name": "Temporal + Spatial + Kappa Transformer",
+        "flags": {
+          "temporal_backbone": "transformer",
+          "spatial_backbone": "transformer",
+          "kappa_backbone": "transformer"
+        },
+        "device": "cuda",
+        "lr": 0.0001,
+        "seed": 1,
+        "history": 128,
+        "batch_size": 16,
+        "epoch_cap": 50,
+        "patience": 0,
+        "official_splits": true,
+        "upgrades_applied": true,
+        "evaluated_weights": "best-validation snapshot, always restored",
+        "cli": "--temporal-backbone transformer --spatial-backbone transformer --kappa-backbone transformer --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+        "stop_reason": "completed",
+        "stopped_early": false,
+        "best_epoch": 30,
+        "best_val_loss": 7.798822055823055,
+        "epochs_ran": 50,
+        "mean_epoch_seconds": 82.49672776390798,
+        "mu": 1.54960471263621e-05,
+        "val": {
+          "LL_ts": -7.799210071563721,
+          "LL_t": 1.1058076620101929,
+          "LL_s": -8.905017852783203,
+          "n": 14741
+        },
+        "test": {
+          "LL_ts": -7.210219383239746,
+          "LL_t": 1.52653968334198,
+          "LL_s": -8.736759185791016,
+          "n": 21885
+        },
+        "seconds": 3414.8983799021225,
+        "weights": "/hy-tmp/st-nkf-comcat-20261114/ComCat/weights/scheme1_H128_seed1_best.pt",
+        "finished": "2026-11-14 16:02:14 Asia/Shanghai"
+      },
+      "scheme4": {
+        "status": "ok",
+        "name": "Same as scheme 2, Kappa deeper MLP (4x64 GELU)",
+        "flags": {
+          "temporal_backbone": "transformer",
+          "spatial_backbone": "transformer",
+          "kappa_backbone": "mlp"
+        },
+        "device": "cuda",
+        "lr": 0.0001,
+        "seed": 1,
+        "history": 128,
+        "batch_size": 16,
+        "epoch_cap": 50,
+        "patience": 0,
+        "official_splits": true,
+        "upgrades_applied": true,
+        "evaluated_weights": "best-validation snapshot, always restored",
+        "cli": "--temporal-backbone transformer --spatial-backbone transformer --kappa-backbone mlp --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+        "stop_reason": "completed",
+        "stopped_early": false,
+        "best_epoch": 30,
+        "best_val_loss": 7.7989326711830245,
+        "epochs_ran": 50,
+        "mean_epoch_seconds": 80.81919351738878,
+        "mu": 1.549196895211935e-05,
+        "val": {
+          "LL_ts": -7.799351215362549,
+          "LL_t": 1.0745247602462769,
+          "LL_s": -8.873875617980957,
+          "n": 14741
+        },
+        "test": {
+          "LL_ts": -7.2098846435546875,
+          "LL_t": 1.4959665536880493,
+          "LL_s": -8.705850601196289,
+          "n": 21885
+        },
+        "seconds": 4058.172024853993,
+        "weights": "/hy-tmp/st-nkf-comcat-20261114/ComCat/weights/scheme4_H128_seed1_best.pt",
+        "finished": "2026-11-14 17:09:52 Asia/Shanghai"
+      },
+      "scheme3": {
+        "status": "ok",
+        "name": "Temporal Transformer only; Spatial and Kappa FCNN",
+        "flags": {
+          "temporal_backbone": "transformer",
+          "spatial_backbone": "fcnn",
+          "kappa_backbone": "fcnn"
+        },
+        "device": "cuda",
+        "lr": 0.0001,
+        "seed": 1,
+        "history": 128,
+        "batch_size": 16,
+        "epoch_cap": 50,
+        "patience": 0,
+        "official_splits": true,
+        "upgrades_applied": true,
+        "evaluated_weights": "best-validation snapshot, always restored",
+        "cli": "--temporal-backbone transformer --spatial-backbone fcnn --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+        "stop_reason": "completed",
+        "stopped_early": false,
+        "best_epoch": 50,
+        "best_val_loss": 7.84035766377846,
+        "epochs_ran": 50,
+        "mean_epoch_seconds": 89.00032858829015,
+        "mu": 1.565382262924686e-05,
+        "val": {
+          "LL_ts": -7.8405961990356445,
+          "LL_t": 1.066906452178955,
+          "LL_s": -8.907503128051758,
+          "n": 14741
+        },
+        "test": {
+          "LL_ts": -7.261841773986816,
+          "LL_t": 1.48793363571167,
+          "LL_s": -8.749775886535645,
+          "n": 21885
+        },
+        "seconds": 4466.490686374018,
+        "weights": "/hy-tmp/st-nkf-comcat-20261114/ComCat/weights/scheme3_H128_seed1_best.pt",
+        "finished": "2026-11-14 18:24:19 Asia/Shanghai"
+      }
+    }
+  },
+  "ll_path": "/workspace/st-nkf-diagrams/st-nkf-comcat-5090-20261114/run/ComCat/four-schemes-gpu-ll.json",
+  "shutdown_ok": true,
+  "shutdown_notes": "cmd='command -v shutdown && shutdown -h now' rc=0 out='SHUTDOWN_ISSUED\\n/usr/local/bin/shutdown\\n' err='Usage of shutdown:\\n'"
+}

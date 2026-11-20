@@ -1,0 +1,17 @@
+........................
+----------------------------------------------------------------------
+Ran 24 tests in 0.395s
+
+OK
+BOUNDARY_COMPENSATOR max_abs=2.139e-07
+BOUNDARY_MASS analytic256=0.867398 polar1024=0.867397 mc=0.864900
+CDF_FD TemporalKernelTransformer: max_abs=4.403e-09
+CDF_FD TemporalKernelTransformer: max_abs=1.098e-10
+CDF_FD SpatialKernelTransformer: max_abs=5.848e-09
+CDF_FD SpatialKernelTransformer: max_abs=1.941e-11
+COMPENSATOR max_abs=2.224e-07 analytic=1.480655380 numeric=1.480655602
+CDF_LIMIT TemporalKernelTransformer: max_error=2.220e-16
+CDF_LIMIT SpatialKernelTransformer: max_error=2.220e-16
+CDF_INTEGRAL TemporalKernelTransformer: max_abs=7.723e-09
+CDF_INTEGRAL SpatialKernelTransformer: max_abs=1.250e-08
+SPATIAL_PLANE mass=[0.9999856207028603, 0.9999869206482657, 0.9999890843217977] cdf=[0.999985479323517, 0.9999867792685206, 0.9999889429414142] max_error=3.605e-06

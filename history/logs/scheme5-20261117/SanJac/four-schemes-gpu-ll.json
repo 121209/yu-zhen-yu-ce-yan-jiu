@@ -1,0 +1,80 @@
+{
+  "protocol": {
+    "dataset": "SanJac",
+    "catalog": "Datasets/QTM/SanJac_catalog_jitter.csv",
+    "splits": "aux 2008-01-01, train 2009-01-01, val 2014-01-01, test 2016-01-01–2018-01-01, m0=1.0",
+    "counts": {
+      "auxiliary_num": 1672,
+      "training_num": 11770,
+      "validation_num": 3449,
+      "testing_num": 4400,
+      "area": 10310.094253972062,
+      "global_m0": 1.0,
+      "catalog": "Datasets/QTM/SanJac_catalog_jitter.csv",
+      "windows": "aux 2008-01-01, train 2009-01-01, val 2014-01-01, test 2016-01-01–2018-01-01, m0=1.0",
+      "history": 128
+    },
+    "history": 128,
+    "batch_size": 16,
+    "epochs": 50,
+    "patience": 0,
+    "lr": 0.0001,
+    "seed": 1,
+    "boundary_angles": 128,
+    "mu_init": "mean train event rate / area, then analytic epoch update",
+    "evaluated_weights": "best-validation snapshot, always restored",
+    "run_order": [
+      "scheme5"
+    ],
+    "device": "NVIDIA GeForce RTX 4090",
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "started": "2026-11-17 11:43:54 Asia/Shanghai",
+    "finished": "2026-11-17 12:08:32 Asia/Shanghai",
+    "elapsed_seconds": 2384.072205875069
+  },
+  "schemes": {
+    "scheme5": {
+      "status": "ok",
+      "name": "Spatial Transformer only; Temporal and Kappa FCNN",
+      "flags": {
+        "temporal_backbone": "fcnn",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "fcnn"
+      },
+      "device": "cuda",
+      "lr": 0.0001,
+      "seed": 1,
+      "history": 128,
+      "batch_size": 16,
+      "epoch_cap": 50,
+      "patience": 0,
+      "official_splits": true,
+      "upgrades_applied": true,
+      "evaluated_weights": "best-validation snapshot, always restored",
+      "cli": "--temporal-backbone fcnn --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+      "stop_reason": "completed",
+      "stopped_early": false,
+      "best_epoch": 50,
+      "best_val_loss": 5.668884459700436,
+      "epochs_ran": 50,
+      "mean_epoch_seconds": 29.401804669490083,
+      "mu": 4.032108699902892e-05,
+      "val": {
+        "LL_ts": -5.668959617614746,
+        "LL_t": 1.7008172273635864,
+        "LL_s": -7.369777202606201,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.729705810546875,
+        "LL_t": 2.1568644046783447,
+        "LL_s": -6.886569976806641,
+        "n": 4400
+      },
+      "seconds": 1478.2445064522326,
+      "weights": "/hy-tmp/st-nkf-scheme5-spatial-tf-20261117/SanJac/weights/scheme5_H128_seed1_best.pt",
+      "finished": "2026-11-17 12:08:32 Asia/Shanghai"
+    }
+  }
+}

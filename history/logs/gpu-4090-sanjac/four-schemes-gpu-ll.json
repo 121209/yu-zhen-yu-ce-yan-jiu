@@ -1,0 +1,199 @@
+{
+  "protocol": {
+    "dataset": "SanJac",
+    "catalog": "NeuralKernelFunction SanJac_catalog_jitter.csv (no extra train-time jitter)",
+    "splits": "official config.py train/val/test windows",
+    "history": 128,
+    "batch_size": 16,
+    "epochs": 50,
+    "patience": 0,
+    "lr": 0.0001,
+    "seed": 1,
+    "boundary_angles": 128,
+    "mu_init": "mean train event rate / area, then analytic epoch update",
+    "evaluated_weights": "best-validation snapshot, always restored",
+    "run_order": [
+      "scheme2",
+      "scheme1",
+      "scheme4",
+      "scheme3"
+    ],
+    "device": "NVIDIA GeForce RTX 4090",
+    "torch": "2.5.1+cu124",
+    "cuda": "12.4",
+    "budget_hours": 10.0,
+    "started": "2026-11-12 19:35:51 Asia/Shanghai",
+    "finished": "2026-11-12 21:18:41 Asia/Shanghai",
+    "elapsed_seconds": 6170.6498155631125
+  },
+  "schemes": {
+    "scheme2": {
+      "status": "ok",
+      "name": "Temporal + Spatial Transformer, Kappa 5x32 FCNN",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "fcnn"
+      },
+      "device": "cuda",
+      "lr": 0.0001,
+      "seed": 1,
+      "history": 128,
+      "batch_size": 16,
+      "epoch_cap": 50,
+      "patience": 0,
+      "official_splits": true,
+      "upgrades_applied": true,
+      "evaluated_weights": "best-validation snapshot, always restored",
+      "cli": "--temporal-backbone transformer --spatial-backbone transformer --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+      "stop_reason": "completed",
+      "stopped_early": false,
+      "best_epoch": 41,
+      "best_val_loss": 5.6095422835721935,
+      "epochs_ran": 50,
+      "mean_epoch_seconds": 30.65244790080935,
+      "mu": 5.975404928904027e-05,
+      "val": {
+        "LL_ts": -5.609742164611816,
+        "LL_t": 0.7515281438827515,
+        "LL_s": -6.361269950866699,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.66646671295166,
+        "LL_t": 1.2646692991256714,
+        "LL_s": -5.931136131286621,
+        "n": 4400
+      },
+      "seconds": 1537.3610998708755,
+      "weights": "/root/autodl-tmp/st-nkf-gpu/weights/scheme2_H128_seed1_best.pt",
+      "finished": "2026-11-12 20:01:28 Asia/Shanghai"
+    },
+    "scheme1": {
+      "status": "ok",
+      "name": "Temporal + Spatial + Kappa Transformer",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "transformer"
+      },
+      "device": "cuda",
+      "lr": 0.0001,
+      "seed": 1,
+      "history": 128,
+      "batch_size": 16,
+      "epoch_cap": 50,
+      "patience": 0,
+      "official_splits": true,
+      "upgrades_applied": true,
+      "evaluated_weights": "best-validation snapshot, always restored",
+      "cli": "--temporal-backbone transformer --spatial-backbone transformer --kappa-backbone transformer --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+      "stop_reason": "completed",
+      "stopped_early": false,
+      "best_epoch": 42,
+      "best_val_loss": 5.609114061407022,
+      "epochs_ran": 50,
+      "mean_epoch_seconds": 31.345588928572834,
+      "mu": 6.27981498837471e-05,
+      "val": {
+        "LL_ts": -5.609392166137695,
+        "LL_t": 0.7443892359733582,
+        "LL_s": -6.353781223297119,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.660050392150879,
+        "LL_t": 1.2638661861419678,
+        "LL_s": -5.923916816711426,
+        "n": 4400
+      },
+      "seconds": 1571.2319881450385,
+      "weights": "/root/autodl-tmp/st-nkf-gpu/weights/scheme1_H128_seed1_best.pt",
+      "finished": "2026-11-12 20:27:39 Asia/Shanghai"
+    },
+    "scheme4": {
+      "status": "ok",
+      "name": "Same as scheme 2, Kappa deeper MLP (4x64 GELU)",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "transformer",
+        "kappa_backbone": "mlp"
+      },
+      "device": "cuda",
+      "lr": 0.0001,
+      "seed": 1,
+      "history": 128,
+      "batch_size": 16,
+      "epoch_cap": 50,
+      "patience": 0,
+      "official_splits": true,
+      "upgrades_applied": true,
+      "evaluated_weights": "best-validation snapshot, always restored",
+      "cli": "--temporal-backbone transformer --spatial-backbone transformer --kappa-backbone mlp --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+      "stop_reason": "completed",
+      "stopped_early": false,
+      "best_epoch": 42,
+      "best_val_loss": 5.608574641618428,
+      "epochs_ran": 50,
+      "mean_epoch_seconds": 30.27836336687207,
+      "mu": 6.319830572465435e-05,
+      "val": {
+        "LL_ts": -5.608809947967529,
+        "LL_t": 0.746736466884613,
+        "LL_s": -6.355545997619629,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.66120719909668,
+        "LL_t": 1.2708419561386108,
+        "LL_s": -5.932048797607422,
+        "n": 4400
+      },
+      "seconds": 1517.6649600341916,
+      "weights": "/root/autodl-tmp/st-nkf-gpu/weights/scheme4_H128_seed1_best.pt",
+      "finished": "2026-11-12 20:52:57 Asia/Shanghai"
+    },
+    "scheme3": {
+      "status": "ok",
+      "name": "Temporal Transformer only; Spatial and Kappa FCNN",
+      "flags": {
+        "temporal_backbone": "transformer",
+        "spatial_backbone": "fcnn",
+        "kappa_backbone": "fcnn"
+      },
+      "device": "cuda",
+      "lr": 0.0001,
+      "seed": 1,
+      "history": 128,
+      "batch_size": 16,
+      "epoch_cap": 50,
+      "patience": 0,
+      "official_splits": true,
+      "upgrades_applied": true,
+      "evaluated_weights": "best-validation snapshot, always restored",
+      "cli": "--temporal-backbone transformer --spatial-backbone fcnn --kappa-backbone fcnn --history 128 --lr 0.0001 --epochs 50 --batch-size 16 --patience 0 --boundary-angles 128",
+      "stop_reason": "completed",
+      "stopped_early": false,
+      "best_epoch": 35,
+      "best_val_loss": 5.713885484276802,
+      "epochs_ran": 50,
+      "mean_epoch_seconds": 30.81011713169515,
+      "mu": 9.299802331952378e-05,
+      "val": {
+        "LL_ts": -5.714200973510742,
+        "LL_t": 0.924871563911438,
+        "LL_s": -6.639072418212891,
+        "n": 3449
+      },
+      "test": {
+        "LL_ts": -4.7580885887146,
+        "LL_t": 1.4251023530960083,
+        "LL_s": -6.183190822601318,
+        "n": 4400
+      },
+      "seconds": 1544.1979447063059,
+      "weights": "/root/autodl-tmp/st-nkf-gpu/weights/scheme3_H128_seed1_best.pt",
+      "finished": "2026-11-12 21:18:41 Asia/Shanghai"
+    }
+  }
+}

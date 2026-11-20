@@ -1,0 +1,17 @@
+box_path,bytes,sha256,exists,reason,action
+/workspace/st-nkf-diagrams/watch_pull_scheme5_4090.sh,3720,29f55a415258aa5f3a9d112a63bac60be98ee7db7821565fd7f6605a7efa03aa,True,ssh_cmd/port/user@host/ipv4; GPU pull watcher,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/st-nkf-scheme5-spatial-tf-20261117-retry-pull.log,2461,bf3cadfecfc4e2a693285448a7b884333adb0d7ecf0c30fad3c6c266f097340f,True,ipv4 in pull log,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/comcat-fix-20261114/supervise_comcat.py,5721,3bed13783a6910d7b8c1c06ef386ebd1dde9d01476d8752ad9368b1f5d2ce23c,True,ssh/user@host/ipv4/ctl,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/comcat-fix-20261114/sync_checkpoints.py,1509,9c9ab4d514bc8796ce343a2b9ce5fc970c46027abe28fa4bd6bf87b79e01a362,True,ssh/user@host/ipv4/ctl,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/comcat-fix-20261114/supervisor.log,8101,9316f022116eb3b6760e1f36111fbee4db4cd0e37ed81b105244d5861bf9f4a0,True,ssh/user@host/ipv4/ctl,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/comcat-fix-20261114/sync.log,1460,cec00b44b67d52a33b32e12f4ccbb1cc32c3afa3caa33c974b8ae16f4fe0835c,True,ssh/user@host/ipv4/ctl,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/comcat-fix-20261114/HANDOFF.md,4991,aa464935fc4fbea852348e2dc24dd1a69137bab63f673537f9ad36a9a9ccc29a,True,ssh/port/user@host/ipv4; scientific facts summarized in EXPERIMENT-LEDGER.md instead,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/comcat-fix-20261114/supervisor-error.json,283,2c7ae3f2c82231de801c13657c25b7e9bedee31cf8689eaec00f807c6b85005b,True,ssh/ipv4,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/comcat-fix-20261114/remote_status.py,2611,2cec2462d89b759880062373281b1feb87393abe61086ab71c60db86d9366145,True,remote GPU status helper; withheld conservatively,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/comcat-fix-20261114/supervisor-latest.json,5799,7824c955aa50a6a1fe317f5cbfad814ab420f8a75b0b86ccfdab691483ae83e9,True,supervisor live state; withheld conservatively,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/st-nkf-comcat-5090-20261114/EXPERIMENT.json,3474,6b9dd190b168e2b7ad7ecc57416eebcaecb3783a99c61b8dff117c763ebd4fff,True,ssh/instance/billing,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/st-nkf-comcat-5090-20261114/code/EXPERIMENT.json,3474,6b9dd190b168e2b7ad7ecc57416eebcaecb3783a99c61b8dff117c763ebd4fff,True,ssh/instance/billing,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/st-nkf-comcat-5090-20261114/run/experiment_snapshot/EXPERIMENT.json,3474,6b9dd190b168e2b7ad7ecc57416eebcaecb3783a99c61b8dff117c763ebd4fff,True,ssh/instance/billing,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/st-nkf-fcnn-h128-5090-20261114/run/environment.json,3133,45710bad31d62e2470652f336167361708486b2731c62597c8b4f1f508e670ad,True,hostname/ssh field,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/st-nkf-fcnn-h128-5090-20261114/sync.log,110188,e888927577bce2911d1f2a869042b59ea1f3f12640b39ef819d7628d43a2a33b,True,ssh mentions in transfer log,left on box only; not in public bundle
+/workspace/st-nkf-diagrams/st-nkf-fcnn-h128-5090-20261114/watcher.stdout,180340,b9fe3b39b1f68528788624a16ae1a0a4cebdf4063246a2aae03d79c265ba53b1,True,ssh/ipv4,left on box only; not in public bundle
