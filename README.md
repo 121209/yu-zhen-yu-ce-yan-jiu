@@ -160,7 +160,7 @@ python .\eval_ll_decomposition.py --repo "C:\Users\admin\Desktop\yu-zhen-yu-ce-y
 
 官方评估使用 jitter 目录：`Datasets/**/*_catalog_jitter.csv` 以及对应的 `*_shape.npy`（ComCat 为 `california_shape.npy`）。这些文件已收录，`config.py` 中的路径是 `./Datasets/...`。
 
-未收录非 jitter 的 `*_catalog.csv`（其中 SCEDC 最大，约 11 MB）。它们不是这套官方对照评估的输入。若你需要原始未 jitter 目录，可以从 [ST-NKF-pytorch](https://github.com/121209/ST-NKF-pytorch) 的 `Datasets/` 复制。
+原始未 jitter 的 `*_catalog.csv` 现已放在对应 jitter 文件旁边（ComCat、SCEDC、WHITE，以及 QTM 的 SaltonSea、SanJac）。它们不是官方评估输入，没有替换 `*_catalog_jitter.csv`。上游抖动笔记本在 `history/preprocessing/upstream-NeuralKernelFunction/Data processing.ipynb`（NumPy seed 42）。
 
 ## ETAS / 日志快照说明
 
@@ -170,7 +170,7 @@ python .\eval_ll_decomposition.py --repo "C:\Users\admin\Desktop\yu-zhen-yu-ce-y
 
 ## 实验全程、复现入口与仍缺的材料
 
-公开归档。不要放入凭据、SSH、口令、访问令牌或账户账单。16 个含这类内容的文件没有入库，清单和哈希在 `history/WITHHELD-PUBLIC-SAFETY.csv`。时间线、证据和命令以 `history/EXPERIMENT-LEDGER.md` 为准。
+公开归档。不要放入凭据、SSH、口令、访问令牌或账户账单。原先 16 个不安全文件的可脱敏副本在 `history/redacted/`，原件没有入库。两份无法可靠脱敏的 SSH 传输日志仍留在原始机器：`st-nkf-fcnn-h128-5090-20261114/sync.log` 与 `watcher.stdout`。时间线、证据和命令以 `history/EXPERIMENT-LEDGER.md` 为准。
 
 本地 `ST-NKF-pytorch` 的 git HEAD `eb4ddba3660531445ffe0376125709fd2457c990` 不是这套实验代码。实验改动当时在工作区，未进入那个提交。本仓库根上的 `models.py`、`run_models.py`、`layers.py`、`layers_transformer.py`、`config.py`、`utils.py`、`batch.py`、`requirements.txt`、`environment.yml` 与那份工作区字节相同，见 `history/SOURCE-HASHES.sha256.csv`。
 
@@ -194,12 +194,18 @@ python -m unittest tests.test_port
 
 `history/weights-historical/` 只是被取代的小权重（SanJac 20 epoch / patience 8，以及预对齐 ETAS）。预对齐 ETAS 是 1000 epoch、lr 0.005、`mu_init=1`，不是官方 49。
 
-仍未入库，不能写成已经收齐：
+`history/weights/INVENTORY-152-DEDUP.csv` 把 152 行历史清单分成：48 行与官方 49 个 best 字节相同，不重复存放；12 个被取代的小权重仍只在 `history/weights-historical/`（1114124 字节）；66 个互不相同的 last / 中间检查点在 `history/weights/`（22977390 字节）；另外 26 条路径与这 66 个之一哈希相同，没有再打包第二次。这 66+26 正好是此前缺的 92 个文件、32598322 字节。这些 `.pt` 是训练检查点，常常带优化器状态，不是官方 `save_weights`。
 
-- `history/HISTORICAL-WEIGHTS.sha256.csv` 有 152 行。其中 48 行与官方 49 个 best 字节相同，不重复存放。12 个被取代的小权重已在 `history/weights-historical/`（1114124 字节）。另外 92 个 last / 中间检查点共 32598322 字节，目前只有哈希，文件还没有来。这 92 个加上已放入的 12 个，就是账上 104 个非官方历史权重、合计 33712446 字节。在这 92 个文件进入仓库之前，不能把历史权重视为已经收齐。
+盒上原本就没有、因此没有编造的文件：
+
+- SanJac 官方 4090 运行没有找到 `scheme{1-4}_last.pt`，只有 epoch jsonl 和官方 best。
+- 官方 FCNN 与对齐 ETAS 只有 best 快照，没有单独的 trainer `*_last.pt`。
+- 第一次六数据集 ComCat 失败（凸区域假设）没有留下 ComCat 权重。
 - 没有独立的背景 μ 评估，也没有固定 μ 消融。
-- 非 jitter 的 `*_catalog.csv`、上游预处理笔记本、重复数据包和虚拟环境都没有打包。
+- 上游 TensorFlow 仓库的其余部分、重复数据包和虚拟环境没有打包。
 - scheme5 的 `six-datasets-gpu-status.md` 表格只记了 SCEDC_20 的续跑。七个数据集以对应 ll.json 为准。
+
+放置和这些缺口的原文在 `history/weights/PLACEMENT-AND-GAPS.md`。
 
 ## 许可
 

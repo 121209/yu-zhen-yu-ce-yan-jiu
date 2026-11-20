@@ -1,0 +1,39 @@
+===== retry-pull start Tue Nov 17 20:53:57 CST 2026 pid=419570 =====
+Connection closed by <REDACTED_IPV4> port 14873
+2026-11-17 20:53:59 CST ssh miss fail=1
+Connection closed by <REDACTED_IPV4> port 14873
+2026-11-17 20:54:23 CST ssh miss fail=2
+Connection closed by <REDACTED_IPV4> port 14873
+2026-11-17 20:54:46 CST ssh miss fail=3
+Connection closed by <REDACTED_IPV4> port 14873
+2026-11-17 20:55:09 CST ssh miss fail=4
+Connection closed by <REDACTED_IPV4> port 14873
+2026-11-17 20:55:32 CST ssh miss fail=5
+Connection timed out during banner exchange
+Connection to <REDACTED_IPV4> port 14873 timed out
+2026-11-17 20:56:12 CST ssh miss fail=6
+2026-11-17 20:56:36 CST ssh ok, starting pull
+tar: The following options were used after any non-optional arguments in archive create or update mode.  These options are positional and affect only arguments that follow them.  Please, rearrange them properly.
+tar: --exclude ‘*.prev-*’ has no effect
+tar: Exiting with failure status due to previous errors
+2026-11-17 20:57:04 CST pull ok
+outcome completed finished 2026-11-17 20:14:45 Asia/Shanghai
+SCEDC_30: ds=ok s5=ok best=47 epochs=50 reason=completed test_total=-11131.069972038269 n=1898 mean=-5.864631175994873 weights=True
+SanJac: ds=ok s5=ok best=50 epochs=50 reason=completed test_total=-20810.70556640625 n=4400 mean=-4.729705810546875 weights=True
+WHITE: ds=ok s5=ok best=43 epochs=50 reason=completed test_total=-62611.76387786865 n=24080 mean=-2.600156307220459 weights=True
+SCEDC_25: ds=ok s5=ok best=48 epochs=50 reason=completed test_total=-27977.828979492188 n=5000 mean=-5.5955657958984375 weights=True
+SaltonSea: ds=ok s5=ok best=50 epochs=50 reason=completed test_total=-782.9791560173035 n=4104 mean=-0.19078439474105835 weights=True
+ComCat: ds=ok s5=ok best=46 epochs=50 reason=completed test_total=-157884.55191850662 n=21885 mean=-7.2142815589904785 weights=True
+SCEDC_20: ds=ok s5=ok best=42 epochs=50 reason=completed test_total=-68837.53711223602 n=13067 mean=-5.268044471740723 weights=True
+VERIFY PASS
+2026-11-17 20:57:05 CST wrote PULLED, waiting to confirm shutdown
+2026-11-17 20:57:21 CST still up: still_up
+Tue Nov 17 20:57:21 CST 2026
+2026-11-17 20:57:37 CST still up: still_up
+Tue Nov 17 20:57:37 CST 2026
+2026-11-17 20:57:52 CST still up: still_up
+Tue Nov 17 20:57:52 CST 2026
+2026-11-17 20:58:09 CST still up: still_up
+Tue Nov 17 20:58:08 CST 2026
+2026-11-17 20:58:26 CST ssh ended after PULLED (likely shutdown)
+Connection closed by <REDACTED_IPV4> port 14873

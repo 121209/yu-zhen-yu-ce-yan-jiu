@@ -1,0 +1,24 @@
+2026-11-14T09:41:39.379997 Asia/Shanghai sync starting
+sync exit 0 
+2026-11-14T09:43:19.508172 Asia/Shanghai sync starting
+sync exit 0 
+2026-11-14T09:45:04.908116 Asia/Shanghai sync starting
+sync exit 0 
+2026-11-14T09:46:54.354242 Asia/Shanghai sync starting
+sync exit 0 
+2026-11-14T09:48:40.766410 Asia/Shanghai sync starting
+sync exit 0 
+2026-11-14T09:50:27.126575 Asia/Shanghai sync starting
+sync exit 0 
+2026-11-14T10:48:01.892886 Asia/Shanghai sync starting
+TimeoutExpired Command '['scp', '-rp', '-o', 'ControlPath=<REDACTED_SSH_CTL_OR_IDENTITY>', '-o', 'ConnectTimeout=12', '-o', 'HostKeyAlias=<REDACTED_SSH_CTL_OR_IDENTITY>', '-o', 'UserKnownHostsFile=<REDACTED_SSH_CTL_OR_IDENTITY>', '-P', '13953', '<REDACTED_USER_AT_HOST>:/hy-tmp/st-nkf-comcat-20261114', '/workspace/st-nkf-diagrams']' timed out after 90 seconds
+2026-11-14T10:51:01.991237 Asia/Shanghai sync starting
+TimeoutExpired Command '['scp', '-rp', '-o', 'ControlPath=<REDACTED_SSH_CTL_OR_IDENTITY>', '-o', 'ConnectTimeout=12', '-o', 'HostKeyAlias=<REDACTED_SSH_CTL_OR_IDENTITY>', '-o', 'UserKnownHostsFile=<REDACTED_SSH_CTL_OR_IDENTITY>', '-P', '13953', '<REDACTED_USER_AT_HOST>:/hy-tmp/st-nkf-comcat-20261114', '/workspace/st-nkf-diagrams']' timed out after 90 seconds
+2026-11-14T10:54:02.084487 Asia/Shanghai sync starting
+sync exit 0 
+2026-11-14T13:47:49.999834 Asia/Shanghai sync starting
+sync exit 255 kex_exchange_identification: read: Connection reset by peer
+Connection reset by <REDACTED_IPV4> port 13953
+scp: Connection closed
+
+pre-expiry final sync attempted

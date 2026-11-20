@@ -1,0 +1,5 @@
+{
+  "time": "2026-11-14T13:47:21.359523 Asia/Shanghai",
+  "consecutive_failures": 1,
+  "error": "ssh exit 255: mux_client_request_session: read from master failed: Broken pipe\nkex_exchange_identification: read: Connection reset by peer\nConnection reset by <REDACTED_IPV4> port 13953\n"
+}

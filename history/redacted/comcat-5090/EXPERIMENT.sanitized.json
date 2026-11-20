@@ -1,0 +1,85 @@
+{
+  "created": "2026-11-14 Asia/Shanghai",
+  "purpose": "ComCat 5090 resume: skip completed scheme2, resume scheme1 from last.pt (~epoch 10), then scheme4 and scheme3. Full 50 epochs, patience 0, official splits, H=128, batch=16, lr=1e-4, seed=1, boundary_angles=128, mu analytic, best-val eval.",
+  "gpu": "NVIDIA GeForce RTX 5090 32GB",
+  "image": "Official PyTorch 2.9.1, CUDA 12.8, Python 3.11",
+  "region": "华东",
+  "code_files": {
+    "ST-NKF-pytorch/Datasets/SOURCE.txt": {
+      "sha256": "159a7dd41b48557df5823cb8b55263ddf67c4daafde54309555dbcf75563eca8",
+      "bytes": 1116
+    },
+    "ST-NKF-pytorch/LICENSE": {
+      "sha256": "1aa569d027a6ae0f18444a08774ae1a63a4dffc5c0773f3256c9e22dcf00e772",
+      "bytes": 1064
+    },
+    "ST-NKF-pytorch/README.md": {
+      "sha256": "204ee07bd21b250f2a5c5b30e2f613a4164dad99b6b516494d24e5b6aed4f77b",
+      "bytes": 13596
+    },
+    "ST-NKF-pytorch/batch.py": {
+      "sha256": "f201fa8e82283de546bb9d0ee34ccb0b200111fad3168698cc33bf6579af0f57",
+      "bytes": 3168
+    },
+    "ST-NKF-pytorch/config.py": {
+      "sha256": "edd8c35f1a5e5813a3c7f11e4d4cf4aca3efd2b2dc1aa5531e014519e58e489b",
+      "bytes": 3796
+    },
+    "ST-NKF-pytorch/environment.yml": {
+      "sha256": "b32632ae68a71b343bb35aeeff135c9409baf2086f615d350e843e4ed185b084",
+      "bytes": 331
+    },
+    "ST-NKF-pytorch/layers.py": {
+      "sha256": "359352c66af7b80b638a45a854919db5b4b6f69e2a235f11794f1d4840fa35b0",
+      "bytes": 6681
+    },
+    "ST-NKF-pytorch/layers_transformer.py": {
+      "sha256": "db8eacac5494b294cda47b7f8a393fe8872b0427c76e47e1c25141201b8877ca",
+      "bytes": 13676
+    },
+    "ST-NKF-pytorch/models.py": {
+      "sha256": "56ef5f6bc01761240c9e4672f193d7b362759295cbddc7b3a373064716000d9f",
+      "bytes": 38766
+    },
+    "ST-NKF-pytorch/requirements-plotting.txt": {
+      "sha256": "2cb9c9f5f9101c1b7f44d6d7028694f18952e24a5b42c41110ae313c86ca6559",
+      "bytes": 193
+    },
+    "ST-NKF-pytorch/requirements.txt": {
+      "sha256": "4bb4921ca6f1ddd4ae767858a2cd45d73211fba30d748ffc42cff0b62e0b97a0",
+      "bytes": 247
+    },
+    "ST-NKF-pytorch/run_models.py": {
+      "sha256": "639becb3a60a4d638f3f094aeb25e9adf5ccc7e4e498c738a8da0d735538c8b0",
+      "bytes": 19082
+    },
+    "ST-NKF-pytorch/tests/test_nonconvex_boundary.py": {
+      "sha256": "f9a37d8d3f14b1050019532a666096d996337e98763b964b27c7f4e0ac3d69e5",
+      "bytes": 2848
+    },
+    "ST-NKF-pytorch/tests/test_plot_notebooks.py": {
+      "sha256": "b36b7f15d3afbbd669f0bfe2ce77a0c19a4ca2c3bf1312b0e2138264662d2a94",
+      "bytes": 8829
+    },
+    "ST-NKF-pytorch/tests/test_port.py": {
+      "sha256": "d58b5b89576c2d736769a9b883522b75c63adce44ef08c8e8ecd3184d43c4c0d",
+      "bytes": 11843
+    },
+    "ST-NKF-pytorch/tests/test_transformer_smoke.py": {
+      "sha256": "e3d4566713f8e89ddccb49ff24ca201da71658ff96b51e68d3bcf9311212e1bb",
+      "bytes": 27415
+    },
+    "ST-NKF-pytorch/utils.py": {
+      "sha256": "490e0a11e8ff0f096731c8b590602b4503ae89807e6f910a2c7774c41ee68572",
+      "bytes": 3976
+    },
+    "run_four_schemes_gpu.py": {
+      "sha256": "e76ccfeef08480880ae6905670022a3c7e2dc247150b911a4effdd5865ad69c1",
+      "bytes": 23484
+    },
+    "run_six_datasets_gpu.py": {
+      "sha256": "17580bec8228ec91bb1387aff44a352a167840984d58597b3dfebaf692fada74",
+      "bytes": 17376
+    }
+  }
+}
